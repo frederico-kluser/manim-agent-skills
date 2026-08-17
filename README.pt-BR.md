@@ -230,12 +230,11 @@ bin/mx doctor
 
 ## Licença e atribuição
 
-MIT — veja [LICENSE](LICENSE).
+MIT — veja [LICENSE](LICENSE). Avisos de terceiros em [NOTICE.md](NOTICE.md).
 
 **Sem afiliação, endosso ou relação de fork** com a [Manim
 Community](https://github.com/ManimCommunity/manim) ou o
 [3Blue1Brown](https://github.com/3b1b/manim). Nenhum código upstream é embutido aqui: o `manimx`
 chama e faz patch do Manim instalado em tempo de execução. O `api/` contém nomes, assinaturas e a
 primeira linha de cada docstring, extraídos por reflexão desses projetos (MIT), e o
-`custom_config.yml` deriva do `default_config.yml` do ManimGL. Avisos completos no
-[LICENSE](LICENSE).
+`custom_config.yml` deriva do `default_config.yml` do ManimGL.
