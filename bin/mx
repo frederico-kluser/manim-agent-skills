@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# CLI `mx` — camada de API do Manim para agentes.
+#
+#   bin/mx doctor
+#   bin/mx render scenes/demo.py Demo -q h --codec nvenc --json
+#   bin/mx find Transform
+#   bin/mx show Circle
+#
+# Roda sempre no venv do ManimCE, com LaTeX e GPU no ambiente.
+set -euo pipefail
+source "$(dirname "${BASH_SOURCE[0]}")/manim-env.sh"
+manimx_use_ce
+manimx_enable_gpu
+exec "$MANIMX_ROOT/.venv/bin/python" -m manimx.cli "$@"

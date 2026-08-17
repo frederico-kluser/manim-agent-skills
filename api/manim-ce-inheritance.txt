@@ -1,0 +1,338 @@
+Árvore de herança — manim v0.21.0
+
+Animation
+  Add
+  AnimationGroup
+    Flash
+    LaggedStart
+      Broadcast
+      LaggedStartMap
+    ShowPassingFlashWithThinningStrokeWidth
+    Succession
+      AddTextWordByWord
+      Blink
+      Circumscribe
+    TransformMatchingAbstractBase
+      TransformMatchingShapes
+      TransformMatchingTex
+  ChangeSpeed
+  ChangingDecimal
+    ChangeDecimalToValue
+  DrawBorderThenFill
+    Write
+      Unwrite
+  Homotopy
+    ApplyWave
+    ComplexHomotopy
+    SmoothedVectorizedHomotopy
+  MaintainPositionRelativeTo
+  MoveAlongPath
+  PhaseFlow
+  Rotating
+  ShowIncreasingSubsets
+    AddTextLetterByLetter
+      RemoveTextLetterByLetter
+      TypeWithCursor
+        UntypeWithCursor
+    ShowSubmobjectsOneByOne
+  ShowPartial
+    Create
+      Uncreate
+    ShowPassingFlash
+  SpiralIn
+  Transform
+    ApplyFunction
+    ApplyMethod
+      ApplyComplexFunction
+      ApplyPointwiseFunction
+        ApplyMatrix
+        ApplyPointwiseFunctionToCenter
+      FadeToColor
+      Restore
+      ScaleInPlace
+        ShrinkToCenter
+    ClockwiseTransform
+    CounterclockwiseTransform
+    CyclicReplace
+      Swap
+    FadeTransform
+      FadeTransformPieces
+    FocusOn
+    GrowFromPoint
+      GrowArrow
+      GrowFromCenter
+        SpinInFromNothing
+      GrowFromEdge
+    Indicate
+    MoveToTarget
+    ReplacementTransform
+    Rotate
+    TransformAnimations
+    TransformFromCopy
+  UpdateFromFunc
+    UpdateFromAlphaFunc
+  Wait
+  Wiggle
+BackgroundColoredVMobjectDisplayer
+CairoRenderer
+Camera
+  MappingCamera
+  MovingCamera
+    MultiCamera
+  OldMultiCamera
+    SplitScreenCamera
+  ThreeDCamera
+CapStyleType
+Cell
+ClickArgs
+Comparable
+ConvertToOpenGL
+CoordinateSystem
+  Axes
+    BarChart
+    NumberPlane
+      ComplexPlane
+    PolarPlane
+    ThreeDAxes
+DefaultSectionType
+DictAsObject
+Difference
+EndSceneEarlyException
+Exclusion
+Facet
+FadeIn
+FadeOut
+HealthCheckFunction
+Horizon
+Intersection
+JSONFormatter
+LayoutFunction
+LineJointType
+LinearBase
+LogBase
+ManimColor
+  HSV
+ManimConfig
+ManimFrame
+MarkupUtils
+MethodWithArgs
+Mobject
+  AbstractImageMobject
+    ImageMobject
+    ImageMobjectFromCamera
+  Group
+    DefaultGroup
+  PMobject
+    Mobject1D
+      PointCloudDot
+    Mobject2D
+    PGroup
+    Point
+  VMobject
+    Angle
+      RightAngle
+    ArcPolygon
+    ArcPolygonFromArcs
+    ArrowTip
+      ArrowCircleTip
+        ArrowCircleFilledTip
+      ArrowSquareTip
+        ArrowSquareFilledTip
+      ArrowTriangleTip
+        ArrowTriangleFilledTip
+      StealthTip
+    BraceLabel
+      BraceText
+    Code
+    CubicBezier
+    Cutout
+    DashedVMobject
+    DecimalNumber
+      Integer
+    Elbow
+    GenericGraph
+      DiGraph
+      Graph
+    ImplicitFunction
+    MathTexPart
+    Matrix
+      DecimalMatrix
+      IntegerMatrix
+      MobjectMatrix
+    ParametricFunction
+      FunctionGraph
+    Polygram
+      ConvexHull
+      LabeledPolygram
+      Polygon
+        Rectangle
+          RoundedRectangle
+            SurroundingRectangle
+              BackgroundRectangle
+          SampleSpace
+          ScreenRectangle
+            FullScreenRectangle
+          Square
+        Star
+      RegularPolygram
+        RegularPolygon
+          Triangle
+    SVGMobject
+      MarkupText
+      SingleStringMathTex
+        MathTex
+          Tex
+            BulletedList
+            Title
+      Text
+      Typst
+        MathTypst
+    ThreeDVMobject
+    TipableVMobject
+      Arc
+        AnnularSector
+          Sector
+        ArcBetweenPoints
+          CurvedArrow
+            CurvedDoubleArrow
+          TangentialArc
+        Circle
+          Annulus
+          Dot
+            AnnotationDot
+            LabeledDot
+          Ellipse
+      Line
+        Arrow
+          DoubleArrow
+          LabeledArrow
+          Vector
+        DashedLine
+        LabeledLine
+        NumberLine
+          UnitInterval
+        TangentLine
+        Underline
+    TracedPath
+    VDict
+    VGroup
+      AnimatedBoundary
+      Cross
+      Cube
+        Prism
+      CurvesAsSubmobjects
+      Label
+      ManimBanner
+      Paragraph
+      Polyhedron
+        ConvexHull3D
+        Dodecahedron
+        Icosahedron
+        Octahedron
+        Tetrahedron
+      Surface
+        Cone
+        Cylinder
+          Line3D
+            Arrow3D
+        Sphere
+          Dot3D
+        Torus
+      Table
+        DecimalTable
+        IntegerTable
+        MathTable
+        MobjectTable
+      VectorField
+        ArrowVectorField
+        StreamLines
+    VMobjectFromSVGPath
+      Brace
+        ArcBrace
+        BraceBetweenPoints
+    Variable
+    VectorizedPoint
+  ValueTracker
+    ComplexValueTracker
+MultiAnimationOverrideException
+Object3D
+  Mesh
+    FullScreenQuad
+OpenGLMobject
+  OpenGLCamera
+  OpenGLGroup
+  OpenGLPMobject
+    DotCloud
+      TrueDot
+    OpenGLPGroup
+    OpenGLPMPoint
+  OpenGLPoint
+    OpenGLVectorizedPoint
+  OpenGLSurface
+    OpenGLSurfaceGroup
+    OpenGLTexturedSurface
+      OpenGLImageMobject
+  OpenGLVMobject
+    OpenGLCubicBezier
+    OpenGLDashedVMobject
+    OpenGLElbow
+    OpenGLPolygon
+      OpenGLRectangle
+        OpenGLRoundedRectangle
+        OpenGLSquare
+      OpenGLRegularPolygon
+        OpenGLTriangle
+          OpenGLArrowTip
+    OpenGLTipableVMobject
+      OpenGLArc
+        OpenGLAnnularSector
+          OpenGLSector
+        OpenGLArcBetweenPoints
+          OpenGLCurvedArrow
+            OpenGLCurvedDoubleArrow
+        OpenGLCircle
+          OpenGLAnnulus
+          OpenGLDot
+          OpenGLEllipse
+      OpenGLLine
+        OpenGLArrow
+          OpenGLDoubleArrow
+          OpenGLVector
+        OpenGLDashedLine
+        OpenGLTangentLine
+    OpenGLVGroup
+      OpenGLCurvesAsSubmobjects
+      OpenGLSurfaceMesh
+OpenGLRenderer
+PangoUtils
+Percent
+QualityDict
+QuickHull
+QuickHullPoint
+RGBA
+RandomColorGenerator
+RateFunction
+RendererType
+RerunSceneException
+RerunSceneHandler
+Scene
+  MovingCameraScene
+    ZoomedScene
+  ThreeDScene
+    SpecialThreeDScene
+  VectorScene
+    LinearTransformationScene
+SceneFileWriter
+  DummySceneFileWriter
+SceneInteractContinue
+SceneInteractRerun
+Section
+Shader
+ShaderWrapper
+SubFacet
+TexFontTemplates
+TexTemplate
+TexTemplateLibrary
+TextSetting
+Union
+VideoMetadata

@@ -1,0 +1,17 @@
+# Os scripts em bin/ são o único ponto de entrada suportado. Num clone
+# Windows com core.autocrlf=true eles virariam CRLF e o bash falharia com
+# "bad interpreter: /usr/bin/env bash^M". Force LF.
+bin/*        text eol=lf
+*.sh         text eol=lf
+*.py         text eol=lf
+
+# ~13 dos ~16 MiB do repositório são índices GERADOS por `bin/mx api-dump`.
+# Sem isto, o linguist classificaria o repo como "TSV" em vez de Python, e
+# os diffs desses arquivos poluiriam toda revisão.
+api/*.tsv            linguist-generated=true -diff
+api/*.md             linguist-generated=true -diff
+api/*.txt            linguist-generated=true -diff
+api/*.json.gz        linguist-generated=true -diff binary
+
+# Documentação não conta como código na barra de linguagens.
+.claude/skills/**    linguist-documentation=true

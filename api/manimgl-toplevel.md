@@ -1,0 +1,718 @@
+# `from manimlib import *` — v1.7.2
+
+## classe (272)
+
+- `ABC` — abc.ABC  [só no topo]
+- `AddTextWordByWord` — manimlib.animation.creation.AddTextWordByWord
+- `AnimatedBoundary` — manimlib.mobject.changing.AnimatedBoundary
+- `AnimatedStreamLines` — manimlib.mobject.vector_field.AnimatedStreamLines
+- `Animation` — manimlib.animation.animation.Animation
+- `AnimationGroup` — manimlib.animation.composition.AnimationGroup
+- `AnimationOnSurroundingRectangle` — manimlib.animation.indication.AnimationOnSurroundingRectangle
+- `AnnularSector` — manimlib.mobject.geometry.AnnularSector
+- `Annulus` — manimlib.mobject.geometry.Annulus
+- `ApplyComplexFunction` — manimlib.animation.transform.ApplyComplexFunction
+- `ApplyFunction` — manimlib.animation.transform.ApplyFunction
+- `ApplyMatrix` — manimlib.animation.transform.ApplyMatrix
+- `ApplyMethod` — manimlib.animation.transform.ApplyMethod
+- `ApplyPointwiseFunction` — manimlib.animation.transform.ApplyPointwiseFunction
+- `ApplyPointwiseFunctionToCenter` — manimlib.animation.transform.ApplyPointwiseFunctionToCenter
+- `ApplyWave` — manimlib.animation.indication.ApplyWave
+- `Arc` — manimlib.mobject.geometry.Arc
+- `ArcBetweenPoints` — manimlib.mobject.geometry.ArcBetweenPoints
+- `Arrow` — manimlib.mobject.geometry.Arrow
+- `ArrowTip` — manimlib.mobject.geometry.ArrowTip
+- `Axes` — manimlib.mobject.coordinate_systems.Axes
+- `BackgroundRectangle` — manimlib.mobject.shape_matchers.BackgroundRectangle
+- `BarChart` — manimlib.mobject.probability.BarChart
+- `Brace` — manimlib.mobject.svg.brace.Brace
+- `BraceLabel` — manimlib.mobject.svg.brace.BraceLabel
+- `BraceText` — manimlib.mobject.svg.brace.BraceText
+- `Broadcast` — manimlib.animation.specialized.Broadcast
+- `Bubble` — manimlib.mobject.svg.drawings.Bubble
+- `BulletedList` — manimlib.mobject.svg.special_tex.BulletedList
+- `Button` — manimlib.mobject.interactive.Button
+- `Cache` — diskcache.core.Cache  [só no topo]
+- `Camera` — manimlib.camera.camera.Camera
+- `CameraFrame` — manimlib.camera.camera_frame.CameraFrame
+- `ChangeDecimalToValue` — manimlib.animation.numbers.ChangeDecimalToValue
+- `ChangingDecimal` — manimlib.animation.numbers.ChangingDecimal
+- `Checkbox` — manimlib.mobject.interactive.Checkbox
+- `Checkmark` — manimlib.mobject.svg.drawings.Checkmark
+- `CheckpointManager` — manimlib.scene.scene_embed.CheckpointManager
+- `Circle` — manimlib.mobject.geometry.Circle
+- `CircleIndicate` — manimlib.animation.indication.CircleIndicate
+- `Clock` — manimlib.mobject.svg.drawings.Clock
+- `ClockPassesTime` — manimlib.mobject.svg.drawings.ClockPassesTime
+- `Code` — manimlib.mobject.svg.text_mobject.Code
+- `Color` — colour.Color  [só no topo]
+- `ColorSliders` — manimlib.mobject.interactive.ColorSliders
+- `ComplexHomotopy` — manimlib.animation.movement.ComplexHomotopy
+- `ComplexPlane` — manimlib.mobject.coordinate_systems.ComplexPlane
+- `ComplexValueTracker` — manimlib.mobject.value_tracker.ComplexValueTracker
+- `Cone` — manimlib.mobject.three_dimensions.Cone
+- `ControlMobject` — manimlib.mobject.interactive.ControlMobject
+- `ControlPanel` — manimlib.mobject.interactive.ControlPanel
+- `CoordinateSystem` — manimlib.mobject.coordinate_systems.CoordinateSystem
+- `CountInFrom` — manimlib.animation.numbers.CountInFrom
+- `Cross` — manimlib.mobject.shape_matchers.Cross
+- `Cube` — manimlib.mobject.three_dimensions.Cube
+- `CubicBezier` — manimlib.mobject.geometry.CubicBezier
+- `CurvedArrow` — manimlib.mobject.geometry.CurvedArrow
+- `CurvedDoubleArrow` — manimlib.mobject.geometry.CurvedDoubleArrow
+- `CurvesAsSubmobjects` — manimlib.mobject.types.vectorized_mobject.CurvesAsSubmobjects
+- `CyclicReplace` — manimlib.animation.transform.CyclicReplace
+- `Cylinder` — manimlib.mobject.three_dimensions.Cylinder
+- `Dartboard` — manimlib.mobject.svg.drawings.Dartboard
+- `DashedLine` — manimlib.mobject.geometry.DashedLine
+- `DashedVMobject` — manimlib.mobject.types.vectorized_mobject.DashedVMobject
+- `DecimalMatrix` — manimlib.mobject.matrix.DecimalMatrix
+- `DecimalNumber` — manimlib.mobject.numbers.DecimalNumber
+- `DieFace` — manimlib.mobject.svg.drawings.DieFace
+- `Difference` — manimlib.mobject.boolean_ops.Difference
+- `Disk3D` — manimlib.mobject.three_dimensions.Disk3D
+- `Dodecahedron` — manimlib.mobject.three_dimensions.Dodecahedron
+- `Dot` — manimlib.mobject.geometry.Dot
+- `DotCloud` — manimlib.mobject.types.dot_cloud.DotCloud
+- `DoubleSpeechBubble` — manimlib.mobject.svg.drawings.DoubleSpeechBubble
+- `DrawBorderThenFill` — manimlib.animation.creation.DrawBorderThenFill
+- `Drawing` — manimlib.renderer.drawing.Drawing
+- `Elbow` — manimlib.mobject.geometry.Elbow
+- `Ellipse` — manimlib.mobject.geometry.Ellipse
+- `EnableDisableButton` — manimlib.mobject.interactive.EnableDisableButton
+- `EndScene` — manimlib.scene.scene.EndScene
+- `EventListener` — manimlib.event_handler.event_listner.EventListener
+- `EventType` — manimlib.event_handler.event_type.EventType
+- `Exclusion` — manimlib.mobject.boolean_ops.Exclusion
+- `ExitStack` — contextlib.ExitStack  [só no topo]
+- `Exmark` — manimlib.mobject.svg.drawings.Exmark
+- `ExponentialValueTracker` — manimlib.mobject.value_tracker.ExponentialValueTracker
+- `Fade` — manimlib.animation.fading.Fade
+- `FadeIn` — manimlib.animation.fading.FadeIn
+- `FadeInFromPoint` — manimlib.animation.fading.FadeInFromPoint
+- `FadeOut` — manimlib.animation.fading.FadeOut
+- `FadeOutToPoint` — manimlib.animation.fading.FadeOutToPoint
+- `FadeToColor` — manimlib.animation.transform.FadeToColor
+- `FadeTransform` — manimlib.animation.fading.FadeTransform
+- `FadeTransformPieces` — manimlib.animation.fading.FadeTransformPieces
+- `Flash` — manimlib.animation.indication.Flash
+- `FlashAround` — manimlib.animation.indication.FlashAround
+- `FlashUnder` — manimlib.animation.indication.FlashUnder
+- `FlashyFadeIn` — manimlib.animation.indication.FlashyFadeIn
+- `FocusOn` — manimlib.animation.indication.FocusOn
+- `FrameStream` — manimlib.camera.camera.FrameStream
+- `FullScreenFadeRectangle` — manimlib.mobject.frame.FullScreenFadeRectangle
+- `FullScreenRectangle` — manimlib.mobject.frame.FullScreenRectangle
+- `FunctionGraph` — manimlib.mobject.functions.FunctionGraph
+- `Generic` — typing.Generic  [só no topo]
+- `GlowDot` — manimlib.mobject.types.dot_cloud.GlowDot
+- `GlowDots` — manimlib.mobject.types.dot_cloud.GlowDots
+- `Gpu` — manimlib.renderer.gpu.Gpu
+- `Group` — manimlib.mobject.mobject.Group
+- `GrowArrow` — manimlib.animation.growing.GrowArrow
+- `GrowFromCenter` — manimlib.animation.growing.GrowFromCenter
+- `GrowFromEdge` — manimlib.animation.growing.GrowFromEdge
+- `GrowFromPoint` — manimlib.animation.growing.GrowFromPoint
+- `Homotopy` — manimlib.animation.movement.Homotopy
+- `ImageMobject` — manimlib.mobject.types.image_mobject.ImageMobject
+- `ImplicitFunction` — manimlib.mobject.functions.ImplicitFunction
+- `Indicate` — manimlib.animation.indication.Indicate
+- `Integer` — manimlib.mobject.numbers.Integer
+- `IntegerMatrix` — manimlib.mobject.matrix.IntegerMatrix
+- `InteractiveScene` — manimlib.scene.interactive_scene.InteractiveScene
+- `InteractiveSceneEmbed` — manimlib.scene.scene_embed.InteractiveSceneEmbed
+- `Intersection` — manimlib.mobject.boolean_ops.Intersection
+- `JuliaFractal` — manimlib.mobject.fractals.JuliaFractal
+- `Keys` — manimlib.event_keys.Keys
+- `LaggedStart` — manimlib.animation.composition.LaggedStart
+- `LaggedStartMap` — manimlib.animation.composition.LaggedStartMap
+- `Laptop` — manimlib.mobject.svg.drawings.Laptop
+- `LatexError` — manimlib.utils.tex_file_writing.LatexError
+- `Lightbulb` — manimlib.mobject.svg.drawings.Lightbulb
+- `Line` — manimlib.mobject.geometry.Line
+- `Line3D` — manimlib.mobject.three_dimensions.Line3D
+- `LineBrace` — manimlib.mobject.svg.brace.LineBrace
+- `LinearNumberSlider` — manimlib.mobject.interactive.LinearNumberSlider
+- `MaintainPositionRelativeTo` — manimlib.animation.update.MaintainPositionRelativeTo
+- `MandelbrotFractal` — manimlib.mobject.fractals.MandelbrotFractal
+- `MarkupText` — manimlib.mobject.svg.text_mobject.MarkupText
+- `Matrix` — manimlib.mobject.matrix.Matrix
+- `MetaNewtonFractal` — manimlib.mobject.fractals.MetaNewtonFractal
+- `Mobject` — manimlib.mobject.mobject.Mobject
+- `MobjectMatrix` — manimlib.mobject.matrix.MobjectMatrix
+- `Mods` — manimlib.event_keys.Mods
+- `MotionMobject` — manimlib.mobject.interactive.MotionMobject
+- `MoveAlongPath` — manimlib.animation.movement.MoveAlongPath
+- `MoveToTarget` — manimlib.animation.transform.MoveToTarget
+- `NewtonFractal` — manimlib.mobject.fractals.NewtonFractal
+- `NumberLine` — manimlib.mobject.number_line.NumberLine
+- `NumberPlane` — manimlib.mobject.coordinate_systems.NumberPlane
+- `OldSpeechBubble` — manimlib.mobject.svg.drawings.OldSpeechBubble
+- `OldThoughtBubble` — manimlib.mobject.svg.drawings.OldThoughtBubble
+- `OrderedDict` — collections.OrderedDict  [só no topo]
+- `PGroup` — manimlib.mobject.types.point_cloud_mobject.PGroup
+- `PMobject` — manimlib.mobject.types.point_cloud_mobject.PMobject
+- `PackageNotFoundError` — importlib.metadata.PackageNotFoundError  [só no topo]
+- `ParametricCurve` — manimlib.mobject.functions.ParametricCurve
+- `ParametricSurface` — manimlib.mobject.types.surface.ParametricSurface
+- `Path` — pathlib.Path  [só no topo]
+- `PhaseFlow` — manimlib.animation.movement.PhaseFlow
+- `Piano` — manimlib.mobject.svg.drawings.Piano
+- `Piano3D` — manimlib.mobject.svg.drawings.Piano3D
+- `PlaneFractal` — manimlib.mobject.fractals.PlaneFractal
+- `Point` — manimlib.mobject.mobject.Point
+- `Polygon` — manimlib.mobject.geometry.Polygon
+- `Polyline` — manimlib.mobject.geometry.Polyline
+- `Prism` — manimlib.mobject.three_dimensions.Prism
+- `Prismify` — manimlib.mobject.three_dimensions.Prismify
+- `ProgressDisplay` — tqdm.asyncio.tqdm_asyncio  [só no topo]
+- `Rectangle` — manimlib.mobject.geometry.Rectangle
+- `RegularPolygon` — manimlib.mobject.geometry.RegularPolygon
+- `RenderCanvas` — rendercanvas.glfw.GlfwRenderCanvas  [só no topo]
+- `Renderer` — manimlib.renderer.renderer.Renderer
+- `ReplacementTransform` — manimlib.animation.transform.ReplacementTransform
+- `Restore` — manimlib.animation.transform.Restore
+- `Rotate` — manimlib.animation.rotation.Rotate
+- `Rotating` — manimlib.animation.rotation.Rotating
+- `Rotation` — scipy.spatial.transform._rotation.Rotation  [só no topo]
+- `RoundedRectangle` — manimlib.mobject.geometry.RoundedRectangle
+- `SVGMobject` — manimlib.mobject.svg.svg_mobject.SVGMobject
+- `SampleSpace` — manimlib.mobject.probability.SampleSpace
+- `ScaleInPlace` — manimlib.animation.transform.ScaleInPlace
+- `Scene` — manimlib.scene.scene.Scene
+- `SceneFileWriter` — manimlib.scene.scene_file_writer.SceneFileWriter
+- `SceneState` — manimlib.scene.scene.SceneState
+- `ScreenRectangle` — manimlib.mobject.frame.ScreenRectangle
+- `Sector` — manimlib.mobject.geometry.Sector
+- `SequenceMatcher` — difflib.SequenceMatcher  [só no topo]
+- `ShowCreation` — manimlib.animation.creation.ShowCreation
+- `ShowCreationThenDestruction` — manimlib.animation.indication.ShowCreationThenDestruction
+- `ShowCreationThenDestructionAround` — manimlib.animation.indication.ShowCreationThenDestructionAround
+- `ShowCreationThenFadeAround` — manimlib.animation.indication.ShowCreationThenFadeAround
+- `ShowCreationThenFadeOut` — manimlib.animation.indication.ShowCreationThenFadeOut
+- `ShowIncreasingSubsets` — manimlib.animation.creation.ShowIncreasingSubsets
+- `ShowPartial` — manimlib.animation.creation.ShowPartial
+- `ShowPassingFlash` — manimlib.animation.indication.ShowPassingFlash
+- `ShowPassingFlashAround` — manimlib.animation.indication.ShowPassingFlashAround
+- `ShowSubmobjectsOneByOne` — manimlib.animation.creation.ShowSubmobjectsOneByOne
+- `ShrinkToCenter` — manimlib.animation.transform.ShrinkToCenter
+- `Slider` — manimlib.mobject.number_line.Slider
+- `SmallDot` — manimlib.mobject.geometry.SmallDot
+- `SmoothedVectorizedHomotopy` — manimlib.animation.movement.SmoothedVectorizedHomotopy
+- `SpeechBubble` — manimlib.mobject.svg.drawings.SpeechBubble
+- `Speedometer` — manimlib.mobject.svg.drawings.Speedometer
+- `Sphere` — manimlib.mobject.three_dimensions.Sphere
+- `Square` — manimlib.mobject.geometry.Square
+- `Square3D` — manimlib.mobject.three_dimensions.Square3D
+- `StreamLines` — manimlib.mobject.vector_field.StreamLines
+- `StringMobject` — manimlib.mobject.svg.string_mobject.StringMobject
+- `StrokeArrow` — manimlib.mobject.geometry.StrokeArrow
+- `StructuredArray` — manimlib.utils.structured_array.StructuredArray
+- `Succession` — manimlib.animation.composition.Succession
+- `Surface` — manimlib.mobject.types.surface.Surface
+- `SurfaceDrawing` — manimlib.renderer.drawing.SurfaceDrawing
+- `SurfaceMesh` — manimlib.mobject.three_dimensions.SurfaceMesh
+- `SurroundingRectangle` — manimlib.mobject.shape_matchers.SurroundingRectangle
+- `Swap` — manimlib.animation.transform.Swap
+- `TangentLine` — manimlib.mobject.geometry.TangentLine
+- `Tex` — manimlib.mobject.svg.tex_mobject.Tex
+- `TexMatrix` — manimlib.mobject.matrix.TexMatrix
+- `TexText` — manimlib.mobject.svg.tex_mobject.TexText
+- `TexTextFromPresetString` — manimlib.mobject.svg.special_tex.TexTextFromPresetString
+- `Text` — manimlib.mobject.svg.text_mobject.Text
+- `Textbox` — manimlib.mobject.interactive.Textbox
+- `TexturedGeometry` — manimlib.mobject.types.surface.TexturedGeometry
+- `TexturedSurface` — manimlib.mobject.types.surface.TexturedSurface
+- `ThoughtBubble` — manimlib.mobject.svg.drawings.ThoughtBubble
+- `ThreeDAxes` — manimlib.mobject.coordinate_systems.ThreeDAxes
+- `ThreeDCamera` — manimlib.camera.camera.ThreeDCamera
+- `ThreeDModel` — manimlib.mobject.types.surface.ThreeDModel
+- `ThreeDScene` — manimlib.scene.scene.ThreeDScene
+- `TimeVaryingVectorField` — manimlib.mobject.vector_field.TimeVaryingVectorField
+- `TipableVMobject` — manimlib.mobject.geometry.TipableVMobject
+- `Title` — manimlib.mobject.svg.special_tex.Title
+- `Torus` — manimlib.mobject.three_dimensions.Torus
+- `TracedPath` — manimlib.mobject.changing.TracedPath
+- `TracingTail` — manimlib.mobject.changing.TracingTail
+- `Transform` — manimlib.animation.transform.Transform
+- `TransformFromCopy` — manimlib.animation.transform.TransformFromCopy
+- `TransformMatchingParts` — manimlib.animation.transform_matching_parts.TransformMatchingParts
+- `TransformMatchingShapes` — manimlib.animation.transform_matching_parts.TransformMatchingShapes
+- `TransformMatchingStrings` — manimlib.animation.transform_matching_parts.TransformMatchingStrings
+- `TransformMatchingTex` — manimlib.animation.transform_matching_parts.TransformMatchingTex
+- `Triangle` — manimlib.mobject.geometry.Triangle
+- `TrueDot` — manimlib.mobject.types.dot_cloud.TrueDot
+- `TurnInsideOut` — manimlib.animation.indication.TurnInsideOut
+- `TypeVar` — typing.TypeVar  [só no topo]
+- `Uncreate` — manimlib.animation.creation.Uncreate
+- `Underline` — manimlib.mobject.shape_matchers.Underline
+- `Uniforms` — manimlib.renderer.uniform_block.Uniforms
+- `Union` — manimlib.mobject.boolean_ops.Union
+- `UnitInterval` — manimlib.mobject.number_line.UnitInterval
+- `UpdateFromAlphaFunc` — manimlib.animation.update.UpdateFromAlphaFunc
+- `UpdateFromFunc` — manimlib.animation.update.UpdateFromFunc
+- `Updater` — manimlib.mobject.mobject.Updater
+- `VCube` — manimlib.mobject.three_dimensions.VCube
+- `VDrawing` — manimlib.renderer.drawing.VDrawing
+- `VFadeIn` — manimlib.animation.fading.VFadeIn
+- `VFadeInThenOut` — manimlib.animation.fading.VFadeInThenOut
+- `VFadeOut` — manimlib.animation.fading.VFadeOut
+- `VGroup` — manimlib.mobject.types.vectorized_mobject.VGroup
+- `VGroup3D` — manimlib.mobject.three_dimensions.VGroup3D
+- `VHighlight` — manimlib.mobject.types.vectorized_mobject.VHighlight
+- `VMobject` — manimlib.mobject.types.vectorized_mobject.VMobject
+- `VMobjectFromSVGPath` — manimlib.mobject.svg.svg_mobject.VMobjectFromSVGPath
+- `VPrism` — manimlib.mobject.three_dimensions.VPrism
+- `VShowPassingFlash` — manimlib.animation.indication.VShowPassingFlash
+- `ValueTracker` — manimlib.mobject.value_tracker.ValueTracker
+- `Vector` — manimlib.mobject.geometry.Vector
+- `VectorField` — manimlib.mobject.vector_field.VectorField
+- `VectorizedEarth` — manimlib.mobject.svg.drawings.VectorizedEarth
+- `VectorizedPoint` — manimlib.mobject.types.vectorized_mobject.VectorizedPoint
+- `VideoIcon` — manimlib.mobject.svg.drawings.VideoIcon
+- `VideoSeries` — manimlib.mobject.svg.drawings.VideoSeries
+- `WiggleOutThenIn` — manimlib.animation.indication.WiggleOutThenIn
+- `Window` — manimlib.window.Window
+- `Write` — manimlib.animation.creation.Write
+
+## constante / instância (176)
+
+- `ARRAY_ELEMENT_SIZE` — int = 4
+- `ARROW_SYMBOLS` — list = [57344, 57346, 57345, 57347]
+- `ASPECT_RATIO` — float = 1.7777777777777777
+- `AnimationType` — _UnionGenericAlias = typing.Union[manimlib.animation.animation.Animation, mani...  [só no topo]
+- `BLACK` — str = '#000000'
+- `BLOCK_MEMBER_TYPES` — dict = {1: 'f32', 2: 'vec2f', 3: 'vec3f', 4: 'vec4f', 16: 'mat4x...
+- `BLUE` — str = '#58C4DD'
+- `BLUE_A` — str = '#C7E9F1'
+- `BLUE_B` — str = '#9CDCEB'
+- `BLUE_C` — str = '#58C4DD'
+- `BLUE_D` — str = '#29ABCA'
+- `BLUE_E` — str = '#1C758A'
+- `BOLD` — str = 'BOLD'
+- `BOTTOM` — ndarray = array([ 0., -4.,  0.])
+- `CACHE_SIZE` — float = 1000000000.0
+- `CLOSED_THRESHOLD` — float = 0.001
+- `COLORMAP_3B1B` — list = ['#1C758A', '#83C167', '#FFFF00', '#FC6255']
+- `COLOR_FORMAT` — str = 'rgba8unorm'
+- `COLOR_KEY` — str = 'c'
+- `COMMON_UNIFORMS` — tuple = (('is_fixed_in_frame', 1), ('shading', 3), ('clip_plane0'...
+- `CURSOR_KEY` — str = 'k'
+- `DARK_BROWN` — str = '#8B4513'
+- `DEFAULT_ANIMATION_LAG_RATIO` — int = 0
+- `DEFAULT_ANIMATION_RUN_TIME` — float = 1.0
+- `DEFAULT_ARROW_TIP_LENGTH` — float = 0.35
+- `DEFAULT_ARROW_TIP_WIDTH` — float = 0.35
+- `DEFAULT_BUFF_RATIO` — float = 0.5
+- `DEFAULT_CANVAS_HEIGHT` — int = 16384
+- `DEFAULT_CANVAS_WIDTH` — int = 16384
+- `DEFAULT_DASH_LENGTH` — float = 0.05
+- `DEFAULT_DOT_RADIUS` — float = 0.05
+- `DEFAULT_GLOW_DOT_RADIUS` — float = 0.2
+- `DEFAULT_GRID_HEIGHT` — int = 6
+- `DEFAULT_LAGGED_START_LAG_RATIO` — float = 0.05
+- `DEFAULT_LIGHT_COLOR` — str = '#BBBBBB'
+- `DEFAULT_LINE_SPACING_SCALE` — float = 0.6
+- `DEFAULT_MOBJECT_COLOR` — str = '#FFFFFF'
+- `DEFAULT_MOBJECT_TO_EDGE_BUFF` — float = 0.5
+- `DEFAULT_MOBJECT_TO_MOBJECT_BUFF` — float = 0.25
+- `DEFAULT_PIXEL_HEIGHT` — int = 1080
+- `DEFAULT_PIXEL_WIDTH` — int = 1920
+- `DEFAULT_RESOLUTION` — tuple = (1920, 1080)
+- `DEFAULT_SMALL_DOT_RADIUS` — float = 0.04
+- `DEFAULT_STROKE_WIDTH` — float = 4.0
+- `DEFAULT_VMOBJECT_FILL_COLOR` — str = '#888888'
+- `DEFAULT_VMOBJECT_STROKE_COLOR` — str = '#DDDDDD'
+- `DEFAULT_X_RANGE` — tuple = (-8.0, 8.0, 1.0)
+- `DEFAULT_Y_RANGE` — tuple = (-4.0, 4.0, 1.0)
+- `DEG` — float = 0.017453292519943295
+- `DEGREES` — float = 0.017453292519943295
+- `DEPTH_STENCIL_FORMAT` — str = 'depth24plus-stencil8'
+- `DL` — ndarray = array([-1., -1.,  0.])
+- `DOWN` — ndarray = array([ 0., -1.,  0.])
+- `DR` — ndarray = array([ 1., -1.,  0.])
+- `EPSILON` — float = 0.0001
+- `EVENT_DISPATCHER` — EventDispatcher = <manimlib.event_handler.event_dispatcher.EventDispatcher ...  [só no topo]
+- `FRAME_HEIGHT` — float = 8.0
+- `FRAME_SHAPE` — tuple = (14.222222222222221, 8.0)
+- `FRAME_WIDTH` — float = 14.222222222222221
+- `FRAME_X_RADIUS` — float = 7.111111111111111
+- `FRAME_Y_RADIUS` — float = 4.0
+- `GOLD` — str = '#F0AC5F'
+- `GOLD_A` — str = '#F7C797'
+- `GOLD_B` — str = '#F9B775'
+- `GOLD_C` — str = '#F0AC5F'
+- `GOLD_D` — str = '#E1A158'
+- `GOLD_E` — str = '#C78D46'
+- `GRAB_KEY` — str = 'g'
+- `GRAB_KEYS` — list = ['g', 'h', 'v', 'z']
+- `GRADIENT_POINT_KEYS` — list = ['gradient_start', 'gradient_end']
+- `GREEN` — str = '#83C167'
+- `GREEN_A` — str = '#C9E2AE'
+- `GREEN_B` — str = '#A6CF8C'
+- `GREEN_C` — str = '#83C167'
+- `GREEN_D` — str = '#77B05D'
+- `GREEN_E` — str = '#699C52'
+- `GREEN_SCREEN` — str = '#00FF00'
+- `GREY` — str = '#888888'
+- `GREY_A` — str = '#DDDDDD'
+- `GREY_B` — str = '#BBBBBB'
+- `GREY_BROWN` — str = '#736357'
+- `GREY_C` — str = '#888888'
+- `GREY_D` — str = '#444444'
+- `GREY_E` — str = '#222222'
+- `IN` — ndarray = array([ 0.,  0., -1.])
+- `INFORMATION_KEY` — str = 'i'
+- `ITALIC` — str = 'ITALIC'
+- `Iterable` — _SpecialGenericAlias = typing.Iterable  [só no topo]
+- `KEY_NAMES` — dict = {'Backspace': 8, 'Tab': 9, 'Enter': 13, 'Escape': 27, 'De...
+- `LARGE_BUFF` — float = 1.0
+- `LEFT` — ndarray = array([-1.,  0.,  0.])
+- `LEFT_SIDE` — ndarray = array([-7.11111111,  0.        ,  0.        ])
+- `LIGHT_BROWN` — str = '#CD853F'
+- `LIGHT_PINK` — str = '#DC75CD'
+- `MANDELBROT_COLORS` — list = ['#00065c', '#061e7e', '#0c37a0', '#205abc', '#4287d3', '...
+- `MANIM_COLORS` — list = ['#1C758A', '#29ABCA', '#58C4DD', '#9CDCEB', '#C7E9F1', '...
+- `MAROON` — str = '#C55F73'
+- `MAROON_A` — str = '#ECABC1'
+- `MAROON_B` — str = '#EC92AB'
+- `MAROON_C` — str = '#C55F73'
+- `MAROON_D` — str = '#A24D61'
+- `MAROON_E` — str = '#94424F'
+- `MAX_DEGREE` — int = 5
+- `MED_LARGE_BUFF` — float = 0.5
+- `MED_SMALL_BUFF` — float = 0.25
+- `MOD_NAMES` — dict = {'Shift': 1, 'Control': 2, 'Alt': 4, 'Meta': 8}
+- `NEWTON_ROOT_COLORS` — list = ['#440154', '#3b528b', '#21908c', '#5dc963', '#29abca']
+- `NORMAL` — str = 'NORMAL'
+- `NULL_POINTS` — ndarray = array([[0., 0., 0.]])
+- `N_MANDELBROT_COLORS` — int = 9
+- `OBLIQUE` — str = 'OBLIQUE'
+- `ORANGE` — str = '#FF862F'
+- `ORIGIN` — ndarray = array([0., 0., 0.])
+- `OUT` — ndarray = array([0., 0., 1.])
+- `PATH_TO_POINTS` — dict = {}
+- `PI` — float = 3.141592653589793
+- `PINK` — str = '#D147BD'
+- `POSITION_STEPS` — dict = {'L': 0.0, 'U': 0.0, 'O': 0.5, 'R': 1.0, 'D': 1.0}
+- `PRESENT_SHADER` — str = 'present.wgsl'
+- `PURE_BLUE` — str = '#0000FF'
+- `PURE_GREEN` — str = '#00FF00'
+- `PURE_RED` — str = '#FF0000'
+- `PURPLE` — str = '#9A72AC'
+- `PURPLE_A` — str = '#CAA3E8'
+- `PURPLE_B` — str = '#B189C6'
+- `PURPLE_C` — str = '#9A72AC'
+- `PURPLE_D` — str = '#715582'
+- `PURPLE_E` — str = '#644172'
+- `RADIANS` — int = 1
+- `RED` — str = '#FC6255'
+- `RED_A` — str = '#F7A1A3'
+- `RED_B` — str = '#FF8080'
+- `RED_C` — str = '#FC6255'
+- `RED_D` — str = '#E65A4C'
+- `RED_E` — str = '#CF5044'
+- `RESIZE_KEY` — str = 't'
+- `RIGHT` — ndarray = array([1., 0., 0.])
+- `RIGHT_SIDE` — ndarray = array([7.11111111, 0.        , 0.        ])
+- `SELECT_KEY` — str = 's'
+- `SMALL_BUFF` — float = 0.1
+- `STRAIGHT_PATH_THRESHOLD` — float = 0.01
+- `STROKE_WIDTHS_PER_UNIT` — float = 100.0
+- `SVG_HASH_TO_MOB_MAP` — dict = {}
+- `SubVmobjectType` — TypeVar = ~SubVmobjectType  [só no topo]
+- `SubmobjectType` — TypeVar = ~SubmobjectType  [só no topo]
+- `TAU` — float = 6.283185307179586
+- `TEAL` — str = '#5CD0B3'
+- `TEAL_A` — str = '#ACEAD7'
+- `TEAL_B` — str = '#76DDC0'
+- `TEAL_C` — str = '#5CD0B3'
+- `TEAL_D` — str = '#55C1A7'
+- `TEAL_E` — str = '#49A88F'
+- `TEX_TO_SYMBOL_COUNT` — dict = {'\\!': 0, '\\,': 0, '\\-': 0, '\\/': 0, '\\:': 0, '\\;':...
+- `TOP` — ndarray = array([0., 4., 0.])
+- `TYPE_CHECKING` — bool = False
+- `UL` — ndarray = array([-1.,  1.,  0.])
+- `UNSELECT_KEY` — str = 'u'
+- `UP` — ndarray = array([0., 1., 0.])
+- `UR` — ndarray = array([1., 1., 0.])
+- `WHEEL_NOTCH` — float = 100.0
+- `WHITE` — str = '#FFFFFF'
+- `X_AXIS` — ndarray = array([1., 0., 0.])
+- `X_GRAB_KEY` — str = 'h'
+- `YELLOW` — str = '#FFFF00'
+- `YELLOW_A` — str = '#FFF1B6'
+- `YELLOW_B` — str = '#FFEA94'
+- `YELLOW_C` — str = '#FFFF00'
+- `YELLOW_D` — str = '#F4D345'
+- `YELLOW_E` — str = '#E8C11C'
+- `Y_AXIS` — ndarray = array([0., 1., 0.])
+- `Y_GRAB_KEY` — str = 'v'
+- `Z_AXIS` — ndarray = array([0., 0., 1.])
+- `Z_GRAB_KEY` — str = 'z'
+- `annotations` — _Feature = _Feature((3, 7, 0, 'beta', 1), None, 16777216)  [só no topo]
+- `log` — Logger = <Logger manimgl (INFO)>  [só no topo]
+- `manim_config` — Dict = {'directories': {'mirror_module_path': False, 'base': './...  [só no topo]
+
+## função (205)
+
+- `R3_to_complex` — (point: 'Vect3') -> 'complex'
+- `abstractmethod` — (funcobj)  [só no topo]
+- `adjacent_n_tuples` — (objects: 'Sequence[T]', n: 'int') -> 'zip[tuple[T, ...]]'
+- `adjacent_pairs` — (objects: 'Sequence[T]') -> 'zip[tuple[T, T]]'
+- `always` — (method, *args, **kwargs)
+- `always_redraw` — (func: 'Callable[..., Mobject]', *args, **kwargs) -> 'Mobject'
+- `always_rotate` — (mobject: 'Mobject', rate: 'float' = 0.3490658503988659, **kwargs) -> 'Mobject'
+- `always_shift` — (mobject: 'Mobject', direction: 'np.ndarray' = array([1., 0., 0.]), rate: 'float' = 0.1) -> 'Mobject'
+- `angle_axis_from_quaternion` — (quat: 'Vect4') -> 'Tuple[float, Vect3]'
+- `angle_between_vectors` — (v1: 'VectN', v2: 'VectN') -> 'float'
+- `angle_of_vector` — (vector: 'Vect2 | Vect3') -> 'float'
+- `approx_smooth_quadratic_bezier_handles` — (points: 'FloatArray') -> 'FloatArray'
+- `arr_clip` — (arr: 'np.ndarray', min_a: 'float', max_a: 'float') -> 'np.ndarray'
+- `array_is_constant` — (arr: 'np.ndarray') -> 'bool'
+- `arrays_match` — (arr1: 'np.ndarray', arr2: 'np.ndarray') -> 'bool'
+- `as_color_rows` — (colors: 'Sequence[ManimColor]', length: 'int', opacity: 'float' = 1.0)
+- `as_complex_pairs` — (values: 'Iterable[complex]', length: 'int') -> 'np.ndarray'
+- `assert_is_mobject_method` — (method)
+- `average_color` — (*colors: 'ManimColor') -> 'Color'
+- `batch_by_comparison` — (items: 'Iterable[T]', comparison: 'Callable[[T, T], bool]') -> 'List[List[T]]'
+- `batch_by_property` — (items: 'Iterable[T]', property_func: 'Callable[[T], S]') -> 'list[tuple[T, S]]'
+- `bezier` — (points: 'Sequence[float | FloatArray] | VectNArray') -> 'Callable[[float], float | FloatArray]'
+- `binary_search` — (function: 'Callable[[float], float]', target: 'float', lower_bound: 'float', upper_bound: 'float', tolerance: 'float' = 0.0001) -> 'float | None'
+- `boxes_are_disjoint` — (mins: 'Vect3Array', maxs: 'Vect3Array') -> 'bool'
+- `cache_on_disk` — (func: 'Callable[..., T]') -> 'Callable[..., T]'
+- `cartesian_product` — (*arrays: 'np.ndarray')
+- `cdist` — (XA, XB, metric='euclidean', *, out=None, **kwargs)  [só no topo]
+- `center_of_mass` — (points: 'Sequence[Vect3]') -> 'Vect3'
+- `char_to_cahced_mob` — (char: 'str', **text_config)  [só no topo]
+- `choose` — (n: 'int', k: 'int') -> 'int'  [só no topo]
+- `clear_cache` — ()
+- `clip` — (a: 'float', min_a: 'float', max_a: 'float') -> 'float'
+- `clockwise_path` — () -> 'Callable[[Vect3Array, Vect3Array, float], Vect3Array]'
+- `coefficients_to_roots` — (coefs: 'Iterable[complex]') -> 'np.ndarray'
+- `color_gradient` — (reference_colors: 'Iterable[ManimColor]', length_of_output: 'int', interp_by_hsl: 'bool' = False) -> 'list[Color]'
+- `color_to_hex` — (color: 'ManimColor') -> 'str'
+- `color_to_int_rgb` — (color: 'ManimColor') -> 'np.ndarray[int, np.dtype[np.uint8]]'
+- `color_to_int_rgba` — (color: 'ManimColor', opacity: 'float' = 1.0) -> 'np.ndarray[int, np.dtype[np.uint8]]'
+- `color_to_rgb` — (color: 'ManimColor') -> 'Vect3'
+- `color_to_rgba` — (color: 'ManimColor', alpha: 'float' = 1.0) -> 'Vect4'
+- `compass_directions` — (n: 'int' = 4, start_vect: 'Vect3' = array([1., 0., 0.])) -> 'Vect3'
+- `complex_func_to_R3_func` — (complex_func: 'Callable[[complex], complex]') -> 'Callable[[Vect3], Vect3]'
+- `complex_to_R3` — (complex_num: 'complex') -> 'Vect3'
+- `contextmanager` — (func)  [só no topo]
+- `counterclockwise_path` — () -> 'Callable[[Vect3Array, Vect3Array, float], Vect3Array]'
+- `cross` — (v1: 'Vect3 | List[float]', v2: 'Vect3 | List[float]', out: 'np.ndarray | None' = None) -> 'Vect3 | Vect3Array'
+- `cross2d` — (a: 'Vect2 | Vect2Array', b: 'Vect2 | Vect2Array') -> 'Vect2 | Vect2Array'
+- `curve_to_quadratic` — (curve, max_err, all_quadratic=True)  [só no topo]
+- `cycle_animation` — (animation: 'Animation', **kwargs) -> 'Mobject'
+- `deepcopy` — (x, memo=None, _nil=[])  [só no topo]
+- `diag_to_matrix` — (l_and_u: 'tuple[int, int]', diag: 'np.ndarray') -> 'np.ndarray'
+- `double_smooth` — (t: 'float') -> 'float'
+- `exponential_decay` — (t: 'float', half_life: 'float' = 0.1) -> 'float'
+- `extract_mobject_family_members` — (mobject_list: 'Iterable[Mobject]', exclude_pointless: 'bool' = False) -> 'list[Mobject]'
+- `f_always` — (method, *arg_generators, **kwargs)
+- `fdiv` — (a: 'Scalable', b: 'Scalable', zero_over_zero_value: 'Scalable | None' = None) -> 'Scalable'
+- `find_file` — (file_name: 'str', directories: 'Iterable[str] | None' = None, extensions: 'Iterable[str] | None' = None) -> 'Path'
+- `find_intersection` — (p0: 'Vect3 | Vect3Array', v0: 'Vect3 | Vect3Array', p1: 'Vect3 | Vect3Array', v1: 'Vect3 | Vect3Array', threshold: 'float' = 1e-05) -> 'Vect3'
+- `full_range_specifier` — (range_args)
+- `gen_choose` — (n: 'int', r: 'int') -> 'int'
+- `get_cache_dir` — () -> 'str'
+- `get_closest_point_on_line` — (a: 'VectN', b: 'VectN', p: 'VectN') -> 'VectN'
+- `get_color_map` — (map_name: 'str') -> 'Callable[[Sequence[float]], Vect4Array]'
+- `get_colormap_code` — (rgb_list: 'Sequence[float]') -> 'str'
+- `get_colormap_from_colors` — (colors: 'Iterable[ManimColor]') -> 'Callable[[Sequence[float]], Vect4Array]'
+- `get_colormap_list` — (map_name: 'str' = 'viridis', n_colors: 'int' = 9) -> 'Vect3Array'
+- `get_directories` — () -> 'dict[str, str]'
+- `get_dist` — (vect1: 'VectN', vect2: 'VectN')
+- `get_downloads_dir` — () -> 'str'
+- `get_full_raster_image_path` — (image_file_name: 'str') -> 'str'
+- `get_full_sound_file_path` — (sound_file_name: 'str') -> 'str'
+- `get_full_three_d_model_path` — (model_file_name: 'str') -> 'str'
+- `get_full_vector_image_path` — (image_file_name: 'str') -> 'str'
+- `get_ipython` — () -> 'InteractiveShell | None'  [só no topo]
+- `get_manim_dir` — ()
+- `get_norm` — (vect: 'VectN | List[float]') -> 'float'
+- `get_num_args` — (function: 'Callable') -> 'int'
+- `get_output_dir` — () -> 'str'
+- `get_parameters` — (function: 'Callable') -> 'Iterable[str]'
+- `get_quadratic_approximation_of_cubic` — (a0: 'FloatArray', h0: 'FloatArray', h1: 'FloatArray', a1: 'FloatArray') -> 'FloatArray'
+- `get_raster_image_dir` — () -> 'str'
+- `get_rgb_gradient_function` — (min_value: 'T', max_value: 'T', color_map: 'str') -> 'Callable[[float], Vect3]'
+- `get_sample_coords` — (coordinate_system: 'CoordinateSystem', density: 'float' = 1.0) -> 'it.product[tuple[Vect3, ...]]'
+- `get_shader_dir` — () -> 'str'
+- `get_smooth_cubic_bezier_handle_points` — (points: 'Sequence[VectN] | VectNArray') -> 'tuple[FloatArray, FloatArray]'
+- `get_smooth_quadratic_bezier_path_through` — (points: 'Sequence[VectN]') -> 'np.ndarray'
+- `get_sound_dir` — () -> 'str'
+- `get_svg_content_height` — (svg_string: 'str') -> 'float'
+- `get_temp_dir` — () -> 'str'
+- `get_tex_mob_scale_factor` — () -> 'float'  [só no topo]
+- `get_text_mob_scale_factor` — () -> 'float'  [só no topo]
+- `get_three_d_model_dir` — () -> 'str'
+- `get_unit_normal` — (v1: 'Vect3', v2: 'Vect3', tol: 'float' = 1e-06) -> 'Vect3'
+- `get_vector_image_dir` — () -> 'str'
+- `get_vectorized_rgb_gradient_function` — (min_value: 'T', max_value: 'T', color_map: 'str') -> 'Callable[[VectN], Vect3Array]'
+- `get_winding_number` — (points: 'Sequence[Vect2 | Vect3]') -> 'float'
+- `guarantee_existence` — (path: 'str | Path') -> 'Path'
+- `hash_obj` — (obj: 'object') -> 'int'
+- `hash_string` — (string: 'str', n_bytes=16) -> 'str'
+- `hex2rgb` — (str_rgb)  [só no topo]
+- `hex_to_int` — (rgb_hex: 'str') -> 'int'
+- `hex_to_rgb` — (hex_code: 'str') -> 'Vect3'
+- `index_labels` — (mobject: 'Mobject', label_height: 'float' = 0.15) -> 'VGroup'
+- `index_within_group` — (counts: 'np.ndarray') -> 'np.ndarray'
+- `int_to_hex` — (rgb_int: 'int') -> 'str'
+- `integer_interpolate` — (start: 'int', end: 'int', alpha: 'float') -> 'tuple[int, float]'
+- `interpolate` — (start: 'Scalable', end: 'Scalable', alpha: 'float | VectN') -> 'Scalable'
+- `interpolate_color` — (color1: 'ManimColor', color2: 'ManimColor', alpha: 'float', interp_by_hsl: 'bool' = False) -> 'Color'
+- `interpolate_color_by_hsl` — (color1: 'ManimColor', color2: 'ManimColor', alpha: 'float') -> 'Color'
+- `inverse_interpolate` — (start: 'Scalable', end: 'Scalable', value: 'Scalable') -> 'np.ndarray'
+- `invert_color` — (color: 'ManimColor') -> 'Color'
+- `invert_image` — (image: 'Iterable') -> 'Image.Image'
+- `is_closed` — (points: 'FloatArray') -> 'bool'
+- `keep_larger` — (start: 'np.ndarray', end: 'np.ndarray', alpha: 'float') -> 'np.ndarray'
+- `latex_to_svg` — (latex: 'str', template: 'str' = '', additional_preamble: 'str' = '', short_tex: 'str' = '', show_message_during_execution: 'bool' = True) -> 'str'  [só no topo]
+- `line_intersection` — (line1: 'Tuple[Vect3, Vect3]', line2: 'Tuple[Vect3, Vect3]') -> 'Vect3'
+- `line_intersects_path` — (start: 'Vect2 | Vect3', end: 'Vect2 | Vect3', path: 'Vect2Array | Vect3Array') -> 'bool'
+- `linear` — (t: 'float') -> 'float'
+- `linear_sum_assignment` — (cost_matrix, maximize=False)  [só no topo]
+- `lingering` — (t: 'float') -> 'float'
+- `list_difference_update` — (l1: 'Iterable[T]', l2: 'Iterable[T]') -> 'list[T]'
+- `list_update` — (l1: 'Iterable[T]', l2: 'Iterable[T]') -> 'list[T]'
+- `listify` — (obj: 'object') -> 'list'
+- `lru_cache` — (maxsize=128, typed=False)  [só no topo]
+- `make_even` — (iterable_1: 'Sequence[T]', iterable_2: 'Sequence[S]') -> 'tuple[Sequence[T], Sequence[S]]'
+- `markup_to_svg` — (markup_str: 'str', justify: 'bool' = False, indent: 'float' = 0, alignment: 'str' = 'CENTER', line_width: 'float | None' = None) -> 'str'  [só no topo]
+- `match_interpolate` — (new_start: 'Scalable', new_end: 'Scalable', old_start: 'Scalable', old_end: 'Scalable', old_value: 'Scalable') -> 'Scalable'
+- `merge_dicts_recursively` — (*dicts)
+- `mid` — (start: 'Scalable', end: 'Scalable') -> 'Scalable'
+- `midpoint` — (point1: 'VectN', point2: 'VectN') -> 'VectN'
+- `move_along_vector_field` — (mobject: 'Mobject', func: 'Callable[[Vect3], Vect3]') -> 'Mobject'
+- `move_points_along_vector_field` — (mobject: 'Mobject', func: 'Callable[[float, float], Iterable[float]]', coordinate_system: 'CoordinateSystem') -> 'Mobject'
+- `move_submobjects_along_vector_field` — (mobject: 'Mobject', func: 'Callable[[Vect3], Vect3]') -> 'Mobject'
+- `normalize` — (vect: 'VectN | List[float]', fall_back: 'VectN | List[float] | None' = None) -> 'VectN'
+- `normalize_along_axis` — (array: 'np.ndarray', axis: 'int') -> 'np.ndarray'
+- `norms_along_axis` — (vectors: 'Vect3Array') -> 'np.ndarray'
+- `not_quite_there` — (func: 'Callable[[float], float]' = <function smooth at 0x7f6ff39332e0>, proportion: 'float' = 0.7) -> 'Callable[[float], float]'
+- `num_tex_symbols` — (tex: 'str') -> 'int'  [só no topo]
+- `ode_solution_points` — (function, state0, time, dt=0.01)
+- `outer_interpolate` — (start: 'Scalable', end: 'Scalable', alpha: 'Scalable') -> 'np.ndarray'
+- `override_animate` — (method)
+- `overshoot` — (t: 'float', pull_factor: 'float' = 1.5) -> 'float'
+- `partial_bezier_points` — (points: 'Sequence[Scalable]', a: 'float', b: 'float') -> 'list[Scalable]'
+- `partial_quadratic_bezier_points` — (points: 'Sequence[VectN] | VectNArray', a: 'float', b: 'float') -> 'list[VectN]'
+- `path_along_arc` — (arc_angle: 'float | Tuple[float, float] | np.ndarray', axis: 'Vect3' = array([0., 0., 1.])) -> 'Callable[[Vect3Array, Vect3Array, float], Vect3Array]'
+- `play_sound` — (sound_file)
+- `plot_isoline` — (fn: 'Func', pmin: 'Point', pmax: 'Point', min_depth: 'int' = 5, max_quads: 'int' = 10000, tol: 'np.ndarray | None' = None) -> 'list[list[Point]]'  [só no topo]
+- `poly_line_length` — (points)
+- `prepare_animation` — (anim: 'Animation | _AnimationBuilder')
+- `print_family` — (mobject: 'Mobject', n_tabs: 'int' = 0) -> 'None'
+- `project_along_vector` — (point: 'Vect3', vector: 'Vect3') -> 'Vect3'
+- `quadratic_bezier_points_for_arc` — (angle: 'float', n_components: 'int' = 8)
+- `quaternion_conjugate` — (quaternion: 'Vect4') -> 'Vect4'
+- `quaternion_from_angle_axis` — (angle: 'float', axis: 'Vect3') -> 'Vect4'
+- `quaternion_mult` — (*quats: 'Vect4') -> 'Vect4'
+- `random_bright_color` — (hue_range: 'tuple[float, float]' = (0.0, 1.0), saturation_range: 'tuple[float, float]' = (0.5, 0.8), luminance_range: 'tuple[float, float]' = (0.5, 1.0)) -> 'Color'
+- `random_color` — () -> 'Color'
+- `read_shader_file` — (filename: 'str') -> 'str | None'  [só no topo]
+- `recursive_mobject_remove` — (mobjects: 'List[Mobject]', to_remove: 'Set[Mobject]') -> 'Tuple[List[Mobject], bool]'
+- `register_font` — (font_file: 'str | Path')
+- `remove_list_redundancies` — (lst: 'Sequence[T]') -> 'list[T]'
+- `remove_tex_environments` — (tex: 'str') -> 'str'
+- `resize_array` — (nparray: 'np.ndarray', length: 'int') -> 'np.ndarray'
+- `resize_preserving_order` — (nparray: 'np.ndarray', length: 'int') -> 'np.ndarray'
+- `resize_with_interpolation` — (nparray: 'np.ndarray', length: 'int') -> 'np.ndarray'
+- `rgb2hex` — (rgb, force_long=False)  [só no topo]
+- `rgb_to_color` — (rgb: 'Vect3 | Sequence[float]') -> 'Color'
+- `rgb_to_hex` — (rgb: 'Vect3 | Sequence[float]') -> 'str'
+- `rgba_to_color` — (rgba: 'Vect4') -> 'Color'
+- `roots_to_coefficients` — (roots: 'Iterable[complex]') -> 'np.ndarray'
+- `rotate_vector` — (vector: 'Vect3', angle: 'float', axis: 'Vect3' = array([0., 0., 1.])) -> 'Vect3'
+- `rotate_vector_2d` — (vector: 'Vect2', angle: 'float') -> 'Vect2'
+- `rotation_about_z` — (angle: 'float') -> 'Matrix3x3'
+- `rotation_between_vectors` — (v1: 'Vect3', v2: 'Vect3') -> 'Matrix3x3'
+- `rotation_matrix` — (angle: 'float', axis: 'Vect3') -> 'Matrix3x3'
+- `rotation_matrix_from_quaternion` — (quat: 'Vect4') -> 'Matrix3x3'
+- `rotation_matrix_transpose` — (angle: 'float', axis: 'Vect3') -> 'Matrix3x3'
+- `rotation_matrix_transpose_from_quaternion` — (quat: 'Vect4') -> 'Matrix3x3'
+- `running_start` — (t: 'float', pull_factor: 'float' = -0.5) -> 'float'
+- `rush_from` — (t: 'float') -> 'float'
+- `rush_into` — (t: 'float') -> 'float'
+- `set_array_by_interpolation` — (arr: 'np.ndarray', arr1: 'np.ndarray', arr2: 'np.ndarray', alpha: 'float', interp_func: 'Callable[[np.ndarray, np.ndarray, float], np.ndarray]' = <function interpolate at 0x7f6ff5270400>) -> 'np.ndarray'
+- `shuffled` — (iterable: 'Iterable') -> 'list'
+- `sigmoid` — (x: 'float | FloatArray')
+- `slow_into` — (t: 'float') -> 'float'
+- `smooth` — (t: 'float') -> 'float'
+- `smooth_quadratic_path` — (anchors: 'Vect3Array') -> 'Vect3Array'
+- `solve_ivp` — (fun, t_span, y0, method='RK45', t_eval=None, dense_output=False, events=None, vectorized=False, args=None, **options)  [só no topo]
+- `square_to_cube_faces` — (square: 'T') -> 'list[T]'
+- `squish_rate_func` — (func: 'Callable[[float], float]', a: 'float' = 0.4, b: 'float' = 0.6) -> 'Callable[[float], float]'
+- `straight_path` — (start_points: 'np.ndarray', end_points: 'np.ndarray', alpha: 'float') -> 'np.ndarray'
+- `there_and_back` — (t: 'float') -> 'float'
+- `there_and_back_with_pause` — (t: 'float', pause_ratio: 'float' = 0.3333333333333333) -> 'float'
+- `thick_diagonal` — (dim: 'int', thickness: 'int' = 2) -> 'np.ndarray'
+- `to_key` — (name: 'str') -> 'Optional[int]'
+- `to_mods` — (names: 'Sequence[str]') -> 'int'
+- `turn_animation_into_updater` — (animation: 'Animation', cycle: 'bool' = False, **kwargs) -> 'Mobject'
+- `uniform_block_code` — (dtype: 'np.dtype') -> 'str'
+- `uniform_block_dtype` — (*members: 'tuple[str, int] | tuple[str, int, int]') -> 'np.dtype'
+- `vectorize` — (pointwise_function: 'Callable[[Tuple], Tuple]')
+- `version` — (distribution_name)  [só no topo]
+- `vmobject_to_svg` — (vmobject, filename: 'str | None' = None, pixel_width: 'int' = 1920, pixel_height: 'int' = 1080) -> 'str'
+- `wiggle` — (t: 'float', wiggles: 'float' = 2) -> 'float'
+- `wraps` — (wrapped, assigned=('__module__', '__name__', '__qualname__', '__doc__', '__annotations__', '__type_params__'), updated=('__dict__',))  [só no topo]
+- `z_to_vector` — (vector: 'Vect3') -> 'Matrix3x3'
+
+## submódulo / paleta (51)
+
+- `ET` — xml.etree.ElementTree  [só no topo]
+- `Image` — PIL.Image  [só no topo]
+- `animation` — manimlib.animation  [só no topo]
+- `appdirs` — appdirs  [só no topo]
+- `camera` — manimlib.camera  [só no topo]
+- `config` — manimlib.config  [só no topo]
+- `constants` — manimlib.constants  [só no topo]
+- `copy` — copy  [só no topo]
+- `event_handler` — manimlib.event_handler  [só no topo]
+- `event_keys` — manimlib.event_keys  [só no topo]
+- `extract_scene` — manimlib.extract_scene  [só no topo]
+- `glfw` — glfw  [só no topo]
+- `hashlib` — hashlib  [só no topo]
+- `inspect` — inspect  [só no topo]
+- `io` — io  [só no topo]
+- `it` — itertools  [só no topo]
+- `linalg` — scipy.linalg  [só no topo]
+- `logger` — manimlib.logger  [só no topo]
+- `logging` — logging  [só no topo]
+- `manimlib` — manimlib  [só no topo]
+- `manimpango` — manimpango  [só no topo]
+- `math` — math  [só no topo]
+- `mobject` — manimlib.mobject  [só no topo]
+- `module_loader` — manimlib.module_loader  [só no topo]
+- `np` — numpy  [só no topo]
+- `numbers` — numbers  [só no topo]
+- `os` — os  [só no topo]
+- `pathops` — pathops  [só no topo]
+- `pickle` — pickle  [só no topo]
+- `platform` — platform  [só no topo]
+- `pygments` — pygments  [só no topo]
+- `pyperclip` — pyperclip  [só no topo]
+- `pyplot` — matplotlib.pyplot  [só no topo]
+- `pywavefront` — pywavefront  [só no topo]
+- `random` — random  [só no topo]
+- `re` — re  [só no topo]
+- `renderer` — manimlib.renderer  [só no topo]
+- `scene` — manimlib.scene  [só no topo]
+- `se` — svgelements  [só no topo]
+- `subprocess` — subprocess  [só no topo]
+- `sys` — sys  [só no topo]
+- `tempfile` — tempfile  [só no topo]
+- `threading` — threading  [só no topo]
+- `time` — time  [só no topo]
+- `trimesh` — trimesh  [só no topo]
+- `typing` — manimlib.typing  [só no topo]
+- `urllib` — urllib  [só no topo]
+- `utils` — manimlib.utils  [só no topo]
+- `validators` — validators  [só no topo]
+- `wgpu` — wgpu  [só no topo]
+- `window` — manimlib.window  [só no topo]
+

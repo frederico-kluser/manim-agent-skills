@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# ManimCE com LaTeX e GPU já resolvidos.
+#
+#   bin/manim -ql cena.py MinhaCena
+#   bin/manim --renderer=opengl -qh cena.py MinhaCena
+#
+# Repassa todos os argumentos para o `manim` do .venv.
+# Para NVENC use `bin/mx render ... --codec nvenc` (o CLI do ManimCE não
+# tem flag de codec porque ele usa PyAV, não o binário do ffmpeg).
+set -euo pipefail
+source "$(dirname "${BASH_SOURCE[0]}")/manim-env.sh"
+manimx_use_ce
+manimx_enable_gpu
+exec "$MANIMX_ROOT/.venv/bin/manim" "$@"

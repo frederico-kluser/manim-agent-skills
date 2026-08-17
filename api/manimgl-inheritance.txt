@@ -1,0 +1,272 @@
+Árvore de herança — manimlib v1.7.2
+
+Animation
+  AnimationGroup
+    AnimationOnSurroundingRectangle
+      ShowCreationThenDestructionAround
+      ShowCreationThenFadeAround
+      ShowPassingFlashAround
+    ClockPassesTime
+    Flash
+    FlashyFadeIn
+    LaggedStart
+      Broadcast
+      LaggedStartMap
+    Succession
+      ShowCreationThenFadeOut
+    TransformMatchingParts
+      TransformMatchingShapes
+      TransformMatchingStrings
+        TransformMatchingTex
+  ChangingDecimal
+    ChangeDecimalToValue
+    CountInFrom
+  DrawBorderThenFill
+    Write
+  Homotopy
+    ApplyWave
+    ComplexHomotopy
+    SmoothedVectorizedHomotopy
+  MaintainPositionRelativeTo
+  MoveAlongPath
+  PhaseFlow
+  Rotating
+    Rotate
+  ShowIncreasingSubsets
+    AddTextWordByWord
+    ShowSubmobjectsOneByOne
+  ShowPartial
+    ShowCreation
+      Uncreate
+    ShowPassingFlash
+      ShowCreationThenDestruction
+  Transform
+    ApplyFunction
+    ApplyMethod
+      ApplyComplexFunction
+      ApplyPointwiseFunction
+        ApplyMatrix
+      FadeToColor
+      ScaleInPlace
+        ShrinkToCenter
+    ApplyPointwiseFunctionToCenter
+    CircleIndicate
+    CyclicReplace
+      Swap
+    Fade
+      FadeIn
+        FadeInFromPoint
+      FadeOut
+        FadeOutToPoint
+    FadeTransform
+      FadeTransformPieces
+    FocusOn
+    GrowFromPoint
+      GrowArrow
+      GrowFromCenter
+      GrowFromEdge
+    Indicate
+    MoveToTarget
+    ReplacementTransform
+    Restore
+    TransformFromCopy
+    TurnInsideOut
+  UpdateFromAlphaFunc
+  UpdateFromFunc
+  VFadeIn
+    VFadeInThenOut
+    VFadeOut
+  VShowPassingFlash
+    FlashAround
+      FlashUnder
+  WiggleOutThenIn
+Bundling
+Camera
+  ThreeDCamera
+CheckpointManager
+CoordinateSystem
+  Axes
+    NumberPlane
+      ComplexPlane
+    ThreeDAxes
+Drawing
+  SurfaceDrawing
+  VDrawing
+EndScene
+EventDispatcher
+EventListener
+EventType
+FrameStream
+Gpu
+Group
+  ColorSliders
+  ControlPanel
+  Cube
+    Prism
+  ThreeDModel
+  VGroup
+    AnimatedBoundary
+    AnimatedStreamLines
+    BarChart
+    Bubble
+      DoubleSpeechBubble
+      OldSpeechBubble
+      OldThoughtBubble
+      SpeechBubble
+      ThoughtBubble
+    BulletedList
+    Clock
+    Cross
+    CurvesAsSubmobjects
+    Dartboard
+    DieFace
+    Laptop
+    Piano
+    Piano3D
+    Slider
+    StreamLines
+    SurfaceMesh
+    VGroup3D
+      Dodecahedron
+      Prismify
+      VCube
+        VPrism
+    VHighlight
+    VideoSeries
+InteractiveSceneEmbed
+Keys
+LatexError
+Material
+Mobject
+  Button
+  CameraFrame
+  ImageMobject
+  MotionMobject
+  PMobject
+    DotCloud
+      GlowDots
+        GlowDot
+      TrueDot
+    PGroup
+  PlaneFractal
+    MandelbrotFractal
+      JuliaFractal
+    NewtonFractal
+      MetaNewtonFractal
+  Point
+    VectorizedPoint
+  Surface
+    Cylinder
+      Cone
+      Line3D
+    Disk3D
+    ParametricSurface
+    Sphere
+    Square3D
+    TexturedSurface
+      TexturedGeometry
+    Torus
+  VMobject
+    AnnularSector
+      Sector
+    Annulus
+    BraceLabel
+      BraceText
+    CubicBezier
+    DashedVMobject
+    DecimalNumber
+      Integer
+    Difference
+    Elbow
+    Exclusion
+    ImplicitFunction
+    Intersection
+    Matrix
+      DecimalMatrix
+        IntegerMatrix
+      MobjectMatrix
+      TexMatrix
+    ParametricCurve
+      FunctionGraph
+    Polygon
+      Rectangle
+        RoundedRectangle
+        SampleSpace
+        ScreenRectangle
+          FullScreenRectangle
+            FullScreenFadeRectangle
+        Square
+        SurroundingRectangle
+          BackgroundRectangle
+      RegularPolygon
+        Triangle
+          ArrowTip
+    Polyline
+    SVGMobject
+      Lightbulb
+      SingleStringTex
+        OldTex
+          OldTexText
+      StringMobject
+        MarkupText
+          Code
+          Text
+        Tex
+          Brace
+            LineBrace
+          TexText
+            TexTextFromPresetString
+              Checkmark
+              Exmark
+            Title
+      VectorizedEarth
+      VideoIcon
+    Speedometer
+    TipableVMobject
+      Arc
+        ArcBetweenPoints
+          CurvedArrow
+            CurvedDoubleArrow
+        Circle
+          Dot
+            SmallDot
+          Ellipse
+      Line
+        Arrow
+          Vector
+        DashedLine
+        NumberLine
+          UnitInterval
+        StrokeArrow
+        TangentLine
+        Underline
+    TracedPath
+      TracingTail
+    Union
+    VMobjectFromSVGPath
+    VectorField
+      TimeVaryingVectorField
+  ValueTracker
+    ComplexValueTracker
+    ControlMobject
+      Checkbox
+      EnableDisableButton
+      LinearNumberSlider
+      Textbox
+    ExponentialValueTracker
+Mods
+ModuleLoader
+PipelineState
+RenderPass
+Renderer
+Scene
+  InteractiveScene
+    BlankScene
+  ThreeDScene
+SceneFileWriter
+SceneState
+SharedBuffer
+StructuredArray
+  Uniforms
+Updater
+Window

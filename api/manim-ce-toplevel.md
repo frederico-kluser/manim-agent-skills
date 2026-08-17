@@ -1,0 +1,605 @@
+# `from manim import *` — v0.21.0
+
+## classe (258)
+
+- `Add` — manim.animation.animation.Add
+- `AddTextLetterByLetter` — manim.animation.creation.AddTextLetterByLetter
+- `AddTextWordByWord` — manim.animation.creation.AddTextWordByWord
+- `Angle` — manim.mobject.geometry.line.Angle
+- `AnimatedBoundary` — manim.animation.changing.AnimatedBoundary
+- `Animation` — manim.animation.animation.Animation
+- `AnimationGroup` — manim.animation.composition.AnimationGroup
+- `AnnotationDot` — manim.mobject.geometry.arc.AnnotationDot
+- `AnnularSector` — manim.mobject.geometry.arc.AnnularSector
+- `Annulus` — manim.mobject.geometry.arc.Annulus
+- `ApplyComplexFunction` — manim.animation.transform.ApplyComplexFunction
+- `ApplyFunction` — manim.animation.transform.ApplyFunction
+- `ApplyMatrix` — manim.animation.transform.ApplyMatrix
+- `ApplyMethod` — manim.animation.transform.ApplyMethod
+- `ApplyPointwiseFunction` — manim.animation.transform.ApplyPointwiseFunction
+- `ApplyPointwiseFunctionToCenter` — manim.animation.transform.ApplyPointwiseFunctionToCenter
+- `ApplyWave` — manim.animation.indication.ApplyWave
+- `Arc` — manim.mobject.geometry.arc.Arc
+- `ArcBetweenPoints` — manim.mobject.geometry.arc.ArcBetweenPoints
+- `ArcBrace` — manim.mobject.svg.brace.ArcBrace
+- `ArcPolygon` — manim.mobject.geometry.arc.ArcPolygon
+- `ArcPolygonFromArcs` — manim.mobject.geometry.arc.ArcPolygonFromArcs
+- `Arrow` — manim.mobject.geometry.line.Arrow
+- `Arrow3D` — manim.mobject.three_d.three_dimensions.Arrow3D
+- `ArrowCircleFilledTip` — manim.mobject.geometry.tips.ArrowCircleFilledTip
+- `ArrowCircleTip` — manim.mobject.geometry.tips.ArrowCircleTip
+- `ArrowSquareFilledTip` — manim.mobject.geometry.tips.ArrowSquareFilledTip
+- `ArrowSquareTip` — manim.mobject.geometry.tips.ArrowSquareTip
+- `ArrowTip` — manim.mobject.geometry.tips.ArrowTip
+- `ArrowTriangleFilledTip` — manim.mobject.geometry.tips.ArrowTriangleFilledTip
+- `ArrowTriangleTip` — manim.mobject.geometry.tips.ArrowTriangleTip
+- `ArrowVectorField` — manim.mobject.vector_field.ArrowVectorField
+- `Axes` — manim.mobject.graphing.coordinate_systems.Axes
+- `BackgroundColoredVMobjectDisplayer` — manim.camera.camera.BackgroundColoredVMobjectDisplayer
+- `BackgroundRectangle` — manim.mobject.geometry.shape_matchers.BackgroundRectangle
+- `BarChart` — manim.mobject.graphing.probability.BarChart
+- `Blink` — manim.animation.indication.Blink
+- `Brace` — manim.mobject.svg.brace.Brace
+- `BraceBetweenPoints` — manim.mobject.svg.brace.BraceBetweenPoints
+- `BraceLabel` — manim.mobject.svg.brace.BraceLabel
+- `BraceText` — manim.mobject.svg.brace.BraceText
+- `Broadcast` — manim.animation.specialized.Broadcast
+- `BulletedList` — manim.mobject.text.tex_mobject.BulletedList
+- `CairoRenderer` — manim.renderer.cairo_renderer.CairoRenderer
+- `Camera` — manim.camera.camera.Camera
+- `CapStyleType` — manim.constants.CapStyleType
+- `ChangeDecimalToValue` — manim.animation.numbers.ChangeDecimalToValue
+- `ChangeSpeed` — manim.animation.speedmodifier.ChangeSpeed
+- `ChangingDecimal` — manim.animation.numbers.ChangingDecimal
+- `Circle` — manim.mobject.geometry.arc.Circle
+- `Circumscribe` — manim.animation.indication.Circumscribe
+- `ClockwiseTransform` — manim.animation.transform.ClockwiseTransform
+- `Code` — manim.mobject.text.code_mobject.Code
+- `ComplexHomotopy` — manim.animation.movement.ComplexHomotopy
+- `ComplexPlane` — manim.mobject.graphing.coordinate_systems.ComplexPlane
+- `ComplexValueTracker` — manim.mobject.value_tracker.ComplexValueTracker
+- `Cone` — manim.mobject.three_d.three_dimensions.Cone
+- `ConvexHull` — manim.mobject.geometry.polygram.ConvexHull
+- `ConvexHull3D` — manim.mobject.three_d.polyhedra.ConvexHull3D
+- `CoordinateSystem` — manim.mobject.graphing.coordinate_systems.CoordinateSystem
+- `CounterclockwiseTransform` — manim.animation.transform.CounterclockwiseTransform
+- `Create` — manim.animation.creation.Create
+- `Cross` — manim.mobject.geometry.shape_matchers.Cross
+- `Cube` — manim.mobject.three_d.three_dimensions.Cube
+- `CubicBezier` — manim.mobject.geometry.arc.CubicBezier
+- `CurvedArrow` — manim.mobject.geometry.arc.CurvedArrow
+- `CurvedDoubleArrow` — manim.mobject.geometry.arc.CurvedDoubleArrow
+- `CurvesAsSubmobjects` — manim.mobject.types.vectorized_mobject.CurvesAsSubmobjects
+- `Cutout` — manim.mobject.geometry.polygram.Cutout
+- `CyclicReplace` — manim.animation.transform.CyclicReplace
+- `Cylinder` — manim.mobject.three_d.three_dimensions.Cylinder
+- `DashedLine` — manim.mobject.geometry.line.DashedLine
+- `DashedVMobject` — manim.mobject.types.vectorized_mobject.DashedVMobject
+- `DecimalMatrix` — manim.mobject.matrix.DecimalMatrix
+- `DecimalNumber` — manim.mobject.text.numbers.DecimalNumber
+- `DecimalTable` — manim.mobject.table.DecimalTable
+- `DefaultSectionType` — manim.scene.section.DefaultSectionType
+- `DiGraph` — manim.mobject.graph.DiGraph
+- `DictAsObject` — manim.utils.config_ops.DictAsObject
+- `Difference` — manim.mobject.geometry.boolean_ops.Difference
+- `Dodecahedron` — manim.mobject.three_d.polyhedra.Dodecahedron
+- `Dot` — manim.mobject.geometry.arc.Dot
+- `Dot3D` — manim.mobject.three_d.three_dimensions.Dot3D
+- `DotCloud` — manim.mobject.opengl.dot_cloud.DotCloud
+- `DoubleArrow` — manim.mobject.geometry.line.DoubleArrow
+- `DrawBorderThenFill` — manim.animation.creation.DrawBorderThenFill
+- `Elbow` — manim.mobject.geometry.line.Elbow
+- `Ellipse` — manim.mobject.geometry.arc.Ellipse
+- `Exclusion` — manim.mobject.geometry.boolean_ops.Exclusion
+- `FadeIn` — manim.animation.fading.FadeIn
+- `FadeOut` — manim.animation.fading.FadeOut
+- `FadeToColor` — manim.animation.transform.FadeToColor
+- `FadeTransform` — manim.animation.transform.FadeTransform
+- `FadeTransformPieces` — manim.animation.transform.FadeTransformPieces
+- `Flash` — manim.animation.indication.Flash
+- `FocusOn` — manim.animation.indication.FocusOn
+- `FullScreenRectangle` — manim.mobject.frame.FullScreenRectangle
+- `FunctionGraph` — manim.mobject.graphing.functions.FunctionGraph
+- `Graph` — manim.mobject.graph.Graph
+- `Group` — manim.mobject.mobject.Group
+- `GrowArrow` — manim.animation.growing.GrowArrow
+- `GrowFromCenter` — manim.animation.growing.GrowFromCenter
+- `GrowFromEdge` — manim.animation.growing.GrowFromEdge
+- `GrowFromPoint` — manim.animation.growing.GrowFromPoint
+- `HSV` — manim.utils.color.core.HSV
+- `Homotopy` — manim.animation.movement.Homotopy
+- `Icosahedron` — manim.mobject.three_d.polyhedra.Icosahedron
+- `ImageMobject` — manim.mobject.types.image_mobject.ImageMobject
+- `ImageMobjectFromCamera` — manim.mobject.types.image_mobject.ImageMobjectFromCamera
+- `ImplicitFunction` — manim.mobject.graphing.functions.ImplicitFunction
+- `Indicate` — manim.animation.indication.Indicate
+- `Integer` — manim.mobject.text.numbers.Integer
+- `IntegerMatrix` — manim.mobject.matrix.IntegerMatrix
+- `IntegerTable` — manim.mobject.table.IntegerTable
+- `Intersection` — manim.mobject.geometry.boolean_ops.Intersection
+- `Label` — manim.mobject.geometry.labeled.Label
+- `LabeledArrow` — manim.mobject.geometry.labeled.LabeledArrow
+- `LabeledDot` — manim.mobject.geometry.arc.LabeledDot
+- `LabeledLine` — manim.mobject.geometry.labeled.LabeledLine
+- `LabeledPolygram` — manim.mobject.geometry.labeled.LabeledPolygram
+- `LaggedStart` — manim.animation.composition.LaggedStart
+- `LaggedStartMap` — manim.animation.composition.LaggedStartMap
+- `Line` — manim.mobject.geometry.line.Line
+- `Line3D` — manim.mobject.three_d.three_dimensions.Line3D
+- `LineJointType` — manim.constants.LineJointType
+- `LinearBase` — manim.mobject.graphing.scale.LinearBase
+- `LinearTransformationScene` — manim.scene.vector_space_scene.LinearTransformationScene
+- `LogBase` — manim.mobject.graphing.scale.LogBase
+- `MaintainPositionRelativeTo` — manim.animation.updaters.update.MaintainPositionRelativeTo
+- `ManimBanner` — manim.mobject.logo.ManimBanner
+- `ManimColor` — manim.utils.color.core.ManimColor
+- `ManimColorDType` — numpy.float64  [só no topo]
+- `MappingCamera` — manim.camera.mapping_camera.MappingCamera
+- `MarkupText` — manim.mobject.text.text_mobject.MarkupText
+- `MathTable` — manim.mobject.table.MathTable
+- `MathTex` — manim.mobject.text.tex_mobject.MathTex
+- `MathTypst` — manim.mobject.text.typst_mobject.MathTypst
+- `Matrix` — manim.mobject.matrix.Matrix
+- `Mobject` — manim.mobject.mobject.Mobject
+- `Mobject1D` — manim.mobject.types.point_cloud_mobject.Mobject1D
+- `Mobject2D` — manim.mobject.types.point_cloud_mobject.Mobject2D
+- `MobjectMatrix` — manim.mobject.matrix.MobjectMatrix
+- `MobjectTable` — manim.mobject.table.MobjectTable
+- `MoveAlongPath` — manim.animation.movement.MoveAlongPath
+- `MoveToTarget` — manim.animation.transform.MoveToTarget
+- `MovingCamera` — manim.camera.moving_camera.MovingCamera
+- `MovingCameraScene` — manim.scene.moving_camera_scene.MovingCameraScene
+- `MultiCamera` — manim.camera.multi_camera.MultiCamera
+- `NumberLine` — manim.mobject.graphing.number_line.NumberLine
+- `NumberPlane` — manim.mobject.graphing.coordinate_systems.NumberPlane
+- `Octahedron` — manim.mobject.three_d.polyhedra.Octahedron
+- `OldMultiCamera` — manim.camera.mapping_camera.OldMultiCamera
+- `OpenGLPGroup` — manim.mobject.opengl.opengl_point_cloud_mobject.OpenGLPGroup
+- `OpenGLPMPoint` — manim.mobject.opengl.opengl_point_cloud_mobject.OpenGLPMPoint
+- `OpenGLPMobject` — manim.mobject.opengl.opengl_point_cloud_mobject.OpenGLPMobject
+- `PGroup` — manim.mobject.types.point_cloud_mobject.PGroup
+- `PMobject` — manim.mobject.types.point_cloud_mobject.PMobject
+- `PackageNotFoundError` — importlib.metadata.PackageNotFoundError  [só no topo]
+- `Paragraph` — manim.mobject.text.text_mobject.Paragraph
+- `ParametricFunction` — manim.mobject.graphing.functions.ParametricFunction
+- `PhaseFlow` — manim.animation.movement.PhaseFlow
+- `Point` — manim.mobject.types.point_cloud_mobject.Point
+- `PointCloudDot` — manim.mobject.types.point_cloud_mobject.PointCloudDot
+- `PolarPlane` — manim.mobject.graphing.coordinate_systems.PolarPlane
+- `Polygon` — manim.mobject.geometry.polygram.Polygon
+- `Polygram` — manim.mobject.geometry.polygram.Polygram
+- `Polyhedron` — manim.mobject.three_d.polyhedra.Polyhedron
+- `Prism` — manim.mobject.three_d.three_dimensions.Prism
+- `RGBA` — manim.utils.color.core.ManimColor
+- `RandomColorGenerator` — manim.utils.color.core.RandomColorGenerator
+- `Rectangle` — manim.mobject.geometry.polygram.Rectangle
+- `RegularPolygon` — manim.mobject.geometry.polygram.RegularPolygon
+- `RegularPolygram` — manim.mobject.geometry.polygram.RegularPolygram
+- `RemoveTextLetterByLetter` — manim.animation.creation.RemoveTextLetterByLetter
+- `RendererType` — manim.constants.RendererType
+- `ReplacementTransform` — manim.animation.transform.ReplacementTransform
+- `Restore` — manim.animation.transform.Restore
+- `RightAngle` — manim.mobject.geometry.line.RightAngle
+- `Rotate` — manim.animation.rotation.Rotate
+- `Rotating` — manim.animation.rotation.Rotating
+- `RoundedRectangle` — manim.mobject.geometry.polygram.RoundedRectangle
+- `SVGMobject` — manim.mobject.svg.svg_mobject.SVGMobject
+- `SampleSpace` — manim.mobject.graphing.probability.SampleSpace
+- `ScaleInPlace` — manim.animation.transform.ScaleInPlace
+- `Scene` — manim.scene.scene.Scene
+- `SceneFileWriter` — manim.scene.scene_file_writer.SceneFileWriter
+- `ScreenRectangle` — manim.mobject.frame.ScreenRectangle
+- `Section` — manim.scene.section.Section
+- `Sector` — manim.mobject.geometry.arc.Sector
+- `ShowIncreasingSubsets` — manim.animation.creation.ShowIncreasingSubsets
+- `ShowPartial` — manim.animation.creation.ShowPartial
+- `ShowPassingFlash` — manim.animation.indication.ShowPassingFlash
+- `ShowPassingFlashWithThinningStrokeWidth` — manim.animation.indication.ShowPassingFlashWithThinningStrokeWidth
+- `ShowSubmobjectsOneByOne` — manim.animation.creation.ShowSubmobjectsOneByOne
+- `ShrinkToCenter` — manim.animation.transform.ShrinkToCenter
+- `SingleStringMathTex` — manim.mobject.text.tex_mobject.SingleStringMathTex
+- `SmoothedVectorizedHomotopy` — manim.animation.movement.SmoothedVectorizedHomotopy
+- `SpecialThreeDScene` — manim.scene.three_d_scene.SpecialThreeDScene
+- `Sphere` — manim.mobject.three_d.three_dimensions.Sphere
+- `SpinInFromNothing` — manim.animation.growing.SpinInFromNothing
+- `SpiralIn` — manim.animation.creation.SpiralIn
+- `SplitScreenCamera` — manim.camera.mapping_camera.SplitScreenCamera
+- `Square` — manim.mobject.geometry.polygram.Square
+- `Star` — manim.mobject.geometry.polygram.Star
+- `StealthTip` — manim.mobject.geometry.tips.StealthTip
+- `StreamLines` — manim.mobject.vector_field.StreamLines
+- `Succession` — manim.animation.composition.Succession
+- `Surface` — manim.mobject.three_d.three_dimensions.Surface
+- `SurroundingRectangle` — manim.mobject.geometry.shape_matchers.SurroundingRectangle
+- `Swap` — manim.animation.transform.Swap
+- `Table` — manim.mobject.table.Table
+- `TangentLine` — manim.mobject.geometry.line.TangentLine
+- `TangentialArc` — manim.mobject.geometry.arc.TangentialArc
+- `Tetrahedron` — manim.mobject.three_d.polyhedra.Tetrahedron
+- `Tex` — manim.mobject.text.tex_mobject.Tex
+- `TexFontTemplates` — manim.utils.tex_templates.TexFontTemplates
+- `TexTemplate` — manim.utils.tex.TexTemplate
+- `TexTemplateLibrary` — manim.utils.tex_templates.TexTemplateLibrary
+- `Text` — manim.mobject.text.text_mobject.Text
+- `ThreeDAxes` — manim.mobject.graphing.coordinate_systems.ThreeDAxes
+- `ThreeDCamera` — manim.camera.three_d_camera.ThreeDCamera
+- `ThreeDScene` — manim.scene.three_d_scene.ThreeDScene
+- `ThreeDVMobject` — manim.mobject.three_d.three_dimensions.ThreeDVMobject
+- `TipableVMobject` — manim.mobject.geometry.arc.TipableVMobject
+- `Title` — manim.mobject.text.tex_mobject.Title
+- `Torus` — manim.mobject.three_d.three_dimensions.Torus
+- `TracedPath` — manim.animation.changing.TracedPath
+- `Transform` — manim.animation.transform.Transform
+- `TransformAnimations` — manim.animation.transform.TransformAnimations
+- `TransformFromCopy` — manim.animation.transform.TransformFromCopy
+- `TransformMatchingShapes` — manim.animation.transform_matching_parts.TransformMatchingShapes
+- `TransformMatchingTex` — manim.animation.transform_matching_parts.TransformMatchingTex
+- `Triangle` — manim.mobject.geometry.polygram.Triangle
+- `TrueDot` — manim.mobject.opengl.dot_cloud.TrueDot
+- `TypeWithCursor` — manim.animation.creation.TypeWithCursor
+- `Typst` — manim.mobject.text.typst_mobject.Typst
+- `Uncreate` — manim.animation.creation.Uncreate
+- `Underline` — manim.mobject.geometry.shape_matchers.Underline
+- `Union` — manim.mobject.geometry.boolean_ops.Union
+- `UnitInterval` — manim.mobject.graphing.number_line.UnitInterval
+- `UntypeWithCursor` — manim.animation.creation.UntypeWithCursor
+- `Unwrite` — manim.animation.creation.Unwrite
+- `UpdateFromAlphaFunc` — manim.animation.updaters.update.UpdateFromAlphaFunc
+- `UpdateFromFunc` — manim.animation.updaters.update.UpdateFromFunc
+- `VDict` — manim.mobject.types.vectorized_mobject.VDict
+- `VGroup` — manim.mobject.types.vectorized_mobject.VGroup
+- `VMobject` — manim.mobject.types.vectorized_mobject.VMobject
+- `VMobjectFromSVGPath` — manim.mobject.svg.svg_mobject.VMobjectFromSVGPath
+- `ValueTracker` — manim.mobject.value_tracker.ValueTracker
+- `Variable` — manim.mobject.text.numbers.Variable
+- `Vector` — manim.mobject.geometry.line.Vector
+- `VectorField` — manim.mobject.vector_field.VectorField
+- `VectorScene` — manim.scene.vector_space_scene.VectorScene
+- `VectorizedPoint` — manim.mobject.types.vectorized_mobject.VectorizedPoint
+- `Wait` — manim.animation.animation.Wait
+- `Wiggle` — manim.animation.indication.Wiggle
+- `Write` — manim.animation.creation.Write
+- `ZoomedScene` — manim.scene.zoomed_scene.ZoomedScene
+
+## constante / instância (69)
+
+- `BOLD` — str = 'BOLD'
+- `BOOK` — str = 'BOOK'
+- `CHOOSE_NUMBER_MESSAGE` — str = '\nChoose number corresponding to desired scene/arguments...
+- `CONTEXT_SETTINGS` — dict = {'align_option_groups': True, 'align_sections': True, 'sh...
+- `CTRL_VALUE` — int = 65507
+- `DEFAULT_ARROW_TIP_LENGTH` — float = 0.35
+- `DEFAULT_DASH_LENGTH` — float = 0.05
+- `DEFAULT_DOT_RADIUS` — float = 0.08
+- `DEFAULT_FONT_SIZE` — int = 48
+- `DEFAULT_MOBJECT_TO_EDGE_BUFFER` — float = 0.5
+- `DEFAULT_MOBJECT_TO_MOBJECT_BUFFER` — float = 0.25
+- `DEFAULT_POINTWISE_FUNCTION_RUN_TIME` — float = 3.0
+- `DEFAULT_POINT_DENSITY_1D` — int = 10
+- `DEFAULT_POINT_DENSITY_2D` — int = 25
+- `DEFAULT_QUALITY` — str = 'high_quality'
+- `DEFAULT_SMALL_DOT_RADIUS` — float = 0.04
+- `DEFAULT_STROKE_WIDTH` — int = 4
+- `DEFAULT_WAIT_TIME` — float = 1.0
+- `DEGREES` — float = 0.017453292519943295
+- `DL` — ndarray = array([-1., -1.,  0.])
+- `DOWN` — ndarray = array([ 0., -1.,  0.])
+- `DR` — ndarray = array([ 1., -1.,  0.])
+- `EPILOG` — str = 'Made with <3 by Manim Community developers.'
+- `HEAVY` — str = 'HEAVY'
+- `IN` — ndarray = array([ 0.,  0., -1.])
+- `INVALID_NUMBER_MESSAGE` — str = 'Invalid scene numbers have been specified. Aborting.'
+- `ITALIC` — str = 'ITALIC'
+- `LARGE_BUFF` — int = 1
+- `LEFT` — ndarray = array([-1.,  0.,  0.])
+- `LIGHT` — str = 'LIGHT'
+- `MEDIUM` — str = 'MEDIUM'
+- `MED_LARGE_BUFF` — float = 0.5
+- `MED_SMALL_BUFF` — float = 0.25
+- `NORMAL` — str = 'NORMAL'
+- `NO_SCENE_MESSAGE` — str = '\n   There are no scenes inside that module\n'
+- `OBLIQUE` — str = 'OBLIQUE'
+- `ORIGIN` — ndarray = array([0., 0., 0.])
+- `OUT` — ndarray = array([0., 0., 1.])
+- `PI` — float = 3.141592653589793
+- `ParsableManimColor` — UnionType = manim.utils.color.core.ManimColor | int | str | NDArray[n...  [só no topo]
+- `QUALITIES` — dict = {'fourk_quality': {'flag': 'k', 'pixel_height': 2160, 'pi...
+- `RESAMPLING_ALGORITHMS` — dict = {'nearest': <Resampling.NEAREST: 0>, 'none': <Resampling....
+- `RIGHT` — ndarray = array([1., 0., 0.])
+- `SCALE_FACTOR_PER_FONT_POINT` — float = 0.0010416666666666667
+- `SCENE_NOT_FOUND_MESSAGE` — str = '\n   {} is not in the script\n'
+- `SEMIBOLD` — str = 'SEMIBOLD'
+- `SEMILIGHT` — str = 'SEMILIGHT'
+- `SHIFT_VALUE` — int = 65505
+- `SMALL_BUFF` — float = 0.1
+- `START_X` — int = 30
+- `START_Y` — int = 20
+- `TAU` — float = 6.283185307179586
+- `THIN` — str = 'THIN'
+- `UL` — ndarray = array([-1.,  1.,  0.])
+- `ULTRABOLD` — str = 'ULTRABOLD'
+- `ULTRAHEAVY` — str = 'ULTRAHEAVY'
+- `ULTRALIGHT` — str = 'ULTRALIGHT'
+- `UP` — ndarray = array([0., 1., 0.])
+- `UR` — ndarray = array([1., 1., 0.])
+- `X_AXIS` — ndarray = array([1., 0., 0.])
+- `Y_AXIS` — ndarray = array([0., 1., 0.])
+- `Z_AXIS` — ndarray = array([0., 0., 1.])
+- `annotations` — _Feature = _Feature((3, 7, 0, 'beta', 1), None, 16777216)  [só no topo]
+- `cli_ctx_settings` — dict = {'align_option_groups': True, 'align_sections': True, 'sh...  [só no topo]
+- `config` — ManimConfig = assets_dir: ./, background_color: #000000, background_opa...  [só no topo]
+- `console` — Console = <console width=80 None>  [só no topo]
+- `error_console` — Console = <console width=80 None>  [só no topo]
+- `frame` — ManimFrame = <manim._config.utils.ManimFrame object at 0x713bebca7ef0>  [só no topo]
+- `logger` — Logger = <Logger manim (INFO)>  [só no topo]
+
+## cor (89)
+
+- `BLACK` — ManimColor('#000000')
+- `BLUE` — ManimColor('#58C4DD')
+- `BLUE_A` — ManimColor('#C7E9F1')
+- `BLUE_B` — ManimColor('#9CDCEB')
+- `BLUE_C` — ManimColor('#58C4DD')
+- `BLUE_D` — ManimColor('#29ABCA')
+- `BLUE_E` — ManimColor('#236B8E')
+- `DARKER_GRAY` — ManimColor('#222222')
+- `DARKER_GREY` — ManimColor('#222222')
+- `DARK_BLUE` — ManimColor('#236B8E')
+- `DARK_BROWN` — ManimColor('#8B4513')
+- `DARK_GRAY` — ManimColor('#444444')
+- `DARK_GREY` — ManimColor('#444444')
+- `GOLD` — ManimColor('#F0AC5F')
+- `GOLD_A` — ManimColor('#F7C797')
+- `GOLD_B` — ManimColor('#F9B775')
+- `GOLD_C` — ManimColor('#F0AC5F')
+- `GOLD_D` — ManimColor('#E1A158')
+- `GOLD_E` — ManimColor('#C78D46')
+- `GRAY` — ManimColor('#888888')
+- `GRAY_A` — ManimColor('#DDDDDD')
+- `GRAY_B` — ManimColor('#BBBBBB')
+- `GRAY_BROWN` — ManimColor('#736357')
+- `GRAY_C` — ManimColor('#888888')
+- `GRAY_D` — ManimColor('#444444')
+- `GRAY_E` — ManimColor('#222222')
+- `GREEN` — ManimColor('#83C167')
+- `GREEN_A` — ManimColor('#C9E2AE')
+- `GREEN_B` — ManimColor('#A6CF8C')
+- `GREEN_C` — ManimColor('#83C167')
+- `GREEN_D` — ManimColor('#77B05D')
+- `GREEN_E` — ManimColor('#699C52')
+- `GREY` — ManimColor('#888888')
+- `GREY_A` — ManimColor('#DDDDDD')
+- `GREY_B` — ManimColor('#BBBBBB')
+- `GREY_BROWN` — ManimColor('#736357')
+- `GREY_C` — ManimColor('#888888')
+- `GREY_D` — ManimColor('#444444')
+- `GREY_E` — ManimColor('#222222')
+- `LIGHTER_GRAY` — ManimColor('#DDDDDD')
+- `LIGHTER_GREY` — ManimColor('#DDDDDD')
+- `LIGHT_BROWN` — ManimColor('#CD853F')
+- `LIGHT_GRAY` — ManimColor('#BBBBBB')
+- `LIGHT_GREY` — ManimColor('#BBBBBB')
+- `LIGHT_PINK` — ManimColor('#DC75CD')
+- `LOGO_BLACK` — ManimColor('#343434')
+- `LOGO_BLUE` — ManimColor('#525893')
+- `LOGO_GREEN` — ManimColor('#87C2A5')
+- `LOGO_RED` — ManimColor('#E07A5F')
+- `LOGO_WHITE` — ManimColor('#ECE7E2')
+- `MAROON` — ManimColor('#C55F73')
+- `MAROON_A` — ManimColor('#ECABC1')
+- `MAROON_B` — ManimColor('#EC92AB')
+- `MAROON_C` — ManimColor('#C55F73')
+- `MAROON_D` — ManimColor('#A24D61')
+- `MAROON_E` — ManimColor('#94424F')
+- `ORANGE` — ManimColor('#FF862F')
+- `PINK` — ManimColor('#D147BD')
+- `PURE_BLUE` — ManimColor('#0000FF')
+- `PURE_CYAN` — ManimColor('#00FFFF')
+- `PURE_GREEN` — ManimColor('#00FF00')
+- `PURE_MAGENTA` — ManimColor('#FF00FF')
+- `PURE_RED` — ManimColor('#FF0000')
+- `PURE_YELLOW` — ManimColor('#FFFF00')
+- `PURPLE` — ManimColor('#9A72AC')
+- `PURPLE_A` — ManimColor('#CAA3E8')
+- `PURPLE_B` — ManimColor('#B189C6')
+- `PURPLE_C` — ManimColor('#9A72AC')
+- `PURPLE_D` — ManimColor('#715582')
+- `PURPLE_E` — ManimColor('#644172')
+- `RED` — ManimColor('#FC6255')
+- `RED_A` — ManimColor('#F7A1A3')
+- `RED_B` — ManimColor('#FF8080')
+- `RED_C` — ManimColor('#FC6255')
+- `RED_D` — ManimColor('#E65A4C')
+- `RED_E` — ManimColor('#CF5044')
+- `TEAL` — ManimColor('#5CD0B3')
+- `TEAL_A` — ManimColor('#ACEAD7')
+- `TEAL_B` — ManimColor('#76DDC0')
+- `TEAL_C` — ManimColor('#5CD0B3')
+- `TEAL_D` — ManimColor('#55C1A7')
+- `TEAL_E` — ManimColor('#49A88F')
+- `WHITE` — ManimColor('#FFFFFF')
+- `YELLOW` — ManimColor('#F7D96F')
+- `YELLOW_A` — ManimColor('#FFF1B6')
+- `YELLOW_B` — ManimColor('#FFEA94')
+- `YELLOW_C` — ManimColor('#F7D96F')
+- `YELLOW_D` — ManimColor('#F4D345')
+- `YELLOW_E` — ManimColor('#E8C11C')
+
+## função (148)
+
+- `R3_to_complex` — (point: 'Sequence[float]') -> 'np.ndarray'
+- `add_extension_if_not_present` — (file_name: 'Path', extension: 'str') -> 'Path'
+- `adjacent_n_tuples` — (objects: 'Sequence[T]', n: 'int') -> 'zip[tuple[T, ...]]'
+- `adjacent_pairs` — (objects: 'Sequence[T]') -> 'zip[tuple[T, ...]]'
+- `all_elements_are_instances` — (iterable: 'Iterable[object]', Class: 'type[object]') -> 'bool'
+- `always` — (method: 'Callable', *args, **kwargs) -> 'Mobject'
+- `always_redraw` — (func: 'Callable[[], M]') -> 'M'
+- `always_rotate` — (mobject: 'M', rate: 'float' = 0.3490658503988659, **kwargs) -> 'M'
+- `always_shift` — (mobject: 'M', direction: 'np.ndarray[np.float64]' = array([1., 0., 0.]), rate: 'float' = 0.1) -> 'M'
+- `angle_axis_from_quaternion` — (quaternion: 'Sequence[float]') -> 'Sequence[float]'
+- `angle_between_vectors` — (v1: 'np.ndarray', v2: 'np.ndarray') -> 'float'
+- `angle_of_vector` — (vector: 'Sequence[float] | np.ndarray') -> 'float'
+- `assert_is_mobject_method` — (method: 'Callable') -> 'None'
+- `average_color` — (*colors: 'ParsableManimColor') -> 'ManimColor'
+- `bezier` — (points: 'Point3D_Array | Sequence[Point3D_Array]') -> 'Callable[[float | ColVector], Point3D_Array]'
+- `bezier_remap` — (bezier_tuples: 'BezierPointsLike_Array', new_number_of_curves: 'int') -> 'BezierPoints_Array'
+- `binary_search` — (function: 'Callable[[float], float]', target: 'float', lower_bound: 'float', upper_bound: 'float', tolerance: 'float' = 0.0001) -> 'float | None'
+- `capture` — (command: 'str | list[str]', cwd: 'StrOrBytesPath | None' = None, command_input: 'str | None' = None) -> 'tuple[str, str, int]'
+- `cartesian_to_spherical` — (vec: 'Vector3DLike') -> 'np.ndarray'
+- `center_of_mass` — (points: 'PointNDLike_Array') -> 'PointND'
+- `change_to_rgba_array` — (image: 'RGBPixelArray', dtype: 'str' = 'uint8') -> 'RGBAPixelArray'
+- `choose` — (n: 'int', k: 'int') -> 'int'  [só no topo]
+- `clip` — (a: 'ComparableT', min_a: 'ComparableT', max_a: 'ComparableT') -> 'ComparableT'
+- `clockwise_path` — () -> 'PathFuncType'
+- `color_gradient` — (reference_colors: 'Iterable[ParsableManimColor]', length_of_output: 'int') -> 'list[ManimColor]'
+- `color_to_int_rgb` — (color: 'ParsableManimColor') -> 'IntRGB'
+- `color_to_int_rgba` — (color: 'ParsableManimColor', alpha: 'float' = 1.0) -> 'IntRGBA'
+- `color_to_rgb` — (color: 'ParsableManimColor') -> 'FloatRGB'
+- `color_to_rgba` — (color: 'ParsableManimColor', alpha: 'float' = 1.0) -> 'FloatRGBA'
+- `compass_directions` — (n: 'int' = 4, start_vect: 'np.ndarray' = array([1., 0., 0.])) -> 'np.ndarray'
+- `complex_func_to_R3_func` — (complex_func: 'Callable[[complex], complex]') -> 'Callable[[Point3DLike], Point3D]'
+- `complex_to_R3` — (complex_num: 'complex') -> 'np.ndarray'
+- `concatenate_lists` — (*list_of_lists: 'Iterable[T]') -> 'list[T]'
+- `counterclockwise_path` — () -> 'PathFuncType'
+- `cross2d` — (a: 'Vector2D | Vector2D_Array', b: 'Vector2D | Vector2D_Array') -> 'ManimFloat | npt.NDArray[ManimFloat]'
+- `cycle_animation` — (animation: 'Animation', **kwargs) -> 'Mobject'
+- `double_smooth` — (t: 'float') -> 'float'
+- `drag_pixels` — (frames: 'Sequence[PixelArray]') -> 'list[np.ndarray]'
+- `earclip_triangulation` — (verts: 'np.ndarray', ring_ends: 'list') -> 'list'
+- `ensure_executable` — (path_to_exe: 'Path') -> 'bool'
+- `exponential_decay` — (t: 'float', half_life: 'float' = 0.1) -> 'float'
+- `f_always` — (method: 'Callable[[M], None]', *arg_generators, **kwargs) -> 'M'
+- `find_intersection` — (p0s: 'Point3DLike_Array', v0s: 'Vector3DLike_Array', p1s: 'Point3DLike_Array', v1s: 'Vector3DLike_Array', threshold: 'float' = 1e-05) -> 'list[Point3D]'
+- `get_3d_vmob_end_corner` — (vmob: 'VMobject') -> 'Point3D'
+- `get_3d_vmob_end_corner_index` — (vmob: 'VMobject') -> 'int'
+- `get_3d_vmob_end_corner_unit_normal` — (vmob: 'VMobject') -> 'Vector3D'
+- `get_3d_vmob_gradient_start_and_end_points` — (vmob: 'VMobject') -> 'tuple[Point3D, Point3D]'
+- `get_3d_vmob_start_corner` — (vmob: 'VMobject') -> 'Point3D'
+- `get_3d_vmob_start_corner_index` — (vmob: 'VMobject') -> 'Literal[0]'
+- `get_3d_vmob_start_corner_unit_normal` — (vmob: 'VMobject') -> 'Vector3D'
+- `get_3d_vmob_unit_normal` — (vmob: 'VMobject', point_index: 'int') -> 'Vector3D'
+- `get_det_text` — (matrix: 'Matrix', determinant: 'int | str | None' = None, background_rect: 'bool' = False, initial_scale_factor: 'float' = 2) -> 'VGroup'
+- `get_dir_layout` — (dirpath: 'Path') -> 'Generator[str, None, None]'
+- `get_full_raster_image_path` — (image_file_name: 'str | PurePath') -> 'Path'
+- `get_full_sound_file_path` — (sound_file_name: 'StrPath') -> 'Path'
+- `get_plugins` — () -> 'dict[str, Any]'
+- `get_shaded_rgb` — (rgb: 'FloatRGB', point: 'Point3D', unit_normal_vect: 'Vector3D', light_source: 'Point3D') -> 'FloatRGB'
+- `get_smooth_cubic_bezier_handle_points` — (anchors: 'Point3DLike_Array') -> 'tuple[Point3D_Array, Point3D_Array]'
+- `get_unit_normal` — (v1: 'Vector3DLike', v2: 'Vector3DLike', tol: 'float' = 1e-06) -> 'Vector3D'
+- `get_video_metadata` — (path_to_video: 'str | os.PathLike') -> 'VideoMetadata'
+- `get_winding_number` — (points: 'Sequence[np.ndarray]') -> 'float'
+- `guarantee_empty_existence` — (path: 'Path') -> 'Path'
+- `guarantee_existence` — (path: 'Path') -> 'Path'
+- `hex_to_rgb` — (hex_code: 'str') -> 'FloatRGB'
+- `index_labels` — (mobject: 'Mobject', label_height: 'float' = 0.15, background_stroke_width: 'float' = 5, background_stroke_color: 'ManimColor' = ManimColor('#000000'), **kwargs: 'Any') -> 'VGroup'
+- `integer_interpolate` — (start: 'float', end: 'float', alpha: 'float') -> 'tuple[int, float]'
+- `interpolate` — (start: 'float | Point3D', end: 'float | Point3D', alpha: 'float | ColVector') -> 'float | ColVector | Point3D | Point3D_Array'
+- `interpolate_color` — (color1: 'ManimColorT', color2: 'ManimColorT', alpha: 'float') -> 'ManimColorT'
+- `inverse_interpolate` — (start: 'float | Point3D', end: 'float | Point3D', value: 'float | Point3D') -> 'float | Point3D'
+- `invert_color` — (color: 'ManimColorT') -> 'ManimColorT'
+- `invert_image` — (image: 'PixelArray') -> 'Image'
+- `is_closed` — (points: 'Point3D_Array') -> 'bool'
+- `is_gif_format` — () -> 'bool'
+- `is_mov_format` — () -> 'bool'
+- `is_mp4_format` — () -> 'bool'
+- `is_png_format` — () -> 'bool'
+- `is_webm_format` — () -> 'bool'
+- `line_intersection` — (line1: 'Sequence[np.ndarray]', line2: 'Sequence[np.ndarray]') -> 'np.ndarray'
+- `linear` — (t: 'float') -> 'float'
+- `lingering` — (t: 'float') -> 'float'
+- `list_difference_update` — (l1: 'Iterable[T]', l2: 'Iterable[T]') -> 'list[T]'
+- `list_plugins` — () -> 'None'
+- `list_update` — (l1: 'Iterable[T]', l2: 'Iterable[T]') -> 'list[T]'
+- `listify` — (obj: 'str | Iterable[T] | T') -> 'list[str] | list[T]'
+- `make_even` — (iterable_1: 'Iterable[T]', iterable_2: 'Iterable[U]') -> 'tuple[list[T], list[U]]'
+- `make_even_by_cycling` — (iterable_1: 'Collection[T]', iterable_2: 'Collection[U]') -> 'tuple[list[T], list[U]]'
+- `match_interpolate` — (new_start: 'float', new_end: 'float', old_start: 'float', old_end: 'float', old_value: 'float | Point3D') -> 'float | Point3D'
+- `matrix_to_mobject` — (matrix: 'np.ndarray') -> 'MathTex'
+- `matrix_to_tex_string` — (matrix: 'np.ndarray') -> 'str'
+- `merge_dicts_recursively` — (*dicts: 'dict[Any, Any]') -> 'dict[Any, Any]'
+- `mid` — (start: 'float | Point3D', end: 'float | Point3D') -> 'float | Point3D'
+- `midpoint` — (point1: 'Sequence[float]', point2: 'Sequence[float]') -> 'float | np.ndarray'
+- `modify_atime` — (file_path: 'str') -> 'None'
+- `normalize` — (vect: 'np.ndarray | tuple[float]', fall_back: 'np.ndarray | None' = None) -> 'np.ndarray'
+- `not_quite_there` — (func: 'RateFunction' = <function smooth at 0x713b879e5e40>, proportion: 'float' = 0.7) -> 'RateFunction'
+- `open_file` — (file_path: 'Path', in_browser: 'bool' = False) -> 'None'
+- `override_animate` — (method: 'types.MethodType') -> 'Callable[[types.MethodType], types.MethodType]'
+- `override_animation` — (animation_class: 'type[Animation]') -> 'Callable[[Callable], Callable]'
+- `partial_bezier_points` — (points: 'BezierPointsLike', a: 'float', b: 'float') -> 'BezierPoints'
+- `path_along_arc` — (arc_angle: 'float', axis: 'Vector3DLike' = array([0., 0., 1.])) -> 'PathFuncType'
+- `perpendicular_bisector` — (line: 'Sequence[np.ndarray]', norm_vector: 'Vector3D' = array([0., 0., 1.])) -> 'Sequence[np.ndarray]'
+- `point_lies_on_bezier` — (point: 'Point3DLike', control_points: 'BezierPointsLike', round_to: 'float' = 1e-06) -> 'bool'
+- `print_family` — (mobject: 'Mobject', n_tabs: 'int' = 0) -> 'None'
+- `proportions_along_bezier_curve_for_point` — (point: 'Point3DLike', control_points: 'BezierPointsLike', round_to: 'float' = 1e-06) -> 'MatrixMN'
+- `quaternion_conjugate` — (quaternion: 'Sequence[float]') -> 'np.ndarray'
+- `quaternion_from_angle_axis` — (angle: 'float', axis: 'np.ndarray', axis_normalized: 'bool' = False) -> 'list[float]'
+- `quaternion_mult` — (*quats: 'Sequence[float]') -> 'np.ndarray | list[float | np.ndarray]'
+- `random_bright_color` — () -> 'ManimColor'
+- `random_color` — () -> 'ManimColor'
+- `register_font` — (font_file: 'str | Path') -> 'Iterator[None]'
+- `regular_vertices` — (n: 'int', *, radius: 'float' = 1, start_angle: 'float | None' = None) -> 'tuple[np.ndarray, float]'
+- `remove_list_redundancies` — (lst: 'Reversible[H]') -> 'list[H]'
+- `remove_nones` — (sequence: 'Iterable[T | None]') -> 'list[T]'
+- `rgb_to_color` — (rgb: 'FloatRGBLike | IntRGBLike') -> 'ManimColor'
+- `rgb_to_hex` — (rgb: 'FloatRGBLike | IntRGBLike') -> 'str'
+- `rgba_to_color` — (rgba: 'FloatRGBALike | IntRGBALike') -> 'ManimColor'
+- `rotate_vector` — (vector: 'Vector3DLike', angle: 'float', axis: 'Vector3DLike' = array([0., 0., 1.])) -> 'Vector3D'
+- `rotation_about_z` — (angle: 'float') -> 'np.ndarray'
+- `rotation_matrix` — (angle: 'float', axis: 'Vector3DLike', homogeneous: 'bool' = False) -> 'np.ndarray'
+- `running_start` — (t: 'float', pull_factor: 'float' = -0.5) -> 'float'
+- `rush_from` — (t: 'float', inflection: 'float' = 10.0) -> 'float'
+- `rush_into` — (t: 'float', inflection: 'float' = 10.0) -> 'float'
+- `seek_full_path_from_defaults` — (file_name: 'StrPath', default_dir: 'Path', extensions: 'list[str]') -> 'Path'
+- `shoelace` — (x_y: 'Point2D_Array') -> 'float'
+- `shoelace_direction` — (x_y: 'Point2D_Array') -> 'str'
+- `sigmoid` — (x: 'float') -> 'float'
+- `slow_into` — (t: 'float') -> 'float'
+- `smooth` — (t: 'float', inflection: 'float' = 10.0) -> 'float'
+- `smoothererstep` — (t: 'float') -> 'float'
+- `smootherstep` — (t: 'float') -> 'float'
+- `smoothstep` — (t: 'float') -> 'float'
+- `spherical_to_cartesian` — (spherical: 'Sequence[float]') -> 'np.ndarray'
+- `split_bezier` — (points: 'BezierPointsLike', t: 'float') -> 'Spline'
+- `squish_rate_func` — (func: 'RateFunction', a: 'float' = 0.4, b: 'float' = 0.6) -> 'RateFunction'
+- `straight_path` — () -> 'PathFuncType'
+- `stretch_array_to_length` — (nparray: 'npt.NDArray[F]', length: 'int') -> 'npt.NDArray[F]'
+- `subdivide_bezier` — (points: 'BezierPointsLike', n_divisions: 'int') -> 'Spline'
+- `tempconfig` — (temp: 'ManimConfig | dict[str, Any]') -> 'Generator[None, None, None]'
+- `there_and_back` — (t: 'float', inflection: 'float' = 10.0) -> 'float'
+- `there_and_back_with_pause` — (t: 'float', pause_ratio: 'float' = 0.3333333333333333) -> 'float'
+- `thick_diagonal` — (dim: 'int', thickness: 'int' = 2) -> 'MatrixMN'
+- `tuplify` — (obj: 'str | Iterable[T] | T') -> 'tuple[str] | tuple[T]'
+- `turn_animation_into_updater` — (animation: 'Animation', cycle: 'bool' = False, delay: 'float' = 0, **kwargs) -> 'Mobject'
+- `update_dict_recursively` — (current_dict: 'dict[Any, Any]', *others: 'dict[Any, Any]') -> 'None'
+- `version` — (distribution_name)  [só no topo]
+- `wiggle` — (t: 'float', wiggles: 'float' = 2) -> 'float'
+- `write_to_movie` — () -> 'bool'
+- `z_to_vector` — (vector: 'np.ndarray') -> 'np.ndarray'
+
+## submódulo / paleta (24)
+
+- `AS2700` — manim.utils.color.AS2700  [só no topo]
+- `BS381` — manim.utils.color.BS381  [só no topo]
+- `DVIPSNAMES` — manim.utils.color.DVIPSNAMES  [só no topo]
+- `SVGNAMES` — manim.utils.color.SVGNAMES  [só no topo]
+- `X11` — manim.utils.color.X11  [só no topo]
+- `XKCD` — manim.utils.color.XKCD  [só no topo]
+- `animation` — manim.animation  [só no topo]
+- `camera` — manim.camera  [só no topo]
+- `cli` — manim.cli  [só no topo]
+- `color` — manim.utils.color  [só no topo]
+- `constants` — manim.constants  [só no topo]
+- `core` — manim.utils.color.core  [só no topo]
+- `data_structures` — manim.data_structures  [só no topo]
+- `manim_colors` — manim.utils.color.manim_colors  [só no topo]
+- `mobject` — manim.mobject  [só no topo]
+- `np` — numpy  [só no topo]
+- `opengl` — manim.opengl  [só no topo]
+- `plugins` — manim.plugins  [só no topo]
+- `rate_functions` — manim.utils.rate_functions  [só no topo]
+- `renderer` — manim.renderer  [só no topo]
+- `scene` — manim.scene  [só no topo]
+- `typing` — manim.typing  [só no topo]
+- `unit` — manim.utils.unit  [só no topo]
+- `utils` — manim.utils  [só no topo]
+

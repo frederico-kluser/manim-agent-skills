@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# ManimGL (3b1b) com LaTeX e GPU resolvidos.
+#
+#   bin/manimgl cena.py MinhaCena            # janela interativa
+#   bin/manimgl -w -qh cena.py MinhaCena     # escreve arquivo (headless)
+#   bin/manimgl -w --vcodec hevc_nvenc cena.py MinhaCena
+#
+# O ManimGL master usa wgpu (Vulkan), não OpenGL. Ele já escolhe a dGPU via
+# power_preference=high-performance.
+#
+# Encoding: custom_config.yml deixa `libx264` como padrão para o repositório
+# funcionar em qualquer máquina. Se houver GPU NVIDIA e você não tiver pedido
+# um codec explicitamente, este wrapper injeta `--vcodec h264_nvenc`.
+set -euo pipefail
+source "$(dirname "${BASH_SOURCE[0]}")/manim-env.sh"
+manimx_use_gl
+manimx_enable_gpu
+
+extra=()
+if manimx_has_nvidia; then
+    # Não sobrescreve uma escolha explícita do usuário.
+    wants_codec=0
+    for arg in "$@"; do
+        case "$arg" in
+            --vcodec|--vcodec=*) wants_codec=1; break ;;
+        esac
+    done
+    if [ "$wants_codec" -eq 0 ] && manimx_ffmpeg_has_encoder h264_nvenc; then
+        extra+=(--vcodec h264_nvenc)
+    fi
+fi
+
+exec "$MANIMX_ROOT/.venv-gl/bin/manimgl" "${extra[@]}" "$@"

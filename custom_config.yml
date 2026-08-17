@@ -1,0 +1,105 @@
+# Configuração do ManimGL (3b1b) para este projeto.
+#
+# O manimgl procura por `custom_config.yml` no diretório de execução.
+# Para apontar outro arquivo:  manimgl --config_file caminho.yml
+#
+# Referência completa dos defaults:
+#   .venv-gl/lib/python3.12/site-packages/manimlib/default_config.yml
+#
+# ATENÇÃO — o ManimGL master (1.7.x) mudou de fundo:
+#   o padrão dele é "#333333" (cinza escuro), NÃO preto.
+#   Se você quer o preto clássico das aulas, precisa dizer explicitamente.
+
+directories:
+  mirror_module_path: False
+  base: "./media-gl"
+  subdirs:
+    output: "videos"
+    raster_images: "assets/raster"
+    vector_images: "assets/vector"
+    three_d_models: "assets/models"
+    sounds: "assets/sounds"
+    data: "data"
+    downloads: "downloads"
+    latex_cache: "latex_cache"
+
+camera:
+  resolution: (1920, 1080)
+  fps: 60
+  # Preto clássico. Hex de 6 dígitos, sempre.
+  background_color: "#000000"
+  background_opacity: 1.0
+  # Otimizações de draw do renderer wgpu. Desligue só para depurar
+  # artefatos de renderização.
+  bundle_draws: True
+  draw_together: True
+
+file_writer:
+  ffmpeg_bin: "ffmpeg"
+
+  # Aqui está a diferença mais prática entre GL e CE:
+  # o ManimGL chama o BINÁRIO do ffmpeg, então trocar para NVENC é só
+  # mudar esta linha (o ManimCE usa PyAV e precisa da camada manimx).
+  #
+  #   libx264      -> CPU, padrão, compatibilidade máxima
+  #   h264_nvenc   -> GPU NVIDIA
+  #   hevc_nvenc   -> GPU NVIDIA, ~30% menor
+  #   libx264rgb   -> sem perdas (com pixel_format rgb24 e crf 0)
+  #
+  # O default fica em libx264 DE PROPÓSITO: este arquivo é versionado, e
+  # numa máquina sem NVIDIA o ffmpeg aborta com "Unknown encoder
+  # 'h264_nvenc'". O wrapper bin/manimgl detecta a GPU e injeta
+  # `--vcodec h264_nvenc` sozinho quando ela existe — então em máquina com
+  # NVIDIA você ganha o NVENC sem editar nada, e em máquina sem, funciona.
+  #
+  # Para forçar manualmente:  manimgl --vcodec h264_nvenc
+  video_codec: "libx264"
+  pixel_format: "yuv420p"
+  saturation: 1.0
+  gamma: 1.0
+
+  # ATENÇÃO: o ffmpeg IGNORA `crf` silenciosamente quando o codec é NVENC.
+  # Definir crf junto com h264_nvenc não dá erro nem aviso — só entrega
+  # o controle de taxa padrão do NVENC. Para qualidade em NVENC use `cq`.
+
+window:
+  position_string: UR
+  monitor_index: 0
+  full_screen: False
+
+scene:
+  show_animation_progress: True
+  leave_progress_bars: False
+  preview_while_skipping: True
+  default_wait_time: 1.0
+
+vmobject:
+  default_stroke_width: 4.0
+  default_stroke_color: "#DDDDDD"
+  default_fill_color: "#888888"
+
+mobject:
+  default_mobject_color: "#FFFFFF"
+  default_light_color: "#BBBBBB"
+
+tex:
+  template: "default"
+  font_size_for_unit_height: 144
+
+text:
+  font: "Consolas"
+  alignment: "LEFT"
+  font_size_for_unit_height: 144
+
+embed:
+  exception_mode: "Verbose"
+  autoreload: False
+
+sizes:
+  frame_height: 8.0
+  small_buff: 0.1
+  med_small_buff: 0.25
+  med_large_buff: 0.5
+  large_buff: 1.0
+  default_mobject_to_edge_buff: 0.5
+  default_mobject_to_mobject_buff: 0.25

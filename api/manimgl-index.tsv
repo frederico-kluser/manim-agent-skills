@@ -1,0 +1,1242 @@
+kind	name	category	signature	module	doc
+class	AnimationGroup	animation/composition	(*args: 'AnimationType | Iterable[AnimationType]', run_time: 'float' = -1, lag_ratio: 'float' = 0.0, group: 'Optional[Mobject]' = None, group_type: 'Optional[type]' = None, **kwargs)	manimlib.animation.composition	
+constant	DEFAULT_LAGGED_START_LAG_RATIO	animation/composition	0.05	manimlib.animation.composition	
+class	LaggedStart	animation/composition	(*animations, lag_ratio: 'float' = 0.05, **kwargs)	manimlib.animation.composition	
+class	LaggedStartMap	animation/composition	(anim_func: 'Callable[[Mobject], Animation]', group: 'Mobject', run_time: 'float' = 2.0, lag_ratio: 'float' = 0.05, **kwargs)	manimlib.animation.composition	
+class	Succession	animation/composition	(*animations: 'Animation', lag_ratio: 'float' = 1.0, **kwargs)	manimlib.animation.composition	
+constant	TYPE_CHECKING	animation/composition	False	manimlib.animation.composition	
+class	Animation	animation/core	(mobject: 'Mobject', run_time: 'float' = 1.0, time_span: 'tuple[float, float] | None' = None, lag_ratio: 'float' = 0, rate_func: 'Callable[[float], float]' = <function smooth at 0x7f6ff39332e0>, name: 'str' = '', remover: 'bool' = False, final_alpha_value: 'float' = 1.0, suspend_mobject_updating: 'bool' = False)	manimlib.animation.animation	
+constant	DEFAULT_ANIMATION_LAG_RATIO	animation/core	0	manimlib.animation.animation	
+constant	DEFAULT_ANIMATION_RUN_TIME	animation/core	1.0	manimlib.animation.animation	
+class	MaintainPositionRelativeTo	animation/core	(mobject: 'Mobject', tracked_mobject: 'Mobject', **kwargs)	manimlib.animation.update	
+constant	TYPE_CHECKING	animation/core	False	manimlib.animation.animation	
+constant	TYPE_CHECKING	animation/core	False	manimlib.animation.update	
+class	UpdateFromAlphaFunc	animation/core	(mobject: 'Mobject', update_function: 'Callable[[Mobject, float], Mobject | None]', suspend_mobject_updating: 'bool' = False, **kwargs)	manimlib.animation.update	
+class	UpdateFromFunc	animation/core	(mobject: 'Mobject', update_function: 'Callable[[Mobject], Mobject | None]', suspend_mobject_updating: 'bool' = False, **kwargs)	manimlib.animation.update	update_function of the form func(mobject), presumably
+function	prepare_animation	animation/core	(anim: 'Animation | _AnimationBuilder')	manimlib.animation.animation	
+class	AddTextWordByWord	animation/creation	(string_mobject: 'StringMobject', time_per_word: 'float' = 0.2, run_time: 'float' = -1.0, rate_func: 'Callable[[float], float]' = <function linear at 0x7f6ff3932de0>, **kwargs)	manimlib.animation.creation	
+class	DrawBorderThenFill	animation/creation	(vmobject: 'VMobject', run_time: 'float' = 2.0, rate_func: 'Callable[[float], float]' = <function double_smooth at 0x7f6ff3933560>, stroke_width: 'float' = 2.0, stroke_color: 'ManimColor' = None, draw_border_animation_config: 'dict' = {}, fill_animation_config: 'dict' = {}, **kwargs)	manimlib.animation.creation	
+class	ShowCreation	animation/creation	(mobject: 'Mobject', lag_ratio: 'float' = 1.0, **kwargs)	manimlib.animation.creation	Abstract class for ShowCreation and ShowPassingFlash
+class	ShowIncreasingSubsets	animation/creation	(group: 'Mobject', int_func: 'Callable[[float], float]' = <function round at 0x7f70bacdce70>, suspend_mobject_updating: 'bool' = False, **kwargs)	manimlib.animation.creation	
+class	ShowPartial	animation/creation	(mobject: 'Mobject', should_match_start: 'bool' = False, **kwargs)	manimlib.animation.creation	Abstract class for ShowCreation and ShowPassingFlash
+class	ShowSubmobjectsOneByOne	animation/creation	(group: 'Mobject', int_func: 'Callable[[float], float]' = <ufunc 'ceil'>, **kwargs)	manimlib.animation.creation	
+constant	TYPE_CHECKING	animation/creation	False	manimlib.animation.creation	
+class	Uncreate	animation/creation	(mobject: 'Mobject', rate_func: 'Callable[[float], float]' = <function Uncreate.<lambda> at 0x7f6ff2df0540>, remover: 'bool' = True, should_match_start: 'bool' = True, **kwargs)	manimlib.animation.creation	Abstract class for ShowCreation and ShowPassingFlash
+class	Write	animation/creation	(vmobject: 'VMobject', run_time: 'float' = -1, lag_ratio: 'float' = -1, rate_func: 'Callable[[float], float]' = <function linear at 0x7f6ff3932de0>, stroke_color: 'ManimColor' = None, **kwargs)	manimlib.animation.creation	
+class	Fade	animation/fading	(mobject: 'Mobject', shift: 'np.ndarray' = array([0., 0., 0.]), scale: 'float' = 1, **kwargs)	manimlib.animation.fading	
+class	FadeIn	animation/fading	(mobject: 'Mobject', shift: 'np.ndarray' = array([0., 0., 0.]), scale: 'float' = 1, **kwargs)	manimlib.animation.fading	
+class	FadeInFromPoint	animation/fading	(mobject: 'Mobject', point: 'Vect3', **kwargs)	manimlib.animation.fading	
+class	FadeOut	animation/fading	(mobject: 'Mobject', shift: 'Vect3' = array([0., 0., 0.]), remover: 'bool' = True, final_alpha_value: 'float' = 0.0, **kwargs)	manimlib.animation.fading	
+class	FadeOutToPoint	animation/fading	(mobject: 'Mobject', point: 'Vect3', **kwargs)	manimlib.animation.fading	
+class	FadeTransform	animation/fading	(mobject: 'Mobject', target_mobject: 'Mobject', stretch: 'bool' = True, dim_to_match: 'int' = 1, **kwargs)	manimlib.animation.fading	
+class	FadeTransformPieces	animation/fading	(mobject: 'Mobject', target_mobject: 'Mobject', stretch: 'bool' = True, dim_to_match: 'int' = 1, **kwargs)	manimlib.animation.fading	
+constant	ORIGIN	animation/fading	array([0., 0., 0.])	manimlib.animation.fading	
+constant	TYPE_CHECKING	animation/fading	False	manimlib.animation.fading	
+class	VFadeIn	animation/fading	(vmobject: 'VMobject', suspend_mobject_updating: 'bool' = False, **kwargs)	manimlib.animation.fading	VFadeIn and VFadeOut only work for VMobjects,
+class	VFadeInThenOut	animation/fading	(vmobject: 'VMobject', rate_func: 'Callable[[float], float]' = <function there_and_back at 0x7f6ff3933600>, remover: 'bool' = True, final_alpha_value: 'float' = 0.5, **kwargs)	manimlib.animation.fading	VFadeIn and VFadeOut only work for VMobjects,
+class	VFadeOut	animation/fading	(vmobject: 'VMobject', remover: 'bool' = True, final_alpha_value: 'float' = 0.0, **kwargs)	manimlib.animation.fading	VFadeIn and VFadeOut only work for VMobjects,
+class	GrowArrow	animation/growing	(arrow: 'Arrow', **kwargs)	manimlib.animation.growing	
+class	GrowFromCenter	animation/growing	(mobject: 'Mobject', **kwargs)	manimlib.animation.growing	
+class	GrowFromEdge	animation/growing	(mobject: 'Mobject', edge: 'np.ndarray', **kwargs)	manimlib.animation.growing	
+class	GrowFromPoint	animation/growing	(mobject: 'Mobject', point: 'np.ndarray', point_color: 'ManimColor' = None, **kwargs)	manimlib.animation.growing	
+constant	TYPE_CHECKING	animation/growing	False	manimlib.animation.growing	
+class	AnimationOnSurroundingRectangle	animation/indication	(mobject: 'Mobject', stroke_width: 'float' = 2.0, stroke_color: 'ManimColor' = '#FFFF00', buff: 'float' = 0.1, **kwargs)	manimlib.animation.indication	
+class	ApplyWave	animation/indication	(mobject: 'Mobject', direction: 'np.ndarray' = array([0., 1., 0.]), amplitude: 'float' = 0.2, run_time: 'float' = 1.0, **kwargs)	manimlib.animation.indication	
+class	CircleIndicate	animation/indication	(mobject: 'Mobject', scale_factor: 'float' = 1.2, rate_func: 'Callable[[float], float]' = <function there_and_back at 0x7f6ff3933600>, stroke_color: 'ManimColor' = '#FFFF00', stroke_width: 'float' = 3.0, remover: 'bool' = True, **kwargs)	manimlib.animation.indication	
+constant	DEG	animation/indication	0.017453292519943295	manimlib.animation.indication	
+constant	FRAME_X_RADIUS	animation/indication	7.111111111111111	manimlib.animation.indication	
+constant	FRAME_Y_RADIUS	animation/indication	4.0	manimlib.animation.indication	
+class	Flash	animation/indication	(point: 'np.ndarray | Mobject', color: 'ManimColor' = '#FFFF00', line_length: 'float' = 0.2, num_lines: 'int' = 12, flash_radius: 'float' = 0.3, line_stroke_width: 'float' = 3.0, run_time: 'float' = 1.0, **kwargs)	manimlib.animation.indication	
+class	FlashAround	animation/indication	(mobject: 'Mobject', time_width: 'float' = 1.0, taper_width: 'float' = 0.0, stroke_width: 'float' = 4.0, color: 'ManimColor' = '#FFFF00', buff: 'float' = 0.1, n_inserted_curves: 'int' = 100, **kwargs)	manimlib.animation.indication	
+class	FlashUnder	animation/indication	(mobject: 'Mobject', time_width: 'float' = 1.0, taper_width: 'float' = 0.0, stroke_width: 'float' = 4.0, color: 'ManimColor' = '#FFFF00', buff: 'float' = 0.1, n_inserted_curves: 'int' = 100, **kwargs)	manimlib.animation.indication	
+class	FlashyFadeIn	animation/indication	(vmobject: 'VMobject', stroke_width: 'float' = 2.0, fade_lag: 'float' = 0.0, time_width: 'float' = 1.0, **kwargs)	manimlib.animation.indication	
+class	FocusOn	animation/indication	(focus_point: 'np.ndarray | Mobject', opacity: 'float' = 0.2, color: 'ManimColor' = '#888888', run_time: 'float' = 2, remover: 'bool' = True, **kwargs)	manimlib.animation.indication	
+constant	GREY	animation/indication	'#888888'	manimlib.animation.indication	
+class	Indicate	animation/indication	(mobject: 'Mobject', scale_factor: 'float' = 1.2, color: 'ManimColor' = '#FFFF00', rate_func: 'Callable[[float], float]' = <function there_and_back at 0x7f6ff3933600>, **kwargs)	manimlib.animation.indication	
+constant	ORIGIN	animation/indication	array([0., 0., 0.])	manimlib.animation.indication	
+constant	RIGHT	animation/indication	array([1., 0., 0.])	manimlib.animation.indication	
+constant	SMALL_BUFF	animation/indication	0.1	manimlib.animation.indication	
+class	ShowCreationThenDestruction	animation/indication	(vmobject: 'VMobject', time_width: 'float' = 2.0, **kwargs)	manimlib.animation.indication	Abstract class for ShowCreation and ShowPassingFlash
+class	ShowCreationThenDestructionAround	animation/indication	(mobject: 'Mobject', stroke_width: 'float' = 2.0, stroke_color: 'ManimColor' = '#FFFF00', buff: 'float' = 0.1, **kwargs)	manimlib.animation.indication	
+class	ShowCreationThenFadeAround	animation/indication	(mobject: 'Mobject', stroke_width: 'float' = 2.0, stroke_color: 'ManimColor' = '#FFFF00', buff: 'float' = 0.1, **kwargs)	manimlib.animation.indication	
+class	ShowCreationThenFadeOut	animation/indication	(mobject: 'Mobject', remover: 'bool' = True, **kwargs)	manimlib.animation.indication	
+class	ShowPassingFlash	animation/indication	(mobject: 'Mobject', time_width: 'float' = 0.1, remover: 'bool' = True, **kwargs)	manimlib.animation.indication	Abstract class for ShowCreation and ShowPassingFlash
+class	ShowPassingFlashAround	animation/indication	(mobject: 'Mobject', stroke_width: 'float' = 2.0, stroke_color: 'ManimColor' = '#FFFF00', buff: 'float' = 0.1, **kwargs)	manimlib.animation.indication	
+constant	TAU	animation/indication	6.283185307179586	manimlib.animation.indication	
+constant	TYPE_CHECKING	animation/indication	False	manimlib.animation.indication	
+class	TurnInsideOut	animation/indication	(mobject: 'Mobject', path_arc: 'float' = 1.5707963267948966, **kwargs)	manimlib.animation.indication	
+constant	UP	animation/indication	array([0., 1., 0.])	manimlib.animation.indication	
+class	VShowPassingFlash	animation/indication	(vmobject: 'VMobject', time_width: 'float' = 0.3, taper_width: 'float' = 0.05, remover: 'bool' = True, **kwargs)	manimlib.animation.indication	
+class	WiggleOutThenIn	animation/indication	(mobject: 'Mobject', scale_value: 'float' = 1.1, rotation_angle: 'float' = 0.06283185307179587, n_wiggles: 'int' = 6, scale_about_point: 'np.ndarray | None' = None, rotate_about_point: 'np.ndarray | None' = None, run_time: 'float' = 2, **kwargs)	manimlib.animation.indication	
+constant	YELLOW	animation/indication	'#FFFF00'	manimlib.animation.indication	
+class	ComplexHomotopy	animation/movement	(complex_homotopy: 'Callable[[complex, float], complex]', mobject: 'Mobject', **kwargs)	manimlib.animation.movement	
+class	Homotopy	animation/movement	(homotopy: 'Callable[[float, float, float, float], Sequence[float]]', mobject: 'Mobject', run_time: 'float' = 3.0, **kwargs)	manimlib.animation.movement	
+class	MoveAlongPath	animation/movement	(mobject: 'Mobject', path: 'VMobject', suspend_mobject_updating: 'bool' = False, **kwargs)	manimlib.animation.movement	
+class	PhaseFlow	animation/movement	(function: 'Callable[[np.ndarray], np.ndarray]', mobject: 'Mobject', virtual_time: 'float | None' = None, suspend_mobject_updating: 'bool' = False, rate_func: 'Callable[[float], float]' = <function linear at 0x7f6ff3932de0>, run_time: 'float' = 3.0, **kwargs)	manimlib.animation.movement	
+class	SmoothedVectorizedHomotopy	animation/movement	(homotopy: 'Callable[[float, float, float, float], Sequence[float]]', mobject: 'Mobject', run_time: 'float' = 3.0, **kwargs)	manimlib.animation.movement	
+constant	TYPE_CHECKING	animation/movement	False	manimlib.animation.movement	
+class	ChangeDecimalToValue	animation/numbers	(decimal_mob: 'DecimalNumber', target_number: 'float | complex', **kwargs)	manimlib.animation.numbers	
+class	ChangingDecimal	animation/numbers	(decimal_mob: 'DecimalNumber', number_update_func: 'Callable[[float], float]', suspend_mobject_updating: 'bool' = False, **kwargs)	manimlib.animation.numbers	
+class	CountInFrom	animation/numbers	(decimal_mob: 'DecimalNumber', source_number: 'float | complex' = 0, **kwargs)	manimlib.animation.numbers	
+constant	TYPE_CHECKING	animation/numbers	False	manimlib.animation.numbers	
+constant	ORIGIN	animation/rotation	array([0., 0., 0.])	manimlib.animation.rotation	
+constant	OUT	animation/rotation	array([0., 0., 1.])	manimlib.animation.rotation	
+constant	PI	animation/rotation	3.141592653589793	manimlib.animation.rotation	
+class	Rotate	animation/rotation	(mobject: 'Mobject', angle: 'float' = 3.141592653589793, axis: 'np.ndarray' = array([0., 0., 1.]), run_time: 'float' = 1, rate_func: 'Callable[[float], float]' = <function smooth at 0x7f6ff39332e0>, about_edge: 'np.ndarray' = array([0., 0., 0.]), **kwargs)	manimlib.animation.rotation	
+class	Rotating	animation/rotation	(mobject: 'Mobject', angle: 'float' = 6.283185307179586, axis: 'np.ndarray' = array([0., 0., 1.]), about_point: 'np.ndarray | None' = None, about_edge: 'np.ndarray | None' = None, run_time: 'float' = 5.0, rate_func: 'Callable[[float], float]' = <function linear at 0x7f6ff3932de0>, suspend_mobject_updating: 'bool' = False, **kwargs)	manimlib.animation.rotation	
+constant	TAU	animation/rotation	6.283185307179586	manimlib.animation.rotation	
+constant	TYPE_CHECKING	animation/rotation	False	manimlib.animation.rotation	
+constant	BLACK	animation/specialized	'#000000'	manimlib.animation.specialized	
+class	Broadcast	animation/specialized	(focal_point: 'np.ndarray', small_radius: 'float' = 0.0, big_radius: 'float' = 5.0, n_circles: 'int' = 5, start_stroke_width: 'float' = 8.0, color: 'ManimColor' = '#FFFFFF', run_time: 'float' = 3.0, lag_ratio: 'float' = 0.2, remover: 'bool' = True, **kwargs)	manimlib.animation.specialized	
+constant	TYPE_CHECKING	animation/specialized	False	manimlib.animation.specialized	
+constant	WHITE	animation/specialized	'#FFFFFF'	manimlib.animation.specialized	
+class	ApplyComplexFunction	animation/transform	(function: 'Callable[[complex], complex]', mobject: 'Mobject', **kwargs)	manimlib.animation.transform	
+class	ApplyFunction	animation/transform	(function: 'Callable[[Mobject], Mobject]', mobject: 'Mobject', **kwargs)	manimlib.animation.transform	
+class	ApplyMatrix	animation/transform	(matrix: 'npt.ArrayLike', mobject: 'Mobject', **kwargs)	manimlib.animation.transform	
+class	ApplyMethod	animation/transform	(method: 'Callable', *args, **kwargs)	manimlib.animation.transform	
+class	ApplyPointwiseFunction	animation/transform	(function: 'Callable[[np.ndarray], np.ndarray]', mobject: 'Mobject', run_time: 'float' = 3.0, **kwargs)	manimlib.animation.transform	
+class	ApplyPointwiseFunctionToCenter	animation/transform	(function: 'Callable[[np.ndarray], np.ndarray]', mobject: 'Mobject', **kwargs)	manimlib.animation.transform	
+class	CyclicReplace	animation/transform	(*mobjects: 'Mobject', path_arc=1.5707963267948966, **kwargs)	manimlib.animation.transform	
+constant	DEG	animation/transform	0.017453292519943295	manimlib.animation.transform	
+class	FadeToColor	animation/transform	(mobject: 'Mobject', color: 'ManimColor', **kwargs)	manimlib.animation.transform	
+class	MoveToTarget	animation/transform	(mobject: 'Mobject', **kwargs)	manimlib.animation.transform	
+constant	OUT	animation/transform	array([0., 0., 1.])	manimlib.animation.transform	
+class	ReplacementTransform	animation/transform	(mobject: 'Mobject', target_mobject: 'Mobject | None' = None, path_arc: 'float | Tuple[float, float]' = 0.0, path_arc_axis: 'np.ndarray' = array([0., 0., 1.]), path_func: 'Callable | None' = None, **kwargs)	manimlib.animation.transform	
+class	Restore	animation/transform	(mobject: 'Mobject', **kwargs)	manimlib.animation.transform	
+class	ScaleInPlace	animation/transform	(mobject: 'Mobject', scale_factor: 'npt.ArrayLike', **kwargs)	manimlib.animation.transform	
+class	ShrinkToCenter	animation/transform	(mobject: 'Mobject', **kwargs)	manimlib.animation.transform	
+class	Swap	animation/transform	(*mobjects: 'Mobject', path_arc=1.5707963267948966, **kwargs)	manimlib.animation.transform	Alternate name for CyclicReplace
+constant	TYPE_CHECKING	animation/transform	False	manimlib.animation.transform	
+constant	TYPE_CHECKING	animation/transform	False	manimlib.animation.transform_matching_parts	
+class	Transform	animation/transform	(mobject: 'Mobject', target_mobject: 'Mobject | None' = None, path_arc: 'float | Tuple[float, float]' = 0.0, path_arc_axis: 'np.ndarray' = array([0., 0., 1.]), path_func: 'Callable | None' = None, **kwargs)	manimlib.animation.transform	
+class	TransformFromCopy	animation/transform	(mobject: 'Mobject', target_mobject: 'Mobject', **kwargs)	manimlib.animation.transform	
+class	TransformMatchingParts	animation/transform	(source: 'Mobject', target: 'Mobject', matched_pairs: 'Iterable[tuple[Mobject, Mobject]]' = [], match_animation: 'type' = <class 'manimlib.animation.transform.Transform'>, mismatch_animation: 'type' = <class 'manimlib.animation.transform.Transform'>, run_time: 'float' = 2, lag_ratio: 'float' = 0, **kwargs)	manimlib.animation.transform_matching_parts	
+class	TransformMatchingShapes	animation/transform	(source: 'Mobject', target: 'Mobject', matched_pairs: 'Iterable[tuple[Mobject, Mobject]]' = [], match_animation: 'type' = <class 'manimlib.animation.transform.Transform'>, mismatch_animation: 'type' = <class 'manimlib.animation.transform.Transform'>, run_time: 'float' = 2, lag_ratio: 'float' = 0, **kwargs)	manimlib.animation.transform_matching_parts	Alias for TransformMatchingParts
+class	TransformMatchingStrings	animation/transform	(source: 'StringMobject', target: 'StringMobject', matched_keys: 'Iterable[str]' = [], key_map: 'dict[str, str]' = {}, matched_pairs: 'Iterable[tuple[VMobject, VMobject]]' = [], **kwargs)	manimlib.animation.transform_matching_parts	
+class	TransformMatchingTex	animation/transform	(source: 'StringMobject', target: 'StringMobject', matched_keys: 'Iterable[str]' = [], key_map: 'dict[str, str]' = {}, matched_pairs: 'Iterable[tuple[VMobject, VMobject]]' = [], **kwargs)	manimlib.animation.transform_matching_parts	Alias for TransformMatchingStrings
+constant	BLACK	camera	'#000000'	manimlib.camera.camera	
+constant	COLOR_FORMAT	camera	'rgba8unorm'	manimlib.camera.camera	
+constant	COMMON_UNIFORMS	camera	(('is_fixed_in_frame', 1), ('shading', 3), ('clip_plane0', 4), ('clip_plane1', 4), ('clip_plane2', 4), ('clip_plane3'...	manimlib.camera.camera_frame	
+class	Camera	camera	(window: 'Optional[Window]' = None, frame_config: 'dict' = {}, resolution=(1920, 1080), fps: 'int' = 30, background_color: 'ManimColor' = '#000000', background_opacity: 'float' = 1.0, light_source_position: 'Vect3' = array([-10,  10,  10]), bundle_draws: 'bool' = True, draw_together: 'bool' = True, samples: 'int' = 0)	manimlib.camera.camera	
+class	CameraFrame	camera	(frame_shape: 'tuple[float, float]' = (14.222222222222221, 8.0), center_point: 'Vect3' = array([0., 0., 0.]), fovy: 'float' = 0.7853981633974483, euler_axes: 'str' = 'zxz', z_index=-1, **kwargs)	manimlib.camera.camera_frame	Mathematical Object
+constant	DEFAULT_RESOLUTION	camera	(1920, 1080)	manimlib.camera.camera	
+constant	DEG	camera	0.017453292519943295	manimlib.camera.camera_frame	
+constant	DEPTH_STENCIL_FORMAT	camera	'depth24plus-stencil8'	manimlib.camera.camera	
+constant	DOWN	camera	array([ 0., -1.,  0.])	manimlib.camera.camera_frame	
+constant	FRAME_HEIGHT	camera	8.0	manimlib.camera.camera	
+constant	FRAME_SHAPE	camera	(14.222222222222221, 8.0)	manimlib.camera.camera_frame	
+constant	FRAME_WIDTH	camera	14.222222222222221	manimlib.camera.camera	
+class	FrameStream	camera	(camera: 'Camera', sink, behind: 'int' = 1)	manimlib.camera.camera	Frames off the gpu and into somewhere they are being written, staying a frame behind so
+constant	LEFT	camera	array([-1.,  0.,  0.])	manimlib.camera.camera_frame	
+constant	ORIGIN	camera	array([0., 0., 0.])	manimlib.camera.camera_frame	
+constant	OUT	camera	array([0., 0., 1.])	manimlib.camera.camera_frame	
+constant	PI	camera	3.141592653589793	manimlib.camera.camera_frame	
+constant	RADIANS	camera	1	manimlib.camera.camera_frame	
+constant	RIGHT	camera	array([1., 0., 0.])	manimlib.camera.camera_frame	
+constant	TYPE_CHECKING	camera	False	manimlib.camera.camera	
+constant	TYPE_CHECKING	camera	False	manimlib.camera.camera_frame	
+class	ThreeDCamera	camera	(samples: 'int' = 4, **kwargs)	manimlib.camera.camera	
+constant	UP	camera	array([0., 1., 0.])	manimlib.camera.camera_frame	
+constant	ASPECT_RATIO	constants	1.7777777777777777	manimlib.constants	
+constant	BLACK	constants	'#000000'	manimlib.constants	
+constant	BLUE	constants	'#58C4DD'	manimlib.constants	
+constant	BLUE_A	constants	'#C7E9F1'	manimlib.constants	
+constant	BLUE_B	constants	'#9CDCEB'	manimlib.constants	
+constant	BLUE_C	constants	'#58C4DD'	manimlib.constants	
+constant	BLUE_D	constants	'#29ABCA'	manimlib.constants	
+constant	BLUE_E	constants	'#1C758A'	manimlib.constants	
+constant	BOLD	constants	'BOLD'	manimlib.constants	
+constant	BOTTOM	constants	array([ 0., -4.,  0.])	manimlib.constants	
+constant	COLORMAP_3B1B	constants	['#1C758A', '#83C167', '#FFFF00', '#FC6255']	manimlib.constants	
+constant	DARK_BROWN	constants	'#8B4513'	manimlib.constants	
+constant	DEFAULT_LIGHT_COLOR	constants	'#BBBBBB'	manimlib.constants	
+constant	DEFAULT_MOBJECT_COLOR	constants	'#FFFFFF'	manimlib.constants	
+constant	DEFAULT_MOBJECT_TO_EDGE_BUFF	constants	0.5	manimlib.constants	
+constant	DEFAULT_MOBJECT_TO_MOBJECT_BUFF	constants	0.25	manimlib.constants	
+constant	DEFAULT_PIXEL_HEIGHT	constants	1080	manimlib.constants	
+constant	DEFAULT_PIXEL_WIDTH	constants	1920	manimlib.constants	
+constant	DEFAULT_RESOLUTION	constants	(1920, 1080)	manimlib.constants	
+constant	DEFAULT_STROKE_WIDTH	constants	4.0	manimlib.constants	
+constant	DEFAULT_VMOBJECT_FILL_COLOR	constants	'#888888'	manimlib.constants	
+constant	DEFAULT_VMOBJECT_STROKE_COLOR	constants	'#DDDDDD'	manimlib.constants	
+constant	DEG	constants	0.017453292519943295	manimlib.constants	
+constant	DEGREES	constants	0.017453292519943295	manimlib.constants	
+constant	DL	constants	array([-1., -1.,  0.])	manimlib.constants	
+constant	DOWN	constants	array([ 0., -1.,  0.])	manimlib.constants	
+constant	DR	constants	array([ 1., -1.,  0.])	manimlib.constants	
+constant	FRAME_HEIGHT	constants	8.0	manimlib.constants	
+constant	FRAME_SHAPE	constants	(14.222222222222221, 8.0)	manimlib.constants	
+constant	FRAME_WIDTH	constants	14.222222222222221	manimlib.constants	
+constant	FRAME_X_RADIUS	constants	7.111111111111111	manimlib.constants	
+constant	FRAME_Y_RADIUS	constants	4.0	manimlib.constants	
+constant	GOLD	constants	'#F0AC5F'	manimlib.constants	
+constant	GOLD_A	constants	'#F7C797'	manimlib.constants	
+constant	GOLD_B	constants	'#F9B775'	manimlib.constants	
+constant	GOLD_C	constants	'#F0AC5F'	manimlib.constants	
+constant	GOLD_D	constants	'#E1A158'	manimlib.constants	
+constant	GOLD_E	constants	'#C78D46'	manimlib.constants	
+constant	GREEN	constants	'#83C167'	manimlib.constants	
+constant	GREEN_A	constants	'#C9E2AE'	manimlib.constants	
+constant	GREEN_B	constants	'#A6CF8C'	manimlib.constants	
+constant	GREEN_C	constants	'#83C167'	manimlib.constants	
+constant	GREEN_D	constants	'#77B05D'	manimlib.constants	
+constant	GREEN_E	constants	'#699C52'	manimlib.constants	
+constant	GREEN_SCREEN	constants	'#00FF00'	manimlib.constants	
+constant	GREY	constants	'#888888'	manimlib.constants	
+constant	GREY_A	constants	'#DDDDDD'	manimlib.constants	
+constant	GREY_B	constants	'#BBBBBB'	manimlib.constants	
+constant	GREY_BROWN	constants	'#736357'	manimlib.constants	
+constant	GREY_C	constants	'#888888'	manimlib.constants	
+constant	GREY_D	constants	'#444444'	manimlib.constants	
+constant	GREY_E	constants	'#222222'	manimlib.constants	
+constant	IN	constants	array([ 0.,  0., -1.])	manimlib.constants	
+constant	ITALIC	constants	'ITALIC'	manimlib.constants	
+constant	LARGE_BUFF	constants	1.0	manimlib.constants	
+constant	LEFT	constants	array([-1.,  0.,  0.])	manimlib.constants	
+constant	LEFT_SIDE	constants	array([-7.11111111,  0.        ,  0.        ])	manimlib.constants	
+constant	LIGHT_BROWN	constants	'#CD853F'	manimlib.constants	
+constant	LIGHT_PINK	constants	'#DC75CD'	manimlib.constants	
+constant	MANIM_COLORS	constants	['#1C758A', '#29ABCA', '#58C4DD', '#9CDCEB', '#C7E9F1', '#49A88F', '#55C1A7', '#5CD0B3', '#76DDC0', '#ACEAD7', '#699C...	manimlib.constants	
+constant	MAROON	constants	'#C55F73'	manimlib.constants	
+constant	MAROON_A	constants	'#ECABC1'	manimlib.constants	
+constant	MAROON_B	constants	'#EC92AB'	manimlib.constants	
+constant	MAROON_C	constants	'#C55F73'	manimlib.constants	
+constant	MAROON_D	constants	'#A24D61'	manimlib.constants	
+constant	MAROON_E	constants	'#94424F'	manimlib.constants	
+constant	MED_LARGE_BUFF	constants	0.5	manimlib.constants	
+constant	MED_SMALL_BUFF	constants	0.25	manimlib.constants	
+constant	NORMAL	constants	'NORMAL'	manimlib.constants	
+constant	NULL_POINTS	constants	array([[0., 0., 0.]])	manimlib.constants	
+constant	OBLIQUE	constants	'OBLIQUE'	manimlib.constants	
+constant	ORANGE	constants	'#FF862F'	manimlib.constants	
+constant	ORIGIN	constants	array([0., 0., 0.])	manimlib.constants	
+constant	OUT	constants	array([0., 0., 1.])	manimlib.constants	
+constant	PI	constants	3.141592653589793	manimlib.constants	
+constant	PINK	constants	'#D147BD'	manimlib.constants	
+constant	PURE_BLUE	constants	'#0000FF'	manimlib.constants	
+constant	PURE_GREEN	constants	'#00FF00'	manimlib.constants	
+constant	PURE_RED	constants	'#FF0000'	manimlib.constants	
+constant	PURPLE	constants	'#9A72AC'	manimlib.constants	
+constant	PURPLE_A	constants	'#CAA3E8'	manimlib.constants	
+constant	PURPLE_B	constants	'#B189C6'	manimlib.constants	
+constant	PURPLE_C	constants	'#9A72AC'	manimlib.constants	
+constant	PURPLE_D	constants	'#715582'	manimlib.constants	
+constant	PURPLE_E	constants	'#644172'	manimlib.constants	
+constant	RADIANS	constants	1	manimlib.constants	
+constant	RED	constants	'#FC6255'	manimlib.constants	
+constant	RED_A	constants	'#F7A1A3'	manimlib.constants	
+constant	RED_B	constants	'#FF8080'	manimlib.constants	
+constant	RED_C	constants	'#FC6255'	manimlib.constants	
+constant	RED_D	constants	'#E65A4C'	manimlib.constants	
+constant	RED_E	constants	'#CF5044'	manimlib.constants	
+constant	RIGHT	constants	array([1., 0., 0.])	manimlib.constants	
+constant	RIGHT_SIDE	constants	array([7.11111111, 0.        , 0.        ])	manimlib.constants	
+constant	SMALL_BUFF	constants	0.1	manimlib.constants	
+constant	TAU	constants	6.283185307179586	manimlib.constants	
+constant	TEAL	constants	'#5CD0B3'	manimlib.constants	
+constant	TEAL_A	constants	'#ACEAD7'	manimlib.constants	
+constant	TEAL_B	constants	'#76DDC0'	manimlib.constants	
+constant	TEAL_C	constants	'#5CD0B3'	manimlib.constants	
+constant	TEAL_D	constants	'#55C1A7'	manimlib.constants	
+constant	TEAL_E	constants	'#49A88F'	manimlib.constants	
+constant	TOP	constants	array([0., 4., 0.])	manimlib.constants	
+constant	TYPE_CHECKING	constants	False	manimlib.constants	
+constant	UL	constants	array([-1.,  1.,  0.])	manimlib.constants	
+constant	UP	constants	array([0., 1., 0.])	manimlib.constants	
+constant	UR	constants	array([1., 1., 0.])	manimlib.constants	
+constant	WHITE	constants	'#FFFFFF'	manimlib.constants	
+constant	X_AXIS	constants	array([1., 0., 0.])	manimlib.constants	
+constant	YELLOW	constants	'#FFFF00'	manimlib.constants	
+constant	YELLOW_A	constants	'#FFF1B6'	manimlib.constants	
+constant	YELLOW_B	constants	'#FFEA94'	manimlib.constants	
+constant	YELLOW_C	constants	'#FFFF00'	manimlib.constants	
+constant	YELLOW_D	constants	'#F4D345'	manimlib.constants	
+constant	YELLOW_E	constants	'#E8C11C'	manimlib.constants	
+constant	Y_AXIS	constants	array([0., 1., 0.])	manimlib.constants	
+constant	Z_AXIS	constants	array([0., 0., 1.])	manimlib.constants	
+constant	BLACK	mobject/3d	'#000000'	manimlib.mobject.three_dimensions	
+constant	BLUE	mobject/3d	'#58C4DD'	manimlib.mobject.three_dimensions	
+constant	BLUE_D	mobject/3d	'#29ABCA'	manimlib.mobject.three_dimensions	
+constant	BLUE_E	mobject/3d	'#1C758A'	manimlib.mobject.three_dimensions	
+class	Cone	mobject/3d	(u_range: 'Tuple[float, float]' = (0, 6.283185307179586), v_range: 'Tuple[float, float]' = (0, 1), *args, **kwargs)	manimlib.mobject.three_dimensions	Mathematical Object
+class	Cube	mobject/3d	(color: 'ManimColor' = '#58C4DD', opacity: 'float' = 1, shading: 'Tuple[float, float, float]' = (0.1, 0.5, 0.1), square_resolution: 'Tuple[int, int]' = (2, 2), side_length: 'float' = 2, **kwargs)	manimlib.mobject.three_dimensions	Mathematical Object
+class	Cylinder	mobject/3d	(u_range: 'Tuple[float, float]' = (0, 6.283185307179586), v_range: 'Tuple[float, float]' = (-1, 1), resolution: 'Tuple[int, int]' = (101, 11), height: 'float' = 2, radius: 'float' = 1, axis: 'Vect3' = array([0., 0., 1.]), **kwargs)	manimlib.mobject.three_dimensions	Mathematical Object
+class	Disk3D	mobject/3d	(radius: 'float' = 1, u_range: 'Tuple[float, float]' = (0, 1), v_range: 'Tuple[float, float]' = (0, 6.283185307179586), resolution: 'Tuple[int, int]' = (2, 100), **kwargs)	manimlib.mobject.three_dimensions	Mathematical Object
+class	Dodecahedron	mobject/3d	(fill_color: 'ManimColor' = '#1C758A', fill_opacity: 'float' = 1, stroke_color: 'ManimColor' = '#1C758A', stroke_width: 'float' = 1, shading: 'Tuple[float, float, float]' = (0.2, 0.2, 0.2), **kwargs)	manimlib.mobject.three_dimensions	Mathematical Object
+constant	GREY_A	mobject/3d	'#DDDDDD'	manimlib.mobject.three_dimensions	
+constant	IN	mobject/3d	array([ 0.,  0., -1.])	manimlib.mobject.three_dimensions	
+class	Line3D	mobject/3d	(start: 'Vect3', end: 'Vect3', width: 'float' = 0.05, resolution: 'Tuple[int, int]' = (21, 25), **kwargs)	manimlib.mobject.three_dimensions	Mathematical Object
+constant	ORIGIN	mobject/3d	array([0., 0., 0.])	manimlib.mobject.three_dimensions	
+constant	OUT	mobject/3d	array([0., 0., 1.])	manimlib.mobject.three_dimensions	
+constant	PI	mobject/3d	3.141592653589793	manimlib.mobject.three_dimensions	
+class	Prism	mobject/3d	(width: 'float' = 3.0, height: 'float' = 2.0, depth: 'float' = 1.0, **kwargs)	manimlib.mobject.three_dimensions	Mathematical Object
+class	Prismify	mobject/3d	(vmobject, depth=1.0, direction=array([ 0.,  0., -1.]), **kwargs)	manimlib.mobject.three_dimensions	Mathematical Object
+constant	RIGHT	mobject/3d	array([1., 0., 0.])	manimlib.mobject.three_dimensions	
+class	Sphere	mobject/3d	(u_range: 'Tuple[float, float]' = (0, 6.283185307179586), v_range: 'Tuple[float, float]' = (0, 3.141592653589793), resolution: 'Tuple[int, int]' = (101, 51), radius: 'float' = 1.0, clockwise=False, **kwargs)	manimlib.mobject.three_dimensions	Mathematical Object
+class	Square3D	mobject/3d	(side_length: 'float' = 2.0, u_range: 'Tuple[float, float]' = (-1, 1), v_range: 'Tuple[float, float]' = (-1, 1), resolution: 'Tuple[int, int]' = (2, 2), **kwargs)	manimlib.mobject.three_dimensions	Mathematical Object
+class	SurfaceMesh	mobject/3d	(uv_surface: 'Surface', resolution: 'Tuple[int, int]' = (21, 11), stroke_width: 'float' = 1, stroke_color: 'ManimColor' = '#DDDDDD', normal_nudge: 'float' = 0.01, depth_test: 'bool' = True, **kwargs)	manimlib.mobject.three_dimensions	Mathematical Object
+constant	TAU	mobject/3d	6.283185307179586	manimlib.mobject.three_dimensions	
+constant	TYPE_CHECKING	mobject/3d	False	manimlib.mobject.three_dimensions	
+class	Torus	mobject/3d	(u_range: 'Tuple[float, float]' = (0, 6.283185307179586), v_range: 'Tuple[float, float]' = (0, 6.283185307179586), r1: 'float' = 3.0, r2: 'float' = 1.0, **kwargs)	manimlib.mobject.three_dimensions	Mathematical Object
+class	VCube	mobject/3d	(side_length: 'float' = 2.0, fill_color: 'ManimColor' = '#29ABCA', fill_opacity: 'float' = 1, stroke_width: 'float' = 0, **kwargs)	manimlib.mobject.three_dimensions	Mathematical Object
+class	VGroup3D	mobject/3d	(*vmobjects: 'VMobject', depth_test: 'bool' = True, shading: 'Tuple[float, float, float]' = (0.2, 0.2, 0.2), **kwargs)	manimlib.mobject.three_dimensions	Mathematical Object
+class	VPrism	mobject/3d	(width: 'float' = 3.0, height: 'float' = 2.0, depth: 'float' = 1.0, **kwargs)	manimlib.mobject.three_dimensions	Mathematical Object
+function	square_to_cube_faces	mobject/3d	(square: 'T') -> 'list[T]'	manimlib.mobject.three_dimensions	
+class	AnimatedBoundary	mobject/core	(vmobject: 'VMobject', colors: 'List[ManimColor]' = ['#29ABCA', '#9CDCEB', '#1C758A', '#736357'], max_stroke_width: 'float' = 3.0, cycle_rate: 'float' = 0.5, back_and_forth: 'bool' = True, draw_rate_func: 'Callable[[float], float]' = <function smooth at 0x7f6ff39332e0>, fade_rate_func: 'Callable[[float], float]' = <function smooth at 0x7f6ff39332e0>, **kwargs)	manimlib.mobject.changing	Mathematical Object
+class	Axes	mobject/core	(x_range: 'RangeSpecifier' = (-8.0, 8.0, 1.0), y_range: 'RangeSpecifier' = (-4.0, 4.0, 1.0), axis_config: 'dict' = {}, x_axis_config: 'dict' = {}, y_axis_config: 'dict' = {}, height: 'float | None' = None, width: 'float | None' = None, unit_size: 'float' = 1.0, **kwargs)	manimlib.mobject.coordinate_systems	Mathematical Object
+constant	BLACK	mobject/core	'#000000'	manimlib.mobject.coordinate_systems	
+constant	BLACK	mobject/core	'#000000'	manimlib.mobject.fractals	
+constant	BLACK	mobject/core	'#000000'	manimlib.mobject.frame	
+constant	BLACK	mobject/core	'#000000'	manimlib.mobject.interactive	
+constant	BLACK	mobject/core	'#000000'	manimlib.mobject.shape_matchers	
+constant	BLACK	mobject/core	'#000000'	manimlib.mobject.types.vectorized_mobject	
+constant	BLUE	mobject/core	'#58C4DD'	manimlib.mobject.coordinate_systems	
+constant	BLUE	mobject/core	'#58C4DD'	manimlib.mobject.interactive	
+constant	BLUE	mobject/core	'#58C4DD'	manimlib.mobject.probability	
+constant	BLUE_B	mobject/core	'#9CDCEB'	manimlib.mobject.changing	
+constant	BLUE_D	mobject/core	'#29ABCA'	manimlib.mobject.changing	
+constant	BLUE_D	mobject/core	'#29ABCA'	manimlib.mobject.coordinate_systems	
+constant	BLUE_E	mobject/core	'#1C758A'	manimlib.mobject.changing	
+constant	BLUE_E	mobject/core	'#1C758A'	manimlib.mobject.coordinate_systems	
+constant	BLUE_E	mobject/core	'#1C758A'	manimlib.mobject.probability	
+class	BackgroundRectangle	mobject/core	(mobject: 'Mobject', color: 'ManimColor' = None, stroke_width: 'float' = 0, stroke_opacity: 'float' = 0, fill_opacity: 'float' = 0.75, buff: 'float' = 0, **kwargs)	manimlib.mobject.shape_matchers	Creates a rectangle at the center of the screen.
+class	BarChart	mobject/core	(values: 'Iterable[float]', height: 'float' = 4, width: 'float' = 6, n_ticks: 'int' = 4, include_x_ticks: 'bool' = False, tick_width: 'float' = 0.2, tick_height: 'float' = 0.15, label_y_axis: 'bool' = True, y_axis_label_height: 'float' = 0.25, max_value: 'float' = 1, bar_colors: 'list[ManimColor]' = ['#58C4DD', '#FFFF00'], bar_fill_opacity: 'float' = 0.8, bar_stroke_width: 'float' = 3, bar_names: 'list[str]' = [], bar_label_scale_val: 'float' = 0.75, **kwargs)	manimlib.mobject.probability	Mathematical Object
+class	Button	mobject/core	(mobject: 'Mobject', on_click: 'Callable[[Mobject]]', **kwargs)	manimlib.mobject.interactive	Pass any mobject and register an on_click method
+constant	COMMON_UNIFORMS	mobject/core	(('is_fixed_in_frame', 1), ('shading', 3), ('clip_plane0', 4), ('clip_plane1', 4), ('clip_plane2', 4), ('clip_plane3'...	manimlib.mobject.fractals	
+constant	COMMON_UNIFORMS	mobject/core	(('is_fixed_in_frame', 1), ('shading', 3), ('clip_plane0', 4), ('clip_plane1', 4), ('clip_plane2', 4), ('clip_plane3'...	manimlib.mobject.mobject	
+constant	COMMON_UNIFORMS	mobject/core	(('is_fixed_in_frame', 1), ('shading', 3), ('clip_plane0', 4), ('clip_plane1', 4), ('clip_plane2', 4), ('clip_plane3'...	manimlib.mobject.types.dot_cloud	
+constant	COMMON_UNIFORMS	mobject/core	(('is_fixed_in_frame', 1), ('shading', 3), ('clip_plane0', 4), ('clip_plane1', 4), ('clip_plane2', 4), ('clip_plane3'...	manimlib.mobject.types.surface	
+constant	COMMON_UNIFORMS	mobject/core	(('is_fixed_in_frame', 1), ('shading', 3), ('clip_plane0', 4), ('clip_plane1', 4), ('clip_plane2', 4), ('clip_plane3'...	manimlib.mobject.types.vectorized_mobject	
+class	Checkbox	mobject/core	(value: 'bool' = True, value_type: 'np.dtype' = dtype('bool'), rect_kwargs: 'dict' = {'width': 0.5, 'height': 0.5, 'fill_opacity': 0.0}, checkmark_kwargs: 'dict' = {'stroke_color': '#83C167', 'stroke_width': 6}, cross_kwargs: 'dict' = {'stroke_color': '#FC6255', 'stroke_width': 6}, box_content_buff: 'float' = 0.1, **kwargs)	manimlib.mobject.interactive	Not meant to be displayed.  Instead the position encodes some
+class	ColorSliders	mobject/core	(sliders_kwargs: 'dict' = {}, rect_kwargs: 'dict' = {'width': 2.0, 'height': 0.5, 'stroke_opacity': 1.0}, background_grid_kwargs: 'dict' = {'colors': ['#DDDDDD', '#888888'], 'single_square_len': 0.1}, sliders_buff: 'float' = 0.5, default_rgb_value: 'int' = 255, default_a_value: 'int' = 1, **kwargs)	manimlib.mobject.interactive	Mathematical Object
+class	ComplexPlane	mobject/core	(x_range: 'RangeSpecifier' = (-8.0, 8.0, 1.0), y_range: 'RangeSpecifier' = (-4.0, 4.0, 1.0), background_line_style: 'dict' = {'stroke_color': '#29ABCA', 'stroke_width': 2, 'stroke_opacity': 1}, faded_line_style: 'dict' = {'stroke_width': 1, 'stroke_opacity': 0.25}, faded_line_ratio: 'int' = 4, make_smooth_after_applying_functions: 'bool' = True, **kwargs)	manimlib.mobject.coordinate_systems	Mathematical Object
+class	ControlMobject	mobject/core	(value: 'float', *mobjects: 'Mobject', **kwargs)	manimlib.mobject.interactive	Not meant to be displayed.  Instead the position encodes some
+class	ControlPanel	mobject/core	(*controls: 'ControlMobject', panel_kwargs: 'dict' = {'width': 3.5555555555555554, 'height': 8.25, 'fill_color': '#888888', 'fill_opacity': 1.0, 'stroke_width': 0.0}, opener_kwargs: 'dict' = {'width': 1.7777777777777777, 'height': 0.5, 'fill_color': '#888888', 'fill_opacity': 1.0}, opener_text_kwargs: 'dict' = {'text': 'Control Panel', 'font_size': 20}, **kwargs)	manimlib.mobject.interactive	Mathematical Object
+class	CoordinateSystem	mobject/core	(x_range: 'RangeSpecifier' = (-8.0, 8.0, 1.0), y_range: 'RangeSpecifier' = (-4.0, 4.0, 1.0), num_sampled_graph_points_per_tick: 'int' = 5)	manimlib.mobject.coordinate_systems	Abstract class for Axes and NumberPlane
+class	Cross	mobject/core	(mobject: 'Mobject', stroke_color: 'ManimColor' = '#FC6255', stroke_width: 'float | Sequence[float]' = [0, 6, 0], **kwargs)	manimlib.mobject.shape_matchers	Mathematical Object
+class	CurvesAsSubmobjects	mobject/core	(vmobject: 'VMobject', **kwargs)	manimlib.mobject.types.vectorized_mobject	Mathematical Object
+constant	DEFAULT_BUFF_RATIO	mobject/core	0.5	manimlib.mobject.types.dot_cloud	
+constant	DEFAULT_DOT_RADIUS	mobject/core	0.05	manimlib.mobject.types.dot_cloud	
+constant	DEFAULT_GLOW_DOT_RADIUS	mobject/core	0.2	manimlib.mobject.types.dot_cloud	
+constant	DEFAULT_GRID_HEIGHT	mobject/core	6	manimlib.mobject.types.dot_cloud	
+constant	DEFAULT_LIGHT_COLOR	mobject/core	'#BBBBBB'	manimlib.mobject.number_line	
+constant	DEFAULT_MOBJECT_COLOR	mobject/core	'#FFFFFF'	manimlib.mobject.changing	
+constant	DEFAULT_MOBJECT_COLOR	mobject/core	'#FFFFFF'	manimlib.mobject.coordinate_systems	
+constant	DEFAULT_MOBJECT_COLOR	mobject/core	'#FFFFFF'	manimlib.mobject.interactive	
+constant	DEFAULT_MOBJECT_COLOR	mobject/core	'#FFFFFF'	manimlib.mobject.mobject	
+constant	DEFAULT_MOBJECT_COLOR	mobject/core	'#FFFFFF'	manimlib.mobject.numbers	
+constant	DEFAULT_MOBJECT_COLOR	mobject/core	'#FFFFFF'	manimlib.mobject.shape_matchers	
+constant	DEFAULT_MOBJECT_TO_EDGE_BUFF	mobject/core	0.5	manimlib.mobject.mobject	
+constant	DEFAULT_MOBJECT_TO_MOBJECT_BUFF	mobject/core	0.25	manimlib.mobject.mobject	
+constant	DEFAULT_STROKE_WIDTH	mobject/core	4.0	manimlib.mobject.types.vectorized_mobject	
+constant	DEFAULT_VMOBJECT_FILL_COLOR	mobject/core	'#888888'	manimlib.mobject.types.vectorized_mobject	
+constant	DEFAULT_VMOBJECT_STROKE_COLOR	mobject/core	'#DDDDDD'	manimlib.mobject.types.vectorized_mobject	
+constant	DEFAULT_X_RANGE	mobject/core	(-8.0, 8.0, 1.0)	manimlib.mobject.coordinate_systems	
+constant	DEFAULT_Y_RANGE	mobject/core	(-4.0, 4.0, 1.0)	manimlib.mobject.coordinate_systems	
+constant	DEG	mobject/core	0.017453292519943295	manimlib.mobject.coordinate_systems	
+constant	DEG	mobject/core	0.017453292519943295	manimlib.mobject.mobject_update_utils	
+constant	DEG	mobject/core	0.017453292519943295	manimlib.mobject.number_line	
+constant	DEG	mobject/core	0.017453292519943295	manimlib.mobject.types.vectorized_mobject	
+constant	DL	mobject/core	array([-1., -1.,  0.])	manimlib.mobject.coordinate_systems	
+constant	DL	mobject/core	array([-1., -1.,  0.])	manimlib.mobject.fractals	
+constant	DL	mobject/core	array([-1., -1.,  0.])	manimlib.mobject.shape_matchers	
+constant	DL	mobject/core	array([-1., -1.,  0.])	manimlib.mobject.types.image_mobject	
+constant	DOWN	mobject/core	array([ 0., -1.,  0.])	manimlib.mobject.coordinate_systems	
+constant	DOWN	mobject/core	array([ 0., -1.,  0.])	manimlib.mobject.interactive	
+constant	DOWN	mobject/core	array([ 0., -1.,  0.])	manimlib.mobject.mobject	
+constant	DOWN	mobject/core	array([ 0., -1.,  0.])	manimlib.mobject.number_line	
+constant	DOWN	mobject/core	array([ 0., -1.,  0.])	manimlib.mobject.numbers	
+constant	DOWN	mobject/core	array([ 0., -1.,  0.])	manimlib.mobject.probability	
+constant	DOWN	mobject/core	array([ 0., -1.,  0.])	manimlib.mobject.shape_matchers	
+constant	DR	mobject/core	array([ 1., -1.,  0.])	manimlib.mobject.coordinate_systems	
+constant	DR	mobject/core	array([ 1., -1.,  0.])	manimlib.mobject.fractals	
+constant	DR	mobject/core	array([ 1., -1.,  0.])	manimlib.mobject.shape_matchers	
+constant	DR	mobject/core	array([ 1., -1.,  0.])	manimlib.mobject.types.image_mobject	
+class	DashedVMobject	mobject/core	(vmobject: 'VMobject', num_dashes: 'int' = 15, positive_space_ratio: 'float' = 0.5, **kwargs)	manimlib.mobject.types.vectorized_mobject	Mathematical Object
+class	DecimalNumber	mobject/core	(number: 'float | complex' = 0, color: 'ManimColor' = '#FFFFFF', stroke_width: 'float' = 0, fill_opacity: 'float' = 1.0, fill_border_width: 'float' = 0.5, num_decimal_places: 'int' = 2, min_total_width: 'Optional[int]' = 0, include_sign: 'bool' = False, group_with_commas: 'bool' = True, digit_buff_per_font_unit: 'float' = 0.001, show_ellipsis: 'bool' = False, unit: 'str | None' = None, include_background_rectangle: 'bool' = False, hide_zero_components_on_complex: 'bool' = True, edge_to_fix: 'Vect3' = array([-1.,  0.,  0.]), font_size: 'float' = 48, text_config: 'dict' = {}, **kwargs)	manimlib.mobject.numbers	Mathematical Object
+class	Difference	mobject/core	(subject: 'VMobject', clip: 'VMobject', **kwargs)	manimlib.mobject.boolean_ops	Mathematical Object
+class	DotCloud	mobject/core	(points: 'Vect3Array' = array([[0., 0., 0.]]), color: 'ManimColor' = '#888888', opacity: 'float' = 1.0, radius: 'float' = 0.05, glow_factor: 'float' = 0.0, anti_alias_width: 'float' = 2.0, **kwargs)	manimlib.mobject.types.dot_cloud	Mathematical Object
+constant	EPSILON	mobject/core	1e-08	manimlib.mobject.coordinate_systems	
+constant	EPSILON	mobject/core	0.0001	manimlib.mobject.probability	
+class	EnableDisableButton	mobject/core	(value: 'bool' = True, value_type: 'np.dtype' = dtype('bool'), rect_kwargs: 'dict' = {'width': 0.5, 'height': 0.5, 'fill_opacity': 1.0}, enable_color: 'ManimColor' = '#83C167', disable_color: 'ManimColor' = '#FC6255', **kwargs)	manimlib.mobject.interactive	Not meant to be displayed.  Instead the position encodes some
+class	Exclusion	mobject/core	(*vmobjects: 'VMobject', **kwargs)	manimlib.mobject.boolean_ops	Mathematical Object
+constant	FRAME_HEIGHT	mobject/core	8.0	manimlib.mobject.frame	
+constant	FRAME_HEIGHT	mobject/core	8.0	manimlib.mobject.interactive	
+constant	FRAME_WIDTH	mobject/core	14.222222222222221	manimlib.mobject.interactive	
+constant	FRAME_X_RADIUS	mobject/core	7.111111111111111	manimlib.mobject.coordinate_systems	
+constant	FRAME_X_RADIUS	mobject/core	7.111111111111111	manimlib.mobject.functions	
+constant	FRAME_X_RADIUS	mobject/core	7.111111111111111	manimlib.mobject.mobject	
+constant	FRAME_Y_RADIUS	mobject/core	4.0	manimlib.mobject.coordinate_systems	
+constant	FRAME_Y_RADIUS	mobject/core	4.0	manimlib.mobject.functions	
+constant	FRAME_Y_RADIUS	mobject/core	4.0	manimlib.mobject.mobject	
+class	FullScreenFadeRectangle	mobject/core	(stroke_width: 'float' = 0.0, fill_color: 'ManimColor' = '#000000', fill_opacity: 'float' = 0.7, **kwargs)	manimlib.mobject.frame	Creates a rectangle at the center of the screen.
+class	FullScreenRectangle	mobject/core	(height: 'float' = 8.0, fill_color: 'ManimColor' = '#222222', fill_opacity: 'float' = 1, stroke_width: 'float' = 0, **kwargs)	manimlib.mobject.frame	Creates a rectangle at the center of the screen.
+class	FunctionGraph	mobject/core	(function: 'Callable[[float], float]', x_range: 'Tuple[float, float, float]' = (-8, 8, 0.25), color: 'ManimColor' = '#FFFF00', **kwargs)	manimlib.mobject.functions	Mathematical Object
+constant	GRADIENT_POINT_KEYS	mobject/core	['gradient_start', 'gradient_end']	manimlib.mobject.types.vectorized_mobject	
+constant	GREEN	mobject/core	'#83C167'	manimlib.mobject.coordinate_systems	
+constant	GREEN	mobject/core	'#83C167'	manimlib.mobject.interactive	
+constant	GREEN_E	mobject/core	'#699C52'	manimlib.mobject.probability	
+constant	GREY	mobject/core	'#888888'	manimlib.mobject.types.surface	
+constant	GREY_A	mobject/core	'#DDDDDD'	manimlib.mobject.coordinate_systems	
+constant	GREY_A	mobject/core	'#DDDDDD'	manimlib.mobject.interactive	
+constant	GREY_A	mobject/core	'#DDDDDD'	manimlib.mobject.types.vectorized_mobject	
+constant	GREY_B	mobject/core	'#BBBBBB'	manimlib.mobject.probability	
+constant	GREY_BROWN	mobject/core	'#736357'	manimlib.mobject.changing	
+constant	GREY_C	mobject/core	'#888888'	manimlib.mobject.interactive	
+constant	GREY_C	mobject/core	'#888888'	manimlib.mobject.types.dot_cloud	
+constant	GREY_C	mobject/core	'#888888'	manimlib.mobject.types.vectorized_mobject	
+constant	GREY_D	mobject/core	'#444444'	manimlib.mobject.probability	
+constant	GREY_E	mobject/core	'#222222'	manimlib.mobject.frame	
+constant	GREY_E	mobject/core	'#222222'	manimlib.mobject.types.vectorized_mobject	
+class	GlowDot	mobject/core	(center: 'Vect3' = array([0., 0., 0.]), **kwargs)	manimlib.mobject.types.dot_cloud	Mathematical Object
+class	GlowDots	mobject/core	(points: 'Vect3Array' = array([[0., 0., 0.]]), color: 'ManimColor' = '#FFFF00', radius: 'float' = 0.2, glow_factor: 'float' = 2.0, **kwargs)	manimlib.mobject.types.dot_cloud	Mathematical Object
+class	Group	mobject/core	(*mobjects: 'SubmobjectType | Iterable[SubmobjectType]', **kwargs)	manimlib.mobject.mobject	Mathematical Object
+constant	IN	mobject/core	array([ 0.,  0., -1.])	manimlib.mobject.mobject	
+class	ImageMobject	mobject/core	(filename: 'str', height: 'float' = 4.0, **kwargs)	manimlib.mobject.types.image_mobject	Mathematical Object
+class	ImplicitFunction	mobject/core	(func: 'Callable[[float, float], float]', x_range: 'Tuple[float, float]' = (-7.111111111111111, 7.111111111111111), y_range: 'Tuple[float, float]' = (-4.0, 4.0), min_depth: 'int' = 5, max_quads: 'int' = 1500, use_smoothing: 'bool' = False, **kwargs)	manimlib.mobject.functions	Mathematical Object
+class	Integer	mobject/core	(number: 'int' = 0, num_decimal_places: 'int' = 0, **kwargs)	manimlib.mobject.numbers	Mathematical Object
+class	Intersection	mobject/core	(*vmobjects: 'VMobject', **kwargs)	manimlib.mobject.boolean_ops	Mathematical Object
+class	JuliaFractal	mobject/core	(plane: 'CoordinateSystem', parameter: 'complex' = 0j, n_steps: 'int' = 100, **kwargs)	manimlib.mobject.fractals	The Julia set of z -> z^2 + c for one fixed c: which starting points stay bounded, where
+constant	LEFT	mobject/core	array([-1.,  0.,  0.])	manimlib.mobject.coordinate_systems	
+constant	LEFT	mobject/core	array([-1.,  0.,  0.])	manimlib.mobject.interactive	
+constant	LEFT	mobject/core	array([-1.,  0.,  0.])	manimlib.mobject.mobject	
+constant	LEFT	mobject/core	array([-1.,  0.,  0.])	manimlib.mobject.number_line	
+constant	LEFT	mobject/core	array([-1.,  0.,  0.])	manimlib.mobject.numbers	
+constant	LEFT	mobject/core	array([-1.,  0.,  0.])	manimlib.mobject.probability	
+constant	LEFT	mobject/core	array([-1.,  0.,  0.])	manimlib.mobject.shape_matchers	
+class	LinearNumberSlider	mobject/core	(value: 'float' = 0, value_type: 'type' = <class 'numpy.float64'>, min_value: 'float' = -10.0, max_value: 'float' = 10.0, step: 'float' = 1.0, rounded_rect_kwargs: 'dict' = {'height': 0.075, 'width': 2, 'corner_radius': 0.0375}, circle_kwargs: 'dict' = {'radius': 0.1, 'stroke_color': '#DDDDDD', 'fill_color': '#DDDDDD', 'fill_opacity': 1.0}, **kwargs)	manimlib.mobject.interactive	Not meant to be displayed.  Instead the position encodes some
+constant	MANDELBROT_COLORS	mobject/core	['#00065c', '#061e7e', '#0c37a0', '#205abc', '#4287d3', '#D9EDE4', '#F0F9E4', '#BA9F6A', '#573706']	manimlib.mobject.fractals	
+constant	MAROON_B	mobject/core	'#EC92AB'	manimlib.mobject.probability	
+constant	MAX_DEGREE	mobject/core	5	manimlib.mobject.fractals	
+constant	MED_LARGE_BUFF	mobject/core	0.5	manimlib.mobject.interactive	
+constant	MED_LARGE_BUFF	mobject/core	0.5	manimlib.mobject.probability	
+constant	MED_SMALL_BUFF	mobject/core	0.25	manimlib.mobject.coordinate_systems	
+constant	MED_SMALL_BUFF	mobject/core	0.25	manimlib.mobject.interactive	
+constant	MED_SMALL_BUFF	mobject/core	0.25	manimlib.mobject.mobject	
+constant	MED_SMALL_BUFF	mobject/core	0.25	manimlib.mobject.number_line	
+constant	MED_SMALL_BUFF	mobject/core	0.25	manimlib.mobject.probability	
+class	MandelbrotFractal	mobject/core	(plane: 'CoordinateSystem', colors: 'Sequence[ManimColor]' = ['#00065c', '#061e7e', '#0c37a0', '#205abc', '#4287d3', '#D9EDE4', '#F0F9E4', '#BA9F6A', '#573706'], n_steps: 'int' = 300, parameter: 'complex' = 0j, opacity: 'float' = 1.0, mandelbrot: 'bool' = True, **kwargs)	manimlib.mobject.fractals	The Mandelbrot set: which starting points c leave the iteration z -> z^2 + c bounded,
+class	MetaNewtonFractal	mobject/core	(plane: 'CoordinateSystem', fixed_roots: 'Sequence[complex]' = (-1, 1), n_steps: 'int' = 300, black_for_cycles: 'bool' = True, **kwargs)	manimlib.mobject.fractals	Which cubics Newton's method finds a root of at all: two of the three roots are held
+class	Mobject	mobject/core	(color: 'ManimColor' = '#FFFFFF', opacity: 'float' = 1.0, shading: 'Tuple[float, float, float]' = (0.0, 0.0, 0.0), texture_paths: 'dict[str, str] | None' = None, is_fixed_in_frame: 'bool' = False, depth_test: 'bool' = False, z_index: 'int' = 0)	manimlib.mobject.mobject	Mathematical Object
+class	MotionMobject	mobject/core	(mobject: 'Mobject', **kwargs)	manimlib.mobject.interactive	You could hold and drag this object to any position
+constant	NEWTON_ROOT_COLORS	mobject/core	['#440154', '#3b528b', '#21908c', '#5dc963', '#29abca']	manimlib.mobject.fractals	
+constant	NULL_POINTS	mobject/core	array([[0., 0., 0.]])	manimlib.mobject.types.dot_cloud	
+constant	N_MANDELBROT_COLORS	mobject/core	9	manimlib.mobject.fractals	
+class	NewtonFractal	mobject/core	(plane: 'CoordinateSystem', coefs: 'Sequence[complex]' = (-1.0, 0.0, 0.0, 1.0), roots: 'Sequence[complex] | None' = None, colors: 'Sequence[ManimColor]' = ['#440154', '#3b528b', '#21908c', '#5dc963', '#29abca'], n_steps: 'int' = 30, julia_highlight: 'float' = 0.0, saturation_factor: 'float' = 0.0, opacity: 'float' = 1.0, black_for_cycles: 'bool' = False, is_parameter_space: 'bool' = False, **kwargs)	manimlib.mobject.fractals	Newton's method run from every pixel of a plane, each colored by which root it converged
+class	NumberLine	mobject/core	(x_range: 'RangeSpecifier' = (-8, 8, 1), color: 'ManimColor' = '#BBBBBB', stroke_width: 'float' = 2.0, unit_size: 'float' = 1.0, width: 'Optional[float]' = None, include_ticks: 'bool' = True, tick_size: 'float' = 0.1, longer_tick_multiple: 'float' = 1.5, tick_offset: 'float' = 0.0, big_tick_spacing: 'Optional[float]' = None, big_tick_numbers: 'list[float]' = [], include_numbers: 'bool' = False, line_to_number_direction: 'Vect3' = array([ 0., -1.,  0.]), line_to_number_buff: 'float' = 0.25, include_tip: 'bool' = False, tip_config: 'dict' = {'width': 0.25, 'length': 0.25}, decimal_number_config: 'dict' = {'num_decimal_places': 0, 'font_size': 36}, numbers_to_exclude: 'list | None' = None, **kwargs)	manimlib.mobject.number_line	Creates a line joining the points "start" and "end".
+class	NumberPlane	mobject/core	(x_range: 'RangeSpecifier' = (-8.0, 8.0, 1.0), y_range: 'RangeSpecifier' = (-4.0, 4.0, 1.0), background_line_style: 'dict' = {'stroke_color': '#29ABCA', 'stroke_width': 2, 'stroke_opacity': 1}, faded_line_style: 'dict' = {'stroke_width': 1, 'stroke_opacity': 0.25}, faded_line_ratio: 'int' = 4, make_smooth_after_applying_functions: 'bool' = True, **kwargs)	manimlib.mobject.coordinate_systems	Mathematical Object
+constant	ORIGIN	mobject/core	array([0., 0., 0.])	manimlib.mobject.coordinate_systems	
+constant	ORIGIN	mobject/core	array([0., 0., 0.])	manimlib.mobject.interactive	
+constant	ORIGIN	mobject/core	array([0., 0., 0.])	manimlib.mobject.mobject	
+constant	ORIGIN	mobject/core	array([0., 0., 0.])	manimlib.mobject.types.dot_cloud	
+constant	ORIGIN	mobject/core	array([0., 0., 0.])	manimlib.mobject.types.vectorized_mobject	
+constant	OUT	mobject/core	array([0., 0., 1.])	manimlib.mobject.coordinate_systems	
+constant	OUT	mobject/core	array([0., 0., 1.])	manimlib.mobject.mobject	
+constant	OUT	mobject/core	array([0., 0., 1.])	manimlib.mobject.types.surface	
+constant	OUT	mobject/core	array([0., 0., 1.])	manimlib.mobject.types.vectorized_mobject	
+class	PGroup	mobject/core	(*pmobs: 'PMobject', **kwargs)	manimlib.mobject.types.point_cloud_mobject	Mathematical Object
+constant	PI	mobject/core	3.141592653589793	manimlib.mobject.coordinate_systems	
+class	PMobject	mobject/core	(color: 'ManimColor' = '#FFFFFF', opacity: 'float' = 1.0, shading: 'Tuple[float, float, float]' = (0.0, 0.0, 0.0), texture_paths: 'dict[str, str] | None' = None, is_fixed_in_frame: 'bool' = False, depth_test: 'bool' = False, z_index: 'int' = 0)	manimlib.mobject.types.point_cloud_mobject	Mathematical Object
+class	ParametricCurve	mobject/core	(t_func: 'Callable[[float], Sequence[float] | Vect3]', t_range: 'Tuple[float, float, float]' = (0, 1, 0.1), epsilon: 'float' = 1e-08, discontinuities: 'Sequence[float]' = [], use_smoothing: 'bool' = True, **kwargs)	manimlib.mobject.functions	Mathematical Object
+class	ParametricSurface	mobject/core	(uv_func: 'Callable[[float, float], Iterable[float]]', u_range: 'tuple[float, float]' = (0, 1), v_range: 'tuple[float, float]' = (0, 1), **kwargs)	manimlib.mobject.types.surface	Mathematical Object
+class	PlaneFractal	mobject/core	(plane: 'CoordinateSystem', **kwargs)	manimlib.mobject.fractals	A fractal drawn a pixel at a time by its shader, over a rectangle covering a plane.
+class	Point	mobject/core	(location: 'Vect3' = array([0., 0., 0.]), artificial_width: 'float' = 1e-06, artificial_height: 'float' = 1e-06, **kwargs)	manimlib.mobject.mobject	Mathematical Object
+constant	RED	mobject/core	'#FC6255'	manimlib.mobject.coordinate_systems	
+constant	RED	mobject/core	'#FC6255'	manimlib.mobject.interactive	
+constant	RED	mobject/core	'#FC6255'	manimlib.mobject.shape_matchers	
+constant	RIGHT	mobject/core	array([1., 0., 0.])	manimlib.mobject.coordinate_systems	
+constant	RIGHT	mobject/core	array([1., 0., 0.])	manimlib.mobject.interactive	
+constant	RIGHT	mobject/core	array([1., 0., 0.])	manimlib.mobject.mobject	
+constant	RIGHT	mobject/core	array([1., 0., 0.])	manimlib.mobject.mobject_update_utils	
+constant	RIGHT	mobject/core	array([1., 0., 0.])	manimlib.mobject.number_line	
+constant	RIGHT	mobject/core	array([1., 0., 0.])	manimlib.mobject.numbers	
+constant	RIGHT	mobject/core	array([1., 0., 0.])	manimlib.mobject.probability	
+constant	RIGHT	mobject/core	array([1., 0., 0.])	manimlib.mobject.shape_matchers	
+constant	RIGHT	mobject/core	array([1., 0., 0.])	manimlib.mobject.types.vectorized_mobject	
+constant	SMALL_BUFF	mobject/core	0.1	manimlib.mobject.coordinate_systems	
+constant	SMALL_BUFF	mobject/core	0.1	manimlib.mobject.interactive	
+constant	SMALL_BUFF	mobject/core	0.1	manimlib.mobject.number_line	
+constant	SMALL_BUFF	mobject/core	0.1	manimlib.mobject.probability	
+constant	SMALL_BUFF	mobject/core	0.1	manimlib.mobject.shape_matchers	
+class	SampleSpace	mobject/core	(width: 'float' = 3, height: 'float' = 3, fill_color: 'ManimColor' = '#444444', fill_opacity: 'float' = 1, stroke_width: 'float' = 0.5, stroke_color: 'ManimColor' = '#BBBBBB', default_label_scale_val: 'float' = 1, **kwargs)	manimlib.mobject.probability	Creates a rectangle at the center of the screen.
+class	ScreenRectangle	mobject/core	(aspect_ratio: 'float' = 1.7777777777777777, height: 'float' = 4, **kwargs)	manimlib.mobject.frame	Creates a rectangle at the center of the screen.
+class	Slider	mobject/core	(value_tracker: 'ValueTracker', x_range: 'Tuple[float, float]' = (-5, 5), var_name: 'Optional[str]' = None, width: 'float' = 3, unit_size: 'float' = 1, arrow_width: 'float' = 0.15, arrow_length: 'float' = 0.15, arrow_color: 'ManimColor' = '#FFFF00', font_size: 'int' = 24, label_buff: 'float' = 0.1, num_decimal_places: 'int' = 2, tick_size: 'float' = 0.05, number_line_config: 'Dict[str, Any]' = {}, arrow_tip_config: 'Dict[str, Any]' = {}, decimal_config: 'Dict[str, Any]' = {}, angle: 'float' = 0, label_direction: 'Optional[np.ndarray]' = None, add_tick_labels: 'bool' = True, tick_label_font_size: 'int' = 16)	manimlib.mobject.number_line	Mathematical Object
+class	Surface	mobject/core	(color: 'ManimColor' = '#888888', shading: 'Tuple[float, float, float]' = (0.3, 0.2, 0.4), depth_test: 'bool' = True, u_range: 'Tuple[float, float]' = (0.0, 1.0), v_range: 'Tuple[float, float]' = (0.0, 1.0), resolution: 'Tuple[int, int]' = (101, 101), preferred_creation_axis: 'int' = 1, sort_to_camera: 'bool' = False, **kwargs)	manimlib.mobject.types.surface	Mathematical Object
+class	SurroundingRectangle	mobject/core	(mobject: 'Mobject', buff: 'float' = 0.1, color: 'ManimColor' = '#FFFF00', **kwargs)	manimlib.mobject.shape_matchers	Creates a rectangle at the center of the screen.
+constant	TAU	mobject/core	6.283185307179586	manimlib.mobject.mobject	
+constant	TAU	mobject/core	6.283185307179586	manimlib.mobject.types.vectorized_mobject	
+constant	TYPE_CHECKING	mobject/core	False	manimlib.mobject.changing	
+constant	TYPE_CHECKING	mobject/core	False	manimlib.mobject.coordinate_systems	
+constant	TYPE_CHECKING	mobject/core	False	manimlib.mobject.fractals	
+constant	TYPE_CHECKING	mobject/core	False	manimlib.mobject.frame	
+constant	TYPE_CHECKING	mobject/core	False	manimlib.mobject.functions	
+constant	TYPE_CHECKING	mobject/core	False	manimlib.mobject.interactive	
+constant	TYPE_CHECKING	mobject/core	False	manimlib.mobject.mobject	
+constant	TYPE_CHECKING	mobject/core	False	manimlib.mobject.mobject_update_utils	
+constant	TYPE_CHECKING	mobject/core	False	manimlib.mobject.number_line	
+constant	TYPE_CHECKING	mobject/core	False	manimlib.mobject.numbers	
+constant	TYPE_CHECKING	mobject/core	False	manimlib.mobject.probability	
+constant	TYPE_CHECKING	mobject/core	False	manimlib.mobject.shape_matchers	
+constant	TYPE_CHECKING	mobject/core	False	manimlib.mobject.types.dot_cloud	
+constant	TYPE_CHECKING	mobject/core	False	manimlib.mobject.types.image_mobject	
+constant	TYPE_CHECKING	mobject/core	False	manimlib.mobject.types.point_cloud_mobject	
+constant	TYPE_CHECKING	mobject/core	False	manimlib.mobject.types.surface	
+constant	TYPE_CHECKING	mobject/core	False	manimlib.mobject.types.vectorized_mobject	
+class	Textbox	mobject/core	(value: 'str' = '', value_type: 'np.dtype' = dtype('O'), box_kwargs: 'dict' = {'width': 2.0, 'height': 1.0, 'fill_color': '#FFFFFF', 'fill_opacity': 1.0}, text_kwargs: 'dict' = {'color': '#58C4DD'}, text_buff: 'float' = 0.25, isInitiallyActive: 'bool' = False, active_color: 'ManimColor' = '#58C4DD', deactive_color: 'ManimColor' = '#FC6255', **kwargs)	manimlib.mobject.interactive	Not meant to be displayed.  Instead the position encodes some
+class	TexturedGeometry	mobject/core	(geometry: 'trimesh.base.Trimesh', texture_file: 'str', **kwargs)	manimlib.mobject.types.surface	An imported mesh, which is a list of triangles rather than a grid of points, so
+class	TexturedSurface	mobject/core	(uv_surface: 'Surface', image_file: 'str', dark_image_file: 'str | None' = None, **kwargs)	manimlib.mobject.types.surface	Mathematical Object
+class	ThreeDAxes	mobject/core	(x_range: 'RangeSpecifier' = (-6.0, 6.0, 1.0), y_range: 'RangeSpecifier' = (-5.0, 5.0, 1.0), z_range: 'RangeSpecifier' = (-4.0, 4.0, 1.0), z_axis_config: 'dict' = {}, z_normal: 'Vect3' = array([ 0., -1.,  0.]), depth: 'float | None' = None, **kwargs)	manimlib.mobject.coordinate_systems	Mathematical Object
+class	ThreeDModel	mobject/core	(obj_file: 'str', height=3)	manimlib.mobject.types.surface	Mathematical Object
+class	TracedPath	mobject/core	(traced_point_func: 'Callable[[], Vect3]', time_traced: 'float' = inf, time_per_anchor: 'float' = 0.06666666666666667, stroke_color: 'ManimColor' = '#FFFFFF', stroke_width: 'float | Iterable[float]' = 2.0, stroke_opacity: 'float' = 1.0, **kwargs)	manimlib.mobject.changing	Mathematical Object
+class	TracingTail	mobject/core	(mobject_or_func: 'Mobject | Callable[[], np.ndarray]', time_traced: 'float' = 1.0, stroke_color: 'ManimColor' = '#FFFFFF', stroke_width: 'float | Iterable[float]' = (0, 3), stroke_opacity: 'float | Iterable[float]' = (0, 1), **kwargs)	manimlib.mobject.changing	Mathematical Object
+class	TrueDot	mobject/core	(center: 'Vect3' = array([0., 0., 0.]), **kwargs)	manimlib.mobject.types.dot_cloud	Mathematical Object
+constant	UL	mobject/core	array([-1.,  1.,  0.])	manimlib.mobject.coordinate_systems	
+constant	UL	mobject/core	array([-1.,  1.,  0.])	manimlib.mobject.fractals	
+constant	UL	mobject/core	array([-1.,  1.,  0.])	manimlib.mobject.shape_matchers	
+constant	UL	mobject/core	array([-1.,  1.,  0.])	manimlib.mobject.types.image_mobject	
+constant	UP	mobject/core	array([0., 1., 0.])	manimlib.mobject.coordinate_systems	
+constant	UP	mobject/core	array([0., 1., 0.])	manimlib.mobject.interactive	
+constant	UP	mobject/core	array([0., 1., 0.])	manimlib.mobject.mobject	
+constant	UP	mobject/core	array([0., 1., 0.])	manimlib.mobject.number_line	
+constant	UP	mobject/core	array([0., 1., 0.])	manimlib.mobject.numbers	
+constant	UP	mobject/core	array([0., 1., 0.])	manimlib.mobject.probability	
+constant	UR	mobject/core	array([1., 1., 0.])	manimlib.mobject.fractals	
+constant	UR	mobject/core	array([1., 1., 0.])	manimlib.mobject.shape_matchers	
+constant	UR	mobject/core	array([1., 1., 0.])	manimlib.mobject.types.image_mobject	
+class	Underline	mobject/core	(mobject: 'Mobject', buff: 'float' = 0.1, stroke_color='#FFFFFF', stroke_width: 'float | Sequence[float]' = [0, 3, 3, 0], stretch_factor=1.2, **kwargs)	manimlib.mobject.shape_matchers	Creates a line joining the points "start" and "end".
+class	Union	mobject/core	(*vmobjects: 'VMobject', **kwargs)	manimlib.mobject.boolean_ops	Mathematical Object
+class	UnitInterval	mobject/core	(x_range: 'RangeSpecifier' = (0, 1, 0.1), unit_size: 'float' = 10, big_tick_numbers: 'list[float]' = [0, 1], decimal_number_config: 'dict' = {'num_decimal_places': 1}, **kwargs)	manimlib.mobject.number_line	Creates a line joining the points "start" and "end".
+class	Updater	mobject/core	(func: 'UpdateFunction')	manimlib.mobject.mobject	Light wrapper for a function meant to be called on a mobject every frame.
+class	VGroup	mobject/core	(*vmobjects: 'SubVmobjectType | Iterable[SubVmobjectType]', **kwargs)	manimlib.mobject.types.vectorized_mobject	Mathematical Object
+class	VHighlight	mobject/core	(vmobject: 'VMobject', n_layers: 'int' = 5, color_bounds: 'Tuple[ManimColor]' = ('#888888', '#222222'), max_stroke_addition: 'float' = 5.0)	manimlib.mobject.types.vectorized_mobject	Mathematical Object
+class	VMobject	mobject/core	(color: 'ManimColor' = None, fill_color: 'ManimColor' = None, fill_opacity: 'float | Iterable[float] | None' = 0.0, stroke_color: 'ManimColor' = None, stroke_opacity: 'float | Iterable[float] | None' = 1.0, stroke_width: 'float | Iterable[float] | None' = 4.0, stroke_behind: 'bool' = False, background_image_file: 'str | None' = None, long_lines: 'bool' = False, joint_roundness: 'float' = 0.0, flat_stroke: 'bool' = False, stroke_width_in_scene_units: 'bool' = False, use_simple_quadratic_approx: 'bool' = False, anti_alias_width: 'float' = 1.5, fill_border_width: 'float' = 0.0, **kwargs)	manimlib.mobject.types.vectorized_mobject	Mathematical Object
+class	VectorizedPoint	mobject/core	(location: 'np.ndarray' = array([0., 0., 0.]), color: 'ManimColor' = '#000000', fill_opacity: 'float' = 0.0, stroke_width: 'float' = 0.0, **kwargs)	manimlib.mobject.types.vectorized_mobject	Mathematical Object
+constant	WHITE	mobject/core	'#FFFFFF'	manimlib.mobject.interactive	
+constant	YELLOW	mobject/core	'#FFFF00'	manimlib.mobject.functions	
+constant	YELLOW	mobject/core	'#FFFF00'	manimlib.mobject.number_line	
+constant	YELLOW	mobject/core	'#FFFF00'	manimlib.mobject.probability	
+constant	YELLOW	mobject/core	'#FFFF00'	manimlib.mobject.shape_matchers	
+constant	YELLOW	mobject/core	'#FFFF00'	manimlib.mobject.types.dot_cloud	
+function	always	mobject/core	(method, *args, **kwargs)	manimlib.mobject.mobject_update_utils	
+function	always_redraw	mobject/core	(func: 'Callable[..., Mobject]', *args, **kwargs) -> 'Mobject'	manimlib.mobject.mobject_update_utils	
+function	always_rotate	mobject/core	(mobject: 'Mobject', rate: 'float' = 0.3490658503988659, **kwargs) -> 'Mobject'	manimlib.mobject.mobject_update_utils	
+function	always_shift	mobject/core	(mobject: 'Mobject', direction: 'np.ndarray' = array([1., 0., 0.]), rate: 'float' = 0.1) -> 'Mobject'	manimlib.mobject.mobject_update_utils	
+function	as_color_rows	mobject/core	(colors: 'Sequence[ManimColor]', length: 'int', opacity: 'float' = 1.0)	manimlib.mobject.fractals	Colors as the rows of such an array, the last of them repeated to fill it
+function	as_complex_pairs	mobject/core	(values: 'Iterable[complex]', length: 'int') -> 'np.ndarray'	manimlib.mobject.fractals	Complex numbers as the rows of an array a uniform block has room for, which holds four
+function	assert_is_mobject_method	mobject/core	(method)	manimlib.mobject.mobject_update_utils	
+function	coefficients_to_roots	mobject/core	(coefs: 'Iterable[complex]') -> 'np.ndarray'	manimlib.mobject.fractals	The roots of a polynomial given lowest power first
+function	cycle_animation	mobject/core	(animation: 'Animation', **kwargs) -> 'Mobject'	manimlib.mobject.mobject_update_utils	
+function	f_always	mobject/core	(method, *arg_generators, **kwargs)	manimlib.mobject.mobject_update_utils	More functional version of always, where instead
+function	full_range_specifier	mobject/core	(range_args)	manimlib.mobject.coordinate_systems	
+function	norms_along_axis	mobject/core	(vectors: 'Vect3Array') -> 'np.ndarray'	manimlib.mobject.types.surface	
+function	override_animate	mobject/core	(method)	manimlib.mobject.mobject	
+function	roots_to_coefficients	mobject/core	(roots: 'Iterable[complex]') -> 'np.ndarray'	manimlib.mobject.fractals	The polynomial with these roots and a leading coefficient of one, lowest power first
+function	turn_animation_into_updater	mobject/core	(animation: 'Animation', cycle: 'bool' = False, **kwargs) -> 'Mobject'	manimlib.mobject.mobject_update_utils	Add an updater to the animation's mobject which applies
+class	AnnularSector	mobject/geometry	(angle: 'float' = 1.5707963267948966, start_angle: 'float' = 0.0, inner_radius: 'float' = 1.0, outer_radius: 'float' = 2.0, arc_center: 'Vect3' = array([0., 0., 0.]), fill_color: 'ManimColor' = '#BBBBBB', fill_opacity: 'float' = 1.0, stroke_width: 'float' = 0.0, **kwargs)	manimlib.mobject.geometry	Creates an annular sector.
+class	Annulus	mobject/geometry	(inner_radius: 'float' = 1.0, outer_radius: 'float' = 2.0, fill_opacity: 'float' = 1.0, stroke_width: 'float' = 0.0, fill_color: 'ManimColor' = '#BBBBBB', center: 'Vect3' = array([0., 0., 0.]), **kwargs)	manimlib.mobject.geometry	Creates an annulus.
+class	Arc	mobject/geometry	(start_angle: 'float' = 0, angle: 'float' = 1.5707963267948966, radius: 'float' = 1.0, n_components: 'Optional[int]' = None, arc_center: 'Vect3' = array([0., 0., 0.]), **kwargs)	manimlib.mobject.geometry	Creates an arc.
+class	ArcBetweenPoints	mobject/geometry	(start: 'Vect3', end: 'Vect3', angle: 'float' = 1.5707963267948966, **kwargs)	manimlib.mobject.geometry	Creates an arc passing through the specified points with "angle" as the
+class	Arrow	mobject/geometry	(start: 'Vect3 | Mobject' = array([-1.,  0.,  0.]), end: 'Vect3 | Mobject' = array([-1.,  0.,  0.]), buff: 'float' = 0.25, path_arc: 'float' = 0, fill_color: 'ManimColor' = '#BBBBBB', fill_opacity: 'float' = 1.0, stroke_width: 'float' = 0.0, thickness: 'float' = 3.0, tip_width_ratio: 'float' = 5, tip_angle: 'float' = 1.0471975511965976, max_tip_length_to_length_ratio: 'float' = 0.5, max_width_to_length_ratio: 'float' = 0.1, **kwargs)	manimlib.mobject.geometry	Creates an arrow.
+class	ArrowTip	mobject/geometry	(angle: 'float' = 0, width: 'float' = 0.35, length: 'float' = 0.35, fill_opacity: 'float' = 1.0, fill_color: 'ManimColor' = '#FFFFFF', stroke_width: 'float' = 0.0, tip_style: 'int' = 0, **kwargs)	manimlib.mobject.geometry	Creates a triangle of edge length 1 at the center of the screen.
+constant	BLACK	mobject/geometry	'#000000'	manimlib.mobject.geometry	
+class	Circle	mobject/geometry	(start_angle: 'float' = 0, stroke_color: 'ManimColor' = '#FC6255', **kwargs)	manimlib.mobject.geometry	Creates a circle.
+class	CubicBezier	mobject/geometry	(a0: 'Vect3', h0: 'Vect3', h1: 'Vect3', a1: 'Vect3', **kwargs)	manimlib.mobject.geometry	Creates a cubic Bézier curve.
+class	CurvedArrow	mobject/geometry	(start_point: 'Vect3', end_point: 'Vect3', **kwargs)	manimlib.mobject.geometry	Creates a curved arrow passing through the specified points with "angle" as the
+class	CurvedDoubleArrow	mobject/geometry	(start_point: 'Vect3', end_point: 'Vect3', **kwargs)	manimlib.mobject.geometry	Creates a curved double arrow passing through the specified points with "angle" as the
+constant	DEFAULT_ARROW_TIP_LENGTH	mobject/geometry	0.35	manimlib.mobject.geometry	
+constant	DEFAULT_ARROW_TIP_WIDTH	mobject/geometry	0.35	manimlib.mobject.geometry	
+constant	DEFAULT_DASH_LENGTH	mobject/geometry	0.05	manimlib.mobject.geometry	
+constant	DEFAULT_DOT_RADIUS	mobject/geometry	0.08	manimlib.mobject.geometry	
+constant	DEFAULT_LIGHT_COLOR	mobject/geometry	'#BBBBBB'	manimlib.mobject.geometry	
+constant	DEFAULT_MOBJECT_COLOR	mobject/geometry	'#FFFFFF'	manimlib.mobject.geometry	
+constant	DEFAULT_SMALL_DOT_RADIUS	mobject/geometry	0.04	manimlib.mobject.geometry	
+constant	DEG	mobject/geometry	0.017453292519943295	manimlib.mobject.geometry	
+constant	DL	mobject/geometry	array([-1., -1.,  0.])	manimlib.mobject.geometry	
+constant	DOWN	mobject/geometry	array([ 0., -1.,  0.])	manimlib.mobject.geometry	
+constant	DR	mobject/geometry	array([ 1., -1.,  0.])	manimlib.mobject.geometry	
+class	DashedLine	mobject/geometry	(start: 'Vect3' = array([-1.,  0.,  0.]), end: 'Vect3' = array([1., 0., 0.]), dash_length: 'float' = 0.05, positive_space_ratio: 'float' = 0.5, **kwargs)	manimlib.mobject.geometry	Creates a dashed line joining the points "start" and "end".
+class	Dot	mobject/geometry	(point: 'Vect3' = array([0., 0., 0.]), radius: 'float' = 0.08, stroke_color: 'ManimColor' = '#000000', stroke_width: 'float' = 0.0, fill_opacity: 'float' = 1.0, fill_color: 'ManimColor' = '#FFFFFF', **kwargs)	manimlib.mobject.geometry	Creates a dot. Dot is a filled white circle with no bounary and DEFAULT_DOT_RADIUS.
+class	Elbow	mobject/geometry	(width: 'float' = 0.2, angle: 'float' = 0, **kwargs)	manimlib.mobject.geometry	Creates an elbow. Elbow is an L-shaped shaped object.
+class	Ellipse	mobject/geometry	(width: 'float' = 2.0, height: 'float' = 1.0, **kwargs)	manimlib.mobject.geometry	Creates an ellipse.
+constant	LEFT	mobject/geometry	array([-1.,  0.,  0.])	manimlib.mobject.geometry	
+class	Line	mobject/geometry	(start: 'Vect3 | Mobject' = array([-1.,  0.,  0.]), end: 'Vect3 | Mobject' = array([1., 0., 0.]), buff: 'float' = 0.0, path_arc: 'float' = 0.0, **kwargs)	manimlib.mobject.geometry	Creates a line joining the points "start" and "end".
+constant	MED_SMALL_BUFF	mobject/geometry	0.25	manimlib.mobject.geometry	
+constant	ORIGIN	mobject/geometry	array([0., 0., 0.])	manimlib.mobject.geometry	
+constant	OUT	mobject/geometry	array([0., 0., 1.])	manimlib.mobject.geometry	
+constant	PI	mobject/geometry	3.141592653589793	manimlib.mobject.geometry	
+class	Polygon	mobject/geometry	(*vertices: 'Vect3', **kwargs)	manimlib.mobject.geometry	Creates a polygon by joining the specified vertices.
+class	Polyline	mobject/geometry	(*vertices: 'Vect3', **kwargs)	manimlib.mobject.geometry	Mathematical Object
+constant	RED	mobject/geometry	'#FC6255'	manimlib.mobject.geometry	
+constant	RIGHT	mobject/geometry	array([1., 0., 0.])	manimlib.mobject.geometry	
+class	Rectangle	mobject/geometry	(width: 'float' = 4.0, height: 'float' = 2.0, **kwargs)	manimlib.mobject.geometry	Creates a rectangle at the center of the screen.
+class	RegularPolygon	mobject/geometry	(n: 'int' = 6, radius: 'float' = 1.0, start_angle: 'float | None' = None, **kwargs)	manimlib.mobject.geometry	Creates a regular polygon of edge length 1 at the center of the screen.
+class	RoundedRectangle	mobject/geometry	(width: 'float' = 4.0, height: 'float' = 2.0, corner_radius: 'float' = 0.5, **kwargs)	manimlib.mobject.geometry	Creates a rectangle with round edges at the center of the screen.
+constant	SMALL_BUFF	mobject/geometry	0.1	manimlib.mobject.geometry	
+class	Sector	mobject/geometry	(angle: 'float' = 1.5707963267948966, radius: 'float' = 1.0, **kwargs)	manimlib.mobject.geometry	Creates a sector.
+class	SmallDot	mobject/geometry	(point: 'Vect3' = array([0., 0., 0.]), radius: 'float' = 0.04, **kwargs)	manimlib.mobject.geometry	Creates a small dot. Small dot is a filled white circle with no bounary and DEFAULT_SMALL_DOT_RADIUS.
+class	Square	mobject/geometry	(side_length: 'float' = 2.0, **kwargs)	manimlib.mobject.geometry	Creates a square at the center of the screen.
+class	StrokeArrow	mobject/geometry	(start: 'Vect3 | Mobject', end: 'Vect3 | Mobject', stroke_color: 'ManimColor' = '#BBBBBB', stroke_width: 'float' = 5, buff: 'float' = 0.25, tip_width_ratio: 'float' = 5, tip_len_to_width: 'float' = 0.0075, max_tip_length_to_length_ratio: 'float' = 0.3, max_width_to_length_ratio: 'float' = 8.0, **kwargs)	manimlib.mobject.geometry	Creates a line joining the points "start" and "end".
+constant	TAU	mobject/geometry	6.283185307179586	manimlib.mobject.geometry	
+constant	TYPE_CHECKING	mobject/geometry	False	manimlib.mobject.geometry	
+class	TangentLine	mobject/geometry	(vmob: 'VMobject', alpha: 'float', length: 'float' = 2, d_alpha: 'float' = 1e-06, **kwargs)	manimlib.mobject.geometry	Creates a tangent line to the specified vectorized math object.
+class	TipableVMobject	mobject/geometry	(color: 'ManimColor' = None, fill_color: 'ManimColor' = None, fill_opacity: 'float | Iterable[float] | None' = 0.0, stroke_color: 'ManimColor' = None, stroke_opacity: 'float | Iterable[float] | None' = 1.0, stroke_width: 'float | Iterable[float] | None' = 4.0, stroke_behind: 'bool' = False, background_image_file: 'str | None' = None, long_lines: 'bool' = False, joint_roundness: 'float' = 0.0, flat_stroke: 'bool' = False, stroke_width_in_scene_units: 'bool' = False, use_simple_quadratic_approx: 'bool' = False, anti_alias_width: 'float' = 1.5, fill_border_width: 'float' = 0.0, **kwargs)	manimlib.mobject.geometry	Meant for shared functionality between Arc and Line.
+class	Triangle	mobject/geometry	(**kwargs)	manimlib.mobject.geometry	Creates a triangle of edge length 1 at the center of the screen.
+constant	UL	mobject/geometry	array([-1.,  1.,  0.])	manimlib.mobject.geometry	
+constant	UP	mobject/geometry	array([0., 1., 0.])	manimlib.mobject.geometry	
+constant	UR	mobject/geometry	array([1., 1., 0.])	manimlib.mobject.geometry	
+class	Vector	mobject/geometry	(direction: 'Vect3' = array([1., 0., 0.]), buff: 'float' = 0.0, **kwargs)	manimlib.mobject.geometry	Creates a vector. Vector is an arrow with start point as ORIGIN
+constant	DEG	mobject/matrix	0.017453292519943295	manimlib.mobject.matrix	
+constant	DOWN	mobject/matrix	array([ 0., -1.,  0.])	manimlib.mobject.matrix	
+class	DecimalMatrix	mobject/matrix	(matrix: 'FloatMatrixType', num_decimal_places: 'int' = 2, decimal_config: 'dict' = {}, **config)	manimlib.mobject.matrix	Mathematical Object
+class	IntegerMatrix	mobject/matrix	(matrix: 'FloatMatrixType', num_decimal_places: 'int' = 0, decimal_config: 'dict' = {}, **config)	manimlib.mobject.matrix	Mathematical Object
+constant	LEFT	mobject/matrix	array([-1.,  0.,  0.])	manimlib.mobject.matrix	
+class	Matrix	mobject/matrix	(matrix: 'GenericMatrixType', v_buff: 'float' = 0.5, h_buff: 'float' = 0.5, bracket_h_buff: 'float' = 0.2, bracket_v_buff: 'float' = 0.25, height: 'float | None' = None, element_config: 'dict' = {}, element_alignment_corner: 'Vect3' = array([ 0., -1.,  0.]), ellipses_row: 'Optional[int]' = None, ellipses_col: 'Optional[int]' = None)	manimlib.mobject.matrix	Mathematical Object
+class	MobjectMatrix	mobject/matrix	(group: 'VGroup', n_rows: 'int | None' = None, n_cols: 'int | None' = None, height: 'float' = 4.0, element_alignment_corner=array([0., 0., 0.]), **config)	manimlib.mobject.matrix	Mathematical Object
+constant	ORIGIN	mobject/matrix	array([0., 0., 0.])	manimlib.mobject.matrix	
+constant	RIGHT	mobject/matrix	array([1., 0., 0.])	manimlib.mobject.matrix	
+constant	TYPE_CHECKING	mobject/matrix	False	manimlib.mobject.matrix	
+class	TexMatrix	mobject/matrix	(matrix: 'StringMatrixType', tex_config: 'dict' = {}, **config)	manimlib.mobject.matrix	Mathematical Object
+constant	BLACK	mobject/svg	'#000000'	manimlib.mobject.svg.drawings	
+constant	BLACK	mobject/svg	'#000000'	manimlib.mobject.svg.old_tex_mobject	
+constant	BLUE_A	mobject/svg	'#C7E9F1'	manimlib.mobject.svg.drawings	
+constant	BLUE_B	mobject/svg	'#9CDCEB'	manimlib.mobject.svg.drawings	
+constant	BLUE_C	mobject/svg	'#58C4DD'	manimlib.mobject.svg.drawings	
+constant	BLUE_D	mobject/svg	'#29ABCA'	manimlib.mobject.svg.drawings	
+class	Brace	mobject/svg	(mobject: 'Mobject', direction: 'Vect3' = array([ 0., -1.,  0.]), buff: 'float' = 0.2, tex_string: 'str' = '\\underbrace{\\qquad}', **kwargs)	manimlib.mobject.svg.brace	An abstract base class for `Tex` and `MarkupText`
+class	BraceLabel	mobject/svg	(obj: 'VMobject | list[VMobject]', text: 'str | Iterable[str]', brace_direction: 'np.ndarray' = array([ 0., -1.,  0.]), label_scale: 'float' = 1.0, label_buff: 'float' = 0.25, **kwargs) -> 'None'	manimlib.mobject.svg.brace	Mathematical Object
+class	BraceText	mobject/svg	(obj: 'VMobject | list[VMobject]', text: 'str | Iterable[str]', brace_direction: 'np.ndarray' = array([ 0., -1.,  0.]), label_scale: 'float' = 1.0, label_buff: 'float' = 0.25, **kwargs) -> 'None'	manimlib.mobject.svg.brace	Mathematical Object
+class	Bubble	mobject/svg	(content: 'str | VMobject | None' = None, buff: 'float' = 1.0, filler_shape: 'Tuple[float, float]' = (3.0, 2.0), pin_point: 'Vect3 | None' = None, direction: 'Vect3' = array([-1.,  0.,  0.]), add_content: 'bool' = True, fill_color: 'ManimColor' = '#000000', fill_opacity: 'float' = 0.8, stroke_color: 'ManimColor' = '#FFFFFF', stroke_width: 'float' = 3.0, **kwargs)	manimlib.mobject.svg.drawings	Mathematical Object
+class	BulletedList	mobject/svg	(*items: 'str', buff: 'float' = 0.5, aligned_edge: 'Vect3' = array([-1.,  0.,  0.]), numbered: 'bool' = False, **kwargs)	manimlib.mobject.svg.special_tex	Mathematical Object
+class	Checkmark	mobject/svg	(**kwargs)	manimlib.mobject.svg.drawings	An abstract base class for `Tex` and `MarkupText`
+class	Clock	mobject/svg	(stroke_color: 'ManimColor' = '#FFFFFF', stroke_width: 'float' = 3.0, hour_hand_height: 'float' = 0.3, minute_hand_height: 'float' = 0.6, tick_length: 'float' = 0.1, **kwargs)	manimlib.mobject.svg.drawings	Mathematical Object
+class	ClockPassesTime	mobject/svg	(clock: 'Clock', run_time: 'float' = 5.0, hours_passed: 'float' = 12.0, rate_func: 'Callable[[float], float]' = <function linear at 0x7f6ff3932de0>, **kwargs)	manimlib.mobject.svg.drawings	
+class	Code	mobject/svg	(code: 'str', font: 'str' = 'Consolas', font_size: 'int' = 24, lsh: 'float' = 1.0, fill_color: 'ManimColor' = None, stroke_color: 'ManimColor' = None, language: 'str' = 'python', code_style: 'str' = 'monokai', **kwargs)	manimlib.mobject.svg.text_mobject	An abstract base class for `Tex` and `MarkupText`
+constant	DEFAULT_CANVAS_HEIGHT	mobject/svg	16384	manimlib.mobject.svg.text_mobject	
+constant	DEFAULT_CANVAS_WIDTH	mobject/svg	16384	manimlib.mobject.svg.text_mobject	
+constant	DEFAULT_LINE_SPACING_SCALE	mobject/svg	0.6	manimlib.mobject.svg.text_mobject	
+constant	DEFAULT_MOBJECT_COLOR	mobject/svg	'#FFFFFF'	manimlib.mobject.svg.old_tex_mobject	
+constant	DEFAULT_MOBJECT_COLOR	mobject/svg	'#FFFFFF'	manimlib.mobject.svg.special_tex	
+constant	DEFAULT_MOBJECT_COLOR	mobject/svg	'#FFFFFF'	manimlib.mobject.svg.string_mobject	
+constant	DEFAULT_MOBJECT_TO_MOBJECT_BUFF	mobject/svg	0.25	manimlib.mobject.svg.brace	
+constant	DEFAULT_PIXEL_WIDTH	mobject/svg	1920	manimlib.mobject.svg.text_mobject	
+constant	DL	mobject/svg	array([-1., -1.,  0.])	manimlib.mobject.svg.brace	
+constant	DL	mobject/svg	array([-1., -1.,  0.])	manimlib.mobject.svg.drawings	
+constant	DOWN	mobject/svg	array([ 0., -1.,  0.])	manimlib.mobject.svg.brace	
+constant	DOWN	mobject/svg	array([ 0., -1.,  0.])	manimlib.mobject.svg.drawings	
+constant	DOWN	mobject/svg	array([ 0., -1.,  0.])	manimlib.mobject.svg.special_tex	
+constant	DR	mobject/svg	array([ 1., -1.,  0.])	manimlib.mobject.svg.brace	
+constant	DR	mobject/svg	array([ 1., -1.,  0.])	manimlib.mobject.svg.drawings	
+class	Dartboard	mobject/svg	(**kwargs)	manimlib.mobject.svg.drawings	Mathematical Object
+class	DieFace	mobject/svg	(value: 'int', side_length: 'float' = 1.0, corner_radius: 'float' = 0.15, stroke_color: 'ManimColor' = '#FFFFFF', stroke_width: 'float' = 2.0, fill_color: 'ManimColor' = '#222222', dot_radius: 'float' = 0.08, dot_color: 'ManimColor' = '#FFFFFF', dot_coalesce_factor: 'float' = 0.5)	manimlib.mobject.svg.drawings	Mathematical Object
+class	DoubleSpeechBubble	mobject/svg	(content: 'str | VMobject | None' = None, buff: 'float' = 1.0, filler_shape: 'Tuple[float, float]' = (3.0, 2.0), pin_point: 'Vect3 | None' = None, direction: 'Vect3' = array([-1.,  0.,  0.]), add_content: 'bool' = True, fill_color: 'ManimColor' = '#000000', fill_opacity: 'float' = 0.8, stroke_color: 'ManimColor' = '#FFFFFF', stroke_width: 'float' = 3.0, **kwargs)	manimlib.mobject.svg.drawings	Mathematical Object
+class	Exmark	mobject/svg	(**kwargs)	manimlib.mobject.svg.drawings	An abstract base class for `Tex` and `MarkupText`
+constant	FRAME_WIDTH	mobject/svg	14.222222222222221	manimlib.mobject.svg.drawings	
+constant	FRAME_WIDTH	mobject/svg	14.222222222222221	manimlib.mobject.svg.special_tex	
+constant	FRAME_WIDTH	mobject/svg	14.222222222222221	manimlib.mobject.svg.text_mobject	
+constant	GREEN	mobject/svg	'#83C167'	manimlib.mobject.svg.drawings	
+constant	GREEN_E	mobject/svg	'#699C52'	manimlib.mobject.svg.drawings	
+constant	GREEN_SCREEN	mobject/svg	'#00FF00'	manimlib.mobject.svg.drawings	
+constant	GREY	mobject/svg	'#888888'	manimlib.mobject.svg.drawings	
+constant	GREY_A	mobject/svg	'#DDDDDD'	manimlib.mobject.svg.drawings	
+constant	GREY_B	mobject/svg	'#BBBBBB'	manimlib.mobject.svg.drawings	
+constant	GREY_C	mobject/svg	'#888888'	manimlib.mobject.svg.special_tex	
+constant	GREY_E	mobject/svg	'#222222'	manimlib.mobject.svg.drawings	
+constant	LEFT	mobject/svg	array([-1.,  0.,  0.])	manimlib.mobject.svg.brace	
+constant	LEFT	mobject/svg	array([-1.,  0.,  0.])	manimlib.mobject.svg.drawings	
+constant	LEFT	mobject/svg	array([-1.,  0.,  0.])	manimlib.mobject.svg.special_tex	
+class	Laptop	mobject/svg	(width: 'float' = 3, body_dimensions: 'Tuple[float, float, float]' = (4.0, 3.0, 0.05), screen_thickness: 'float' = 0.01, keyboard_width_to_body_width: 'float' = 0.9, keyboard_height_to_body_height: 'float' = 0.5, screen_width_to_screen_plate_width: 'float' = 0.9, key_color_kwargs: 'dict' = {'stroke_width': 0, 'fill_color': '#000000', 'fill_opacity': 1}, fill_opacity: 'float' = 1.0, stroke_width: 'float' = 0.0, body_color: 'ManimColor' = '#BBBBBB', shaded_body_color: 'ManimColor' = '#888888', open_angle: 'float' = 0.7853981633974483, **kwargs)	manimlib.mobject.svg.drawings	Mathematical Object
+class	Lightbulb	mobject/svg	(height: 'float' = 1.0, color: 'ManimColor' = '#FFFF00', stroke_width: 'float' = 3.0, fill_opacity: 'float' = 0.0, **kwargs)	manimlib.mobject.svg.drawings	Mathematical Object
+class	LineBrace	mobject/svg	(line: 'Line', direction=array([0., 1., 0.]), **kwargs)	manimlib.mobject.svg.brace	An abstract base class for `Tex` and `MarkupText`
+constant	MED_LARGE_BUFF	mobject/svg	0.5	manimlib.mobject.svg.drawings	
+constant	MED_LARGE_BUFF	mobject/svg	0.5	manimlib.mobject.svg.special_tex	
+constant	MED_SMALL_BUFF	mobject/svg	0.25	manimlib.mobject.svg.drawings	
+constant	MED_SMALL_BUFF	mobject/svg	0.25	manimlib.mobject.svg.special_tex	
+class	MarkupText	mobject/svg	(text: 'str', font_size: 'int' = 48, height: 'float | None' = None, justify: 'bool' = False, indent: 'float' = 0, alignment: 'str' = '', line_width: 'float | None' = None, font: 'str' = '', slant: 'str' = 'NORMAL', weight: 'str' = 'NORMAL', gradient: 'Iterable[ManimColor] | None' = None, line_spacing_height: 'float | None' = None, text2color: 'dict' = {}, text2font: 'dict' = {}, text2gradient: 'dict' = {}, text2slant: 'dict' = {}, text2weight: 'dict' = {}, lsh: 'float | None' = None, t2c: 'dict' = {}, t2f: 'dict' = {}, t2g: 'dict' = {}, t2s: 'dict' = {}, t2w: 'dict' = {}, global_config: 'dict' = {}, local_configs: 'dict' = {}, disable_ligatures: 'bool' = True, isolate: 'Selector' = re.compile('\\w+'), **kwargs)	manimlib.mobject.svg.text_mobject	An abstract base class for `Tex` and `MarkupText`
+constant	NORMAL	mobject/svg	'NORMAL'	manimlib.mobject.svg.text_mobject	
+constant	ORIGIN	mobject/svg	array([0., 0., 0.])	manimlib.mobject.svg.brace	
+constant	ORIGIN	mobject/svg	array([0., 0., 0.])	manimlib.mobject.svg.drawings	
+constant	OUT	mobject/svg	array([0., 0., 1.])	manimlib.mobject.svg.drawings	
+class	OldSpeechBubble	mobject/svg	(content: 'str | VMobject | None' = None, buff: 'float' = 1.0, filler_shape: 'Tuple[float, float]' = (3.0, 2.0), pin_point: 'Vect3 | None' = None, direction: 'Vect3' = array([-1.,  0.,  0.]), add_content: 'bool' = True, fill_color: 'ManimColor' = '#000000', fill_opacity: 'float' = 0.8, stroke_color: 'ManimColor' = '#FFFFFF', stroke_width: 'float' = 3.0, **kwargs)	manimlib.mobject.svg.drawings	Mathematical Object
+class	OldTex	mobject/svg	(*tex_strings: 'str', arg_separator: 'str' = '', isolate: 'List[str]' = [], tex_to_color_map: 'Dict[str, ManimColor]' = {}, **kwargs)	manimlib.mobject.svg.old_tex_mobject	Mathematical Object
+class	OldTexText	mobject/svg	(*tex_strings: 'str', math_mode: 'bool' = False, arg_separator: 'str' = '', **kwargs)	manimlib.mobject.svg.old_tex_mobject	Mathematical Object
+class	OldThoughtBubble	mobject/svg	(content: 'str | VMobject | None' = None, buff: 'float' = 1.0, filler_shape: 'Tuple[float, float]' = (3.0, 2.0), pin_point: 'Vect3 | None' = None, direction: 'Vect3' = array([-1.,  0.,  0.]), add_content: 'bool' = True, fill_color: 'ManimColor' = '#000000', fill_opacity: 'float' = 0.8, stroke_color: 'ManimColor' = '#FFFFFF', stroke_width: 'float' = 3.0, **kwargs)	manimlib.mobject.svg.drawings	Mathematical Object
+constant	PATH_TO_POINTS	mobject/svg	{}	manimlib.mobject.svg.svg_mobject	
+constant	PI	mobject/svg	3.141592653589793	manimlib.mobject.svg.brace	
+constant	PI	mobject/svg	3.141592653589793	manimlib.mobject.svg.drawings	
+class	Piano	mobject/svg	(n_white_keys=52, black_pattern=[0, 2, 3, 5, 6], white_keys_per_octave=7, white_key_dims=(0.15, 1.0), black_key_dims=(0.1, 0.66), key_buff=0.02, white_key_color='#FFFFFF', black_key_color='#222222', total_width=13, **kwargs)	manimlib.mobject.svg.drawings	Mathematical Object
+class	Piano3D	mobject/svg	(shading: 'Tuple[float, float, float]' = (1.0, 0.2, 0.2), stroke_width: 'float' = 0.25, stroke_color: 'ManimColor' = '#000000', key_depth: 'float' = 0.1, black_key_shift: 'float' = 0.05, piano_2d_config: 'dict' = {'white_key_color': '#DDDDDD', 'key_buff': 0.001}, **kwargs)	manimlib.mobject.svg.drawings	Mathematical Object
+constant	RED	mobject/svg	'#FC6255'	manimlib.mobject.svg.drawings	
+constant	RED_E	mobject/svg	'#CF5044'	manimlib.mobject.svg.drawings	
+constant	RIGHT	mobject/svg	array([1., 0., 0.])	manimlib.mobject.svg.brace	
+constant	RIGHT	mobject/svg	array([1., 0., 0.])	manimlib.mobject.svg.drawings	
+constant	RIGHT	mobject/svg	array([1., 0., 0.])	manimlib.mobject.svg.special_tex	
+constant	RIGHT	mobject/svg	array([1., 0., 0.])	manimlib.mobject.svg.svg_mobject	
+constant	SMALL_BUFF	mobject/svg	0.1	manimlib.mobject.svg.brace	
+constant	SMALL_BUFF	mobject/svg	0.1	manimlib.mobject.svg.drawings	
+constant	SMALL_BUFF	mobject/svg	0.1	manimlib.mobject.svg.special_tex	
+constant	STROKE_WIDTHS_PER_UNIT	mobject/svg	100.0	manimlib.mobject.svg.svg_mobject	
+class	SVGMobject	mobject/svg	(file_name: 'str' = '', svg_string: 'str' = '', should_center: 'bool' = True, height: 'float | None' = None, width: 'float | None' = None, color: 'ManimColor' = None, fill_color: 'ManimColor' = None, fill_opacity: 'float | None' = None, stroke_width: 'float | None' = None, stroke_color: 'ManimColor' = None, stroke_opacity: 'float | None' = None, svg_default: 'dict' = {'color': None, 'opacity': None, 'fill_color': None, 'fill_opacity': None, 'stroke_width': None, 'stroke_color': None, 'stroke_opacity': None}, path_string_config: 'dict' = {}, **kwargs)	manimlib.mobject.svg.svg_mobject	Mathematical Object
+constant	SVG_HASH_TO_MOB_MAP	mobject/svg	{}	manimlib.mobject.svg.svg_mobject	
+class	SingleStringTex	mobject/svg	(tex_string: 'str', height: 'float | None' = None, fill_color: 'ManimColor' = '#FFFFFF', fill_opacity: 'float' = 1.0, stroke_width: 'float' = 0, svg_default: 'dict' = {'fill_color': '#FFFFFF'}, path_string_config: 'dict' = {}, font_size: 'int' = 48, alignment: 'str' = '\\centering', math_mode: 'bool' = True, organize_left_to_right: 'bool' = False, template: 'str' = '', additional_preamble: 'str' = '', **kwargs)	manimlib.mobject.svg.old_tex_mobject	Mathematical Object
+class	SpeechBubble	mobject/svg	(content: 'str | VMobject | None' = None, buff: 'float' = 0.25, filler_shape: 'Tuple[float, float]' = (2.0, 1.0), stem_height_to_bubble_height: 'float' = 0.5, stem_top_x_props: 'Tuple[float, float]' = (0.2, 0.3), **kwargs)	manimlib.mobject.svg.drawings	Mathematical Object
+class	Speedometer	mobject/svg	(arc_angle: 'float' = 4.1887902047863905, num_ticks: 'int' = 8, tick_length: 'float' = 0.2, needle_width: 'float' = 0.1, needle_height: 'float' = 0.8, needle_color: 'ManimColor' = '#FFFF00', **kwargs)	manimlib.mobject.svg.drawings	Mathematical Object
+class	StringMobject	mobject/svg	(string: 'str', fill_color: 'ManimColor' = '#FFFFFF', fill_border_width: 'float' = 0.5, stroke_color: 'ManimColor' = '#FFFFFF', stroke_width: 'float' = 0, base_color: 'ManimColor' = '#FFFFFF', isolate: 'Selector' = (), protect: 'Selector' = (), use_labelled_svg: 'bool' = False, **kwargs)	manimlib.mobject.svg.string_mobject	An abstract base class for `Tex` and `MarkupText`
+constant	TAU	mobject/svg	6.283185307179586	manimlib.mobject.svg.drawings	
+constant	TAU	mobject/svg	6.283185307179586	manimlib.mobject.svg.svg_mobject	
+constant	TYPE_CHECKING	mobject/svg	False	manimlib.mobject.svg.brace	
+constant	TYPE_CHECKING	mobject/svg	False	manimlib.mobject.svg.drawings	
+constant	TYPE_CHECKING	mobject/svg	False	manimlib.mobject.svg.old_tex_mobject	
+constant	TYPE_CHECKING	mobject/svg	False	manimlib.mobject.svg.special_tex	
+constant	TYPE_CHECKING	mobject/svg	False	manimlib.mobject.svg.string_mobject	
+constant	TYPE_CHECKING	mobject/svg	False	manimlib.mobject.svg.svg_mobject	
+constant	TYPE_CHECKING	mobject/svg	False	manimlib.mobject.svg.tex_mobject	
+constant	TYPE_CHECKING	mobject/svg	False	manimlib.mobject.svg.text_mobject	
+class	Tex	mobject/svg	(*tex_strings: 'str', font_size: 'int' = 48, alignment: 'str' = '\\centering', template: 'str' = '', additional_preamble: 'str' = '', tex_to_color_map: 'dict' = {}, t2c: 'dict' = {}, isolate: 'Selector' = [], use_labelled_svg: 'bool' = True, **kwargs)	manimlib.mobject.svg.tex_mobject	An abstract base class for `Tex` and `MarkupText`
+class	TexText	mobject/svg	(*tex_strings: 'str', font_size: 'int' = 48, alignment: 'str' = '\\centering', template: 'str' = '', additional_preamble: 'str' = '', tex_to_color_map: 'dict' = {}, t2c: 'dict' = {}, isolate: 'Selector' = [], use_labelled_svg: 'bool' = True, **kwargs)	manimlib.mobject.svg.tex_mobject	An abstract base class for `Tex` and `MarkupText`
+class	TexTextFromPresetString	mobject/svg	(**kwargs)	manimlib.mobject.svg.special_tex	An abstract base class for `Tex` and `MarkupText`
+class	Text	mobject/svg	(text: 'str', isolate: 'Selector' = (re.compile('\\w+'), re.compile('\\S+')), use_labelled_svg: 'bool' = True, path_string_config: 'dict' = {'use_simple_quadratic_approx': True}, **kwargs)	manimlib.mobject.svg.text_mobject	An abstract base class for `Tex` and `MarkupText`
+class	ThoughtBubble	mobject/svg	(content: 'str | VMobject | None' = None, buff: 'float' = 0.1, filler_shape: 'Tuple[float, float]' = (2.0, 1.0), bulge_radius: 'float' = 0.35, bulge_overlap: 'float' = 0.25, noise_factor: 'float' = 0.1, circle_radii: 'list[float]' = [0.1, 0.15, 0.2], **kwargs)	manimlib.mobject.svg.drawings	Mathematical Object
+class	Title	mobject/svg	(*text_parts: 'str', font_size: 'int' = 72, include_underline: 'bool' = True, underline_width: 'float' = 12.222222222222221, match_underline_width_to_text: 'bool' = False, underline_buff: 'float' = 0.1, underline_style: 'dict' = {'stroke_width': 2, 'stroke_color': '#888888'}, **kwargs)	manimlib.mobject.svg.special_tex	An abstract base class for `Tex` and `MarkupText`
+constant	UL	mobject/svg	array([-1.,  1.,  0.])	manimlib.mobject.svg.brace	
+constant	UL	mobject/svg	array([-1.,  1.,  0.])	manimlib.mobject.svg.drawings	
+constant	UP	mobject/svg	array([0., 1., 0.])	manimlib.mobject.svg.brace	
+constant	UP	mobject/svg	array([0., 1., 0.])	manimlib.mobject.svg.drawings	
+constant	UP	mobject/svg	array([0., 1., 0.])	manimlib.mobject.svg.special_tex	
+constant	UR	mobject/svg	array([1., 1., 0.])	manimlib.mobject.svg.drawings	
+class	VMobjectFromSVGPath	mobject/svg	(path_obj: 'se.Path', **kwargs)	manimlib.mobject.svg.svg_mobject	Mathematical Object
+class	VectorizedEarth	mobject/svg	(height: 'float' = 2.0, **kwargs)	manimlib.mobject.svg.drawings	Mathematical Object
+class	VideoIcon	mobject/svg	(width: 'float' = 1.2, color='#C7E9F1', **kwargs)	manimlib.mobject.svg.drawings	Mathematical Object
+class	VideoSeries	mobject/svg	(num_videos: 'int' = 11, gradient_colors: 'Sequence[ManimColor]' = ['#9CDCEB', '#29ABCA'], width: 'float' = 13.722222222222221, **kwargs)	manimlib.mobject.svg.drawings	Mathematical Object
+constant	WHITE	mobject/svg	'#FFFFFF'	manimlib.mobject.svg.drawings	
+constant	YELLOW	mobject/svg	'#FFFF00'	manimlib.mobject.svg.drawings	
+function	get_svg_content_height	mobject/svg	(svg_string: 'str') -> 'float'	manimlib.mobject.svg.svg_mobject	
+function	register_font	mobject/svg	(font_file: 'str | Path')	manimlib.mobject.svg.text_mobject	Temporarily add a font file to Pango's search path.
+class	ComplexValueTracker	mobject/value_tracker	(value: 'float | complex | np.ndarray' = 0, **kwargs)	manimlib.mobject.value_tracker	Not meant to be displayed.  Instead the position encodes some
+class	ExponentialValueTracker	mobject/value_tracker	(value: 'float | complex | np.ndarray' = 0, **kwargs)	manimlib.mobject.value_tracker	Operates just like ValueTracker, except it encodes the value as the
+constant	TYPE_CHECKING	mobject/value_tracker	False	manimlib.mobject.value_tracker	
+class	ValueTracker	mobject/value_tracker	(value: 'float | complex | np.ndarray' = 0, **kwargs)	manimlib.mobject.value_tracker	Not meant to be displayed.  Instead the position encodes some
+class	AnimatedStreamLines	mobject/vector_field	(stream_lines: 'StreamLines', lag_range: 'float' = 4, rate_multiple: 'float' = 1.0, line_anim_config: 'dict' = {'rate_func': <function linear at 0x7f6ff3932de0>, 'time_width': 1.0}, **kwargs)	manimlib.mobject.vector_field	Mathematical Object
+constant	DEFAULT_MOBJECT_COLOR	mobject/vector_field	'#FFFFFF'	manimlib.mobject.vector_field	
+constant	FRAME_HEIGHT	mobject/vector_field	8.0	manimlib.mobject.vector_field	
+constant	FRAME_WIDTH	mobject/vector_field	14.222222222222221	manimlib.mobject.vector_field	
+class	StreamLines	mobject/vector_field	(func: 'Callable[[VectArray], VectArray]', coordinate_system: 'CoordinateSystem', density: 'float' = 1.0, n_repeats: 'int' = 1, noise_factor: 'float | None' = None, solution_time: 'float' = 3, dt: 'float' = 0.05, arc_len: 'float' = 3, max_time_steps: 'int' = 200, n_samples_per_line: 'int' = 10, cutoff_norm: 'float' = 15, stroke_width: 'float' = 1.0, stroke_color: 'ManimColor' = '#FFFFFF', stroke_opacity: 'float' = 1, color_by_magnitude: 'bool' = True, magnitude_range: 'Tuple[float, float]' = (0, 2.0), taper_stroke_width: 'bool' = False, color_map: 'str' = '3b1b_colormap', **kwargs)	manimlib.mobject.vector_field	Mathematical Object
+constant	TYPE_CHECKING	mobject/vector_field	False	manimlib.mobject.vector_field	
+class	TimeVaryingVectorField	mobject/vector_field	(time_func: 'Callable[[VectArray, float], VectArray]', coordinate_system: 'CoordinateSystem', **kwargs)	manimlib.mobject.vector_field	Mathematical Object
+class	VectorField	mobject/vector_field	(func: 'Callable[[VectArray], VectArray]', coordinate_system: 'CoordinateSystem', sample_coords: 'Optional[VectArray]' = None, density: 'float' = 2.0, magnitude_range: 'Optional[Tuple[float, float]]' = None, color: 'Optional[ManimColor]' = None, color_map_name: 'Optional[str]' = '3b1b_colormap', color_map: 'Optional[Callable[[Sequence[float]], Vect4Array]]' = None, stroke_opacity: 'float' = 1.0, stroke_width: 'float' = 3, tip_width_ratio: 'float' = 4, tip_len_to_width: 'float' = 0.01, max_vect_len: 'float | None' = None, max_vect_len_to_step_size: 'float' = 0.8, flat_stroke: 'bool' = False, norm_to_opacity_func=None, **kwargs)	manimlib.mobject.vector_field	Mathematical Object
+function	get_rgb_gradient_function	mobject/vector_field	(min_value: 'T', max_value: 'T', color_map: 'str') -> 'Callable[[float], Vect3]'	manimlib.mobject.vector_field	
+function	get_sample_coords	mobject/vector_field	(coordinate_system: 'CoordinateSystem', density: 'float' = 1.0) -> 'it.product[tuple[Vect3, ...]]'	manimlib.mobject.vector_field	
+function	get_vectorized_rgb_gradient_function	mobject/vector_field	(min_value: 'T', max_value: 'T', color_map: 'str') -> 'Callable[[VectN], Vect3Array]'	manimlib.mobject.vector_field	
+function	move_along_vector_field	mobject/vector_field	(mobject: 'Mobject', func: 'Callable[[Vect3], Vect3]') -> 'Mobject'	manimlib.mobject.vector_field	
+function	move_points_along_vector_field	mobject/vector_field	(mobject: 'Mobject', func: 'Callable[[float, float], Iterable[float]]', coordinate_system: 'CoordinateSystem') -> 'Mobject'	manimlib.mobject.vector_field	
+function	move_submobjects_along_vector_field	mobject/vector_field	(mobject: 'Mobject', func: 'Callable[[Vect3], Vect3]') -> 'Mobject'	manimlib.mobject.vector_field	
+function	ode_solution_points	mobject/vector_field	(function, state0, time, dt=0.01)	manimlib.mobject.vector_field	
+function	vectorize	mobject/vector_field	(pointwise_function: 'Callable[[Tuple], Tuple]')	manimlib.mobject.vector_field	
+constant	ARRAY_ELEMENT_SIZE	other	4	manimlib	
+constant	ARROW_SYMBOLS	other	[57344, 57346, 57345, 57347]	manimlib	
+constant	ASPECT_RATIO	other	1.7777777777777777	manimlib	
+constant	ASPECT_RATIO	other	1.7777777777777777	manimlib.window	
+constant	BLACK	other	'#000000'	manimlib	
+constant	BLOCK_MEMBER_TYPES	other	{1: 'f32', 2: 'vec2f', 3: 'vec3f', 4: 'vec4f', 16: 'mat4x4f'}	manimlib	
+constant	BLUE	other	'#58C4DD'	manimlib	
+constant	BLUE_A	other	'#C7E9F1'	manimlib	
+constant	BLUE_B	other	'#9CDCEB'	manimlib	
+constant	BLUE_C	other	'#58C4DD'	manimlib	
+constant	BLUE_D	other	'#29ABCA'	manimlib	
+constant	BLUE_E	other	'#1C758A'	manimlib	
+constant	BOLD	other	'BOLD'	manimlib	
+constant	BOTTOM	other	array([ 0., -4.,  0.])	manimlib	
+class	BlankScene	other	(window: 'Optional[Window]' = None, camera_config: 'dict' = {}, file_writer_config: 'dict' = {}, skip_animations: 'bool' = False, always_update_mobjects: 'bool' = False, start_at_animation_number: 'int | None' = None, end_at_animation_number: 'int | None' = None, show_animation_progress: 'bool' = False, leave_progress_bars: 'bool' = False, preview_while_skipping: 'bool' = True, presenter_mode: 'bool' = False, default_wait_time: 'float' = 1.0, invert_zoom_scroll: 'bool' = False)	manimlib.extract_scene	To select mobjects on screen, hold ctrl and move the mouse to highlight a region,
+constant	CACHE_SIZE	other	1000000000.0	manimlib	
+constant	CLOSED_THRESHOLD	other	0.001	manimlib	
+constant	COLORMAP_3B1B	other	['#1C758A', '#83C167', '#FFFF00', '#FC6255']	manimlib	
+constant	COLOR_FORMAT	other	'rgba8unorm'	manimlib	
+constant	COLOR_KEY	other	'c'	manimlib	
+constant	COMMON_UNIFORMS	other	(('is_fixed_in_frame', 1), ('shading', 3), ('clip_plane0', 4), ('clip_plane1', 4), ('clip_plane2', 4), ('clip_plane3'...	manimlib	
+constant	CURSOR_KEY	other	'k'	manimlib	
+constant	DARK_BROWN	other	'#8B4513'	manimlib	
+constant	DEFAULT_ANIMATION_LAG_RATIO	other	0	manimlib	
+constant	DEFAULT_ANIMATION_RUN_TIME	other	1.0	manimlib	
+constant	DEFAULT_ARROW_TIP_LENGTH	other	0.35	manimlib	
+constant	DEFAULT_ARROW_TIP_WIDTH	other	0.35	manimlib	
+constant	DEFAULT_BUFF_RATIO	other	0.5	manimlib	
+constant	DEFAULT_CANVAS_HEIGHT	other	16384	manimlib	
+constant	DEFAULT_CANVAS_WIDTH	other	16384	manimlib	
+constant	DEFAULT_DASH_LENGTH	other	0.05	manimlib	
+constant	DEFAULT_DOT_RADIUS	other	0.05	manimlib	
+constant	DEFAULT_GLOW_DOT_RADIUS	other	0.2	manimlib	
+constant	DEFAULT_GRID_HEIGHT	other	6	manimlib	
+constant	DEFAULT_LAGGED_START_LAG_RATIO	other	0.05	manimlib	
+constant	DEFAULT_LIGHT_COLOR	other	'#BBBBBB'	manimlib	
+constant	DEFAULT_LINE_SPACING_SCALE	other	0.6	manimlib	
+constant	DEFAULT_MOBJECT_COLOR	other	'#FFFFFF'	manimlib	
+constant	DEFAULT_MOBJECT_TO_EDGE_BUFF	other	0.5	manimlib	
+constant	DEFAULT_MOBJECT_TO_MOBJECT_BUFF	other	0.25	manimlib	
+constant	DEFAULT_PIXEL_HEIGHT	other	1080	manimlib	
+constant	DEFAULT_PIXEL_WIDTH	other	1920	manimlib	
+constant	DEFAULT_RESOLUTION	other	(1920, 1080)	manimlib	
+constant	DEFAULT_SMALL_DOT_RADIUS	other	0.04	manimlib	
+constant	DEFAULT_STROKE_WIDTH	other	4.0	manimlib	
+constant	DEFAULT_VMOBJECT_FILL_COLOR	other	'#888888'	manimlib	
+constant	DEFAULT_VMOBJECT_STROKE_COLOR	other	'#DDDDDD'	manimlib	
+constant	DEFAULT_X_RANGE	other	(-8.0, 8.0, 1.0)	manimlib	
+constant	DEFAULT_Y_RANGE	other	(-4.0, 4.0, 1.0)	manimlib	
+constant	DEG	other	0.017453292519943295	manimlib	
+constant	DEGREES	other	0.017453292519943295	manimlib	
+constant	DEPTH_STENCIL_FORMAT	other	'depth24plus-stencil8'	manimlib	
+constant	DL	other	array([-1., -1.,  0.])	manimlib	
+constant	DOWN	other	array([ 0., -1.,  0.])	manimlib	
+constant	DR	other	array([ 1., -1.,  0.])	manimlib	
+constant	EPSILON	other	0.0001	manimlib	
+class	EventDispatcher	other	()	manimlib.event_handler.event_dispatcher	
+class	EventListener	other	(mobject: 'Mobject', event_type: 'EventType', event_callback: 'Callable[[Mobject, dict[str]]]')	manimlib.event_handler.event_listner	
+class	EventType	other	(*values)	manimlib.event_handler.event_type	Create a collection of name/value pairs.
+constant	FORMAT	other	'%(message)s'	manimlib.logger	
+constant	FRAME_HEIGHT	other	8.0	manimlib	
+constant	FRAME_SHAPE	other	(14.222222222222221, 8.0)	manimlib	
+constant	FRAME_SHAPE	other	(14.222222222222221, 8.0)	manimlib.window	
+constant	FRAME_WIDTH	other	14.222222222222221	manimlib	
+constant	FRAME_X_RADIUS	other	7.111111111111111	manimlib	
+constant	FRAME_Y_RADIUS	other	4.0	manimlib	
+constant	GOLD	other	'#F0AC5F'	manimlib	
+constant	GOLD_A	other	'#F7C797'	manimlib	
+constant	GOLD_B	other	'#F9B775'	manimlib	
+constant	GOLD_C	other	'#F0AC5F'	manimlib	
+constant	GOLD_D	other	'#E1A158'	manimlib	
+constant	GOLD_E	other	'#C78D46'	manimlib	
+constant	GRAB_KEY	other	'g'	manimlib	
+constant	GRAB_KEYS	other	['g', 'h', 'v', 'z']	manimlib	
+constant	GRADIENT_POINT_KEYS	other	['gradient_start', 'gradient_end']	manimlib	
+constant	GREEN	other	'#83C167'	manimlib	
+constant	GREEN_A	other	'#C9E2AE'	manimlib	
+constant	GREEN_B	other	'#A6CF8C'	manimlib	
+constant	GREEN_C	other	'#83C167'	manimlib	
+constant	GREEN_D	other	'#77B05D'	manimlib	
+constant	GREEN_E	other	'#699C52'	manimlib	
+constant	GREEN_SCREEN	other	'#00FF00'	manimlib	
+constant	GREY	other	'#888888'	manimlib	
+constant	GREY_A	other	'#DDDDDD'	manimlib	
+constant	GREY_B	other	'#BBBBBB'	manimlib	
+constant	GREY_BROWN	other	'#736357'	manimlib	
+constant	GREY_C	other	'#888888'	manimlib	
+constant	GREY_D	other	'#444444'	manimlib	
+constant	GREY_E	other	'#222222'	manimlib	
+constant	IN	other	array([ 0.,  0., -1.])	manimlib	
+constant	INFORMATION_KEY	other	'i'	manimlib	
+constant	ITALIC	other	'ITALIC'	manimlib	
+constant	KEY_NAMES	other	{'Backspace': 8, 'Tab': 9, 'Enter': 13, 'Escape': 27, 'Delete': 127, 'ArrowLeft': 57344, 'ArrowRight': 57345, 'ArrowU...	manimlib	
+constant	KEY_NAMES	other	{'Backspace': 8, 'Tab': 9, 'Enter': 13, 'Escape': 27, 'Delete': 127, 'ArrowLeft': 57344, 'ArrowRight': 57345, 'ArrowU...	manimlib.window	
+class	Keys	other	()	manimlib.event_keys	
+constant	LARGE_BUFF	other	1.0	manimlib	
+constant	LEFT	other	array([-1.,  0.,  0.])	manimlib	
+constant	LEFT_SIDE	other	array([-7.11111111,  0.        ,  0.        ])	manimlib	
+constant	LIGHT_BROWN	other	'#CD853F'	manimlib	
+constant	LIGHT_PINK	other	'#DC75CD'	manimlib	
+constant	MANDELBROT_COLORS	other	['#00065c', '#061e7e', '#0c37a0', '#205abc', '#4287d3', '#D9EDE4', '#F0F9E4', '#BA9F6A', '#573706']	manimlib	
+constant	MANIM_COLORS	other	['#1C758A', '#29ABCA', '#58C4DD', '#9CDCEB', '#C7E9F1', '#49A88F', '#55C1A7', '#5CD0B3', '#76DDC0', '#ACEAD7', '#699C...	manimlib	
+constant	MAROON	other	'#C55F73'	manimlib	
+constant	MAROON_A	other	'#ECABC1'	manimlib	
+constant	MAROON_B	other	'#EC92AB'	manimlib	
+constant	MAROON_C	other	'#C55F73'	manimlib	
+constant	MAROON_D	other	'#A24D61'	manimlib	
+constant	MAROON_E	other	'#94424F'	manimlib	
+constant	MAX_DEGREE	other	5	manimlib	
+constant	MED_LARGE_BUFF	other	0.5	manimlib	
+constant	MED_SMALL_BUFF	other	0.25	manimlib	
+constant	MOD_NAMES	other	{'Shift': 1, 'Control': 2, 'Alt': 4, 'Meta': 8}	manimlib	
+constant	MOD_NAMES	other	{'Shift': 1, 'Control': 2, 'Alt': 4, 'Meta': 8}	manimlib.window	
+class	Mods	other	()	manimlib.event_keys	Which modifiers were held while an event happened, as the bits of one number
+class	ModuleLoader	other	()	manimlib.module_loader	Utility class to load a module from a file and handle its imports.
+constant	NEWTON_ROOT_COLORS	other	['#440154', '#3b528b', '#21908c', '#5dc963', '#29abca']	manimlib	
+constant	NORMAL	other	'NORMAL'	manimlib	
+constant	NULL_POINTS	other	array([[0., 0., 0.]])	manimlib	
+constant	N_MANDELBROT_COLORS	other	9	manimlib	
+constant	OBLIQUE	other	'OBLIQUE'	manimlib	
+constant	ORANGE	other	'#FF862F'	manimlib	
+constant	ORIGIN	other	array([0., 0., 0.])	manimlib	
+constant	OUT	other	array([0., 0., 1.])	manimlib	
+constant	PATH_TO_POINTS	other	{}	manimlib	
+constant	PI	other	3.141592653589793	manimlib	
+constant	PINK	other	'#D147BD'	manimlib	
+constant	POSITION_STEPS	other	{'L': 0.0, 'U': 0.0, 'O': 0.5, 'R': 1.0, 'D': 1.0}	manimlib	
+constant	POSITION_STEPS	other	{'L': 0.0, 'U': 0.0, 'O': 0.5, 'R': 1.0, 'D': 1.0}	manimlib.window	
+constant	PRESENT_SHADER	other	'present.wgsl'	manimlib	
+constant	PRESENT_SHADER	other	'present.wgsl'	manimlib.window	
+constant	PURE_BLUE	other	'#0000FF'	manimlib	
+constant	PURE_GREEN	other	'#00FF00'	manimlib	
+constant	PURE_RED	other	'#FF0000'	manimlib	
+constant	PURPLE	other	'#9A72AC'	manimlib	
+constant	PURPLE_A	other	'#CAA3E8'	manimlib	
+constant	PURPLE_B	other	'#B189C6'	manimlib	
+constant	PURPLE_C	other	'#9A72AC'	manimlib	
+constant	PURPLE_D	other	'#715582'	manimlib	
+constant	PURPLE_E	other	'#644172'	manimlib	
+constant	RADIANS	other	1	manimlib	
+constant	RED	other	'#FC6255'	manimlib	
+constant	RED_A	other	'#F7A1A3'	manimlib	
+constant	RED_B	other	'#FF8080'	manimlib	
+constant	RED_C	other	'#FC6255'	manimlib	
+constant	RED_D	other	'#E65A4C'	manimlib	
+constant	RED_E	other	'#CF5044'	manimlib	
+constant	RESIZE_KEY	other	't'	manimlib	
+constant	RIGHT	other	array([1., 0., 0.])	manimlib	
+constant	RIGHT_SIDE	other	array([7.11111111, 0.        , 0.        ])	manimlib	
+constant	SELECT_KEY	other	's'	manimlib	
+constant	SMALL_BUFF	other	0.1	manimlib	
+constant	STRAIGHT_PATH_THRESHOLD	other	0.01	manimlib	
+constant	STROKE_WIDTHS_PER_UNIT	other	100.0	manimlib	
+constant	SVG_HASH_TO_MOB_MAP	other	{}	manimlib	
+constant	TAU	other	6.283185307179586	manimlib	
+constant	TEAL	other	'#5CD0B3'	manimlib	
+constant	TEAL_A	other	'#ACEAD7'	manimlib	
+constant	TEAL_B	other	'#76DDC0'	manimlib	
+constant	TEAL_C	other	'#5CD0B3'	manimlib	
+constant	TEAL_D	other	'#55C1A7'	manimlib	
+constant	TEAL_E	other	'#49A88F'	manimlib	
+constant	TEX_TO_SYMBOL_COUNT	other	{'\\!': 0, '\\,': 0, '\\-': 0, '\\/': 0, '\\:': 0, '\\;': 0, '\\>': 0, '\\aa': 0, '\\AA': 0, '\\ae': 0, '\\AE': 0, '\...	manimlib	
+constant	TOP	other	array([0., 4., 0.])	manimlib	
+constant	TYPE_CHECKING	other	False	manimlib	
+constant	TYPE_CHECKING	other	False	manimlib.__main__	
+constant	TYPE_CHECKING	other	False	manimlib.config	
+constant	TYPE_CHECKING	other	False	manimlib.event_handler.event_listner	
+constant	TYPE_CHECKING	other	False	manimlib.extract_scene	
+constant	TYPE_CHECKING	other	False	manimlib.window	
+constant	UL	other	array([-1.,  1.,  0.])	manimlib	
+constant	UNSELECT_KEY	other	'u'	manimlib	
+constant	UP	other	array([0., 1., 0.])	manimlib	
+constant	UR	other	array([1., 1., 0.])	manimlib	
+constant	WHEEL_NOTCH	other	100.0	manimlib	
+constant	WHEEL_NOTCH	other	100.0	manimlib.window	
+constant	WHITE	other	'#FFFFFF'	manimlib	
+class	Window	other	(scene: 'Optional[Scene]' = None, position_string: 'str' = 'UR', monitor_index: 'int' = 1, full_screen: 'bool' = False, size: 'Optional[tuple[int, int]]' = None, position: 'Optional[tuple[int, int]]' = None)	manimlib.window	Where a scene is previewed: somewhere to show a finished frame, and where mouse and key
+constant	X_AXIS	other	array([1., 0., 0.])	manimlib	
+constant	X_GRAB_KEY	other	'h'	manimlib	
+constant	YELLOW	other	'#FFFF00'	manimlib	
+constant	YELLOW_A	other	'#FFF1B6'	manimlib	
+constant	YELLOW_B	other	'#FFEA94'	manimlib	
+constant	YELLOW_C	other	'#FFFF00'	manimlib	
+constant	YELLOW_D	other	'#F4D345'	manimlib	
+constant	YELLOW_E	other	'#E8C11C'	manimlib	
+constant	Y_AXIS	other	array([0., 1., 0.])	manimlib	
+constant	Y_GRAB_KEY	other	'v'	manimlib	
+constant	Z_AXIS	other	array([0., 0., 1.])	manimlib	
+constant	Z_GRAB_KEY	other	'z'	manimlib	
+function	compute_total_frames	other	(scene_class, scene_config)	manimlib.extract_scene	When a scene is being written to file, a copy of the scene is run with
+function	get_animations_numbers	other	(args: 'Namespace') -> 'tuple[int | None, int | None]'	manimlib.config	
+function	get_file_ext	other	(args: 'Namespace') -> 'str'	manimlib.config	
+function	get_indent	other	(code_lines: 'list[str]', line_number: 'int') -> 'str'	manimlib.extract_scene	Find the indent associated with a given line of python code,
+function	get_manim_dir	other	()	manimlib.config	
+function	get_module	other	(run_config: 'Dict') -> 'Module'	manimlib.extract_scene	
+function	get_output_directory	other	(args: 'Namespace', config: 'Dict') -> 'str'	manimlib.config	
+function	get_resolution_from_args	other	(args: 'Optional[Namespace]', resolution_options: 'dict') -> 'Optional[tuple[int, int]]'	manimlib.config	
+function	get_scene_classes	other	(module: 'Optional[Module]')	manimlib.extract_scene	
+function	get_scenes_to_render	other	(all_scene_classes: 'list', scene_config: 'Dict', run_config: 'Dict')	manimlib.extract_scene	
+function	initialize_manim_config	other	() -> 'Dict'	manimlib.config	Return default configuration for various classes in manim, such as
+function	insert_embed_line_to_module	other	(module: 'Module', run_config: 'Dict') -> 'None'	manimlib.extract_scene	This is hacky, but convenient. When user includes the argument "-e", it will try
+function	is_child_scene	other	(obj, module)	manimlib.extract_scene	
+function	load_yaml	other	(file_path: 'str')	manimlib.config	
+function	main	other	()	manimlib.__main__	Main entry point for ManimGL.
+function	main	other	(scene_config: 'Dict', run_config: 'Dict')	manimlib.extract_scene	
+function	note_missing_scenes	other	(arg_names, module_names)	manimlib.extract_scene	
+function	parse_cli	other	()	manimlib.config	
+function	prompt_user_for_choice	other	(scene_classes)	manimlib.extract_scene	
+function	run_scenes	other	()	manimlib.__main__	Runs the scenes in a loop and detects when a scene reload is requested.
+function	scene_from_class	other	(scene_class, scene_config: 'Dict', run_config: 'Dict')	manimlib.extract_scene	
+function	to_key	other	(name: 'str') -> 'Optional[int]'	manimlib.window	manim's name for a key, or None for one it has no name for, which is every key nothing
+function	to_mods	other	(names: 'Sequence[str]') -> 'int'	manimlib.window	
+function	update_camera_config	other	(config: 'Dict', args: 'Namespace')	manimlib.config	
+function	update_directory_config	other	(config: 'Dict')	manimlib.config	
+function	update_embed_config	other	(config: 'Dict', args: 'Namespace')	manimlib.config	
+function	update_file_writer_config	other	(config: 'Dict', args: 'Namespace')	manimlib.config	
+function	update_run_config	other	(config: 'Dict', args: 'Namespace')	manimlib.config	
+function	update_scene_config	other	(config: 'Dict', args: 'Namespace')	manimlib.config	
+function	update_window_config	other	(config: 'Dict', args: 'Namespace')	manimlib.config	
+constant	ARRAY_ELEMENT_SIZE	renderer	4	manimlib.renderer.uniform_block	
+constant	BLEND	renderer	{'color': {'src_factor': 'src-alpha', 'dst_factor': 'one-minus-src-alpha', 'operation': 'add'}, 'alpha': {'src_factor...	manimlib.renderer.pipeline	
+constant	BLOCK_MEMBER_TYPES	renderer	{1: 'f32', 2: 'vec2f', 3: 'vec3f', 4: 'vec4f', 16: 'mat4x4f'}	manimlib.renderer.uniform_block	
+class	Bundling	renderer	(allowed: 'bool' = True)	manimlib.renderer.renderer	When a frame's draws are worth gathering into a render bundle, and for how long the one
+constant	COLOR_FORMAT	renderer	'rgba8unorm'	manimlib.renderer.gpu	
+constant	COLOR_FORMAT	renderer	'rgba8unorm'	manimlib.renderer.pipeline	
+constant	COMMON_UNIFORMS	renderer	(('is_fixed_in_frame', 1), ('shading', 3), ('clip_plane0', 4), ('clip_plane1', 4), ('clip_plane2', 4), ('clip_plane3'...	manimlib.renderer.uniform_block	
+constant	DATA_BINDING	renderer	0	manimlib.renderer.gpu	
+constant	DATA_BINDING	renderer	0	manimlib.renderer.material	
+constant	DATA_BINDING	renderer	0	manimlib.renderer.shader_source	
+constant	DEFAULT	renderer	PipelineState(depth_test=None, depth_write=True, color_write=True, stencil_compare='always', stencil_ops=(('keep', 'k...	manimlib.renderer.drawing	
+constant	DEFAULT	renderer	PipelineState(depth_test=None, depth_write=True, color_write=True, stencil_compare='always', stencil_ops=(('keep', 'k...	manimlib.renderer.pipeline	
+constant	DEPTH_STENCIL_FORMAT	renderer	'depth24plus-stencil8'	manimlib.renderer.gpu	
+constant	DEPTH_STENCIL_FORMAT	renderer	'depth24plus-stencil8'	manimlib.renderer.pipeline	
+class	Drawing	renderer	(material: 'Material', mobject: 'Mobject')	manimlib.renderer.drawing	One mobject's place in a frame: where its values went in the shared buffers, everything
+constant	FILL_BORDER	renderer	PipelineState(depth_test=None, depth_write=True, color_write=True, stencil_compare='equal', stencil_ops=(('keep', 'ke...	manimlib.renderer.drawing	
+constant	FIRST_TEXTURE_BINDING	renderer	2	manimlib.renderer.gpu	
+constant	FIRST_TEXTURE_BINDING	renderer	2	manimlib.renderer.material	
+constant	FIRST_TEXTURE_BINDING	renderer	2	manimlib.renderer.shader_source	
+constant	FRAMES_BEFORE_BUNDLING	renderer	2	manimlib.renderer.renderer	
+constant	FRAME_DTYPE	renderer	dtype([('view', '<f4', (16,)), ('frame_rescale_factors', '<f4', (3,)), ('frame_scale', '<f4'), ('camera_position', '<...	manimlib.renderer.gpu	
+constant	FRAME_GROUP	renderer	0	manimlib.renderer.gpu	
+constant	FRAME_GROUP	renderer	0	manimlib.renderer.shader_source	
+constant	FRAME_UNIFORMS	renderer	(('view', 16), ('frame_rescale_factors', 3), ('frame_scale', 1), ('camera_position', 3), ('pixel_size', 1), ('light_p...	manimlib.renderer.gpu	
+class	Gpu	renderer	()	manimlib.renderer.gpu	The device everything is made from, and every cache built on it: the modules shaders are
+constant	KEEP	renderer	('keep', 'keep', 'keep')	manimlib.renderer.drawing	
+constant	KEEP	renderer	('keep', 'keep', 'keep')	manimlib.renderer.pipeline	
+constant	MOBJECT_GROUP	renderer	1	manimlib.renderer.drawing	
+constant	MOBJECT_GROUP	renderer	1	manimlib.renderer.shader_source	
+class	Material	renderer	(gpu: 'Gpu', mobject: 'Mobject', specs: 'Sequence[ModuleSpec]')	manimlib.renderer.material	Everything one kind of mobject is drawn with, and nothing about any particular one: the
+class	PipelineState	renderer	(depth_test: 'bool | None' = None, depth_write: 'bool' = True, color_write: 'bool' = True, stencil_compare: 'str' = 'always', stencil_ops: 'tuple[tuple[str, str, str], tuple[str, str, str]]' = (('keep', 'keep', 'keep'), ('keep', 'keep', 'keep'))) -> None	manimlib.renderer.pipeline	The fixed function half of a pipeline: everything about how a draw behaves beyond which
+constant	RECORDS	renderer	4096	manimlib.renderer.gpu	
+constant	RESOURCE_GROUP	renderer	2	manimlib.renderer.drawing	
+constant	RESOURCE_GROUP	renderer	2	manimlib.renderer.shader_source	
+class	RenderPass	renderer	(encoder: 'Any', frame_bind_group: 'Any')	manimlib.renderer.gpu	Where draw commands go. A live pass and a bundle being recorded take the same commands, so
+class	Renderer	renderer	(gpu: 'Gpu', bundle: 'bool' = True, together: 'bool' = True)	manimlib.renderer.renderer	What a frame draws, in the order it draws it: a drawing for each mobject holding points,
+constant	SAMPLER_BINDING	renderer	1	manimlib.renderer.gpu	
+constant	SAMPLER_BINDING	renderer	1	manimlib.renderer.material	
+constant	SAMPLER_BINDING	renderer	1	manimlib.renderer.shader_source	
+class	SharedBuffer	renderer	(gpu: 'Gpu', layout: 'Any', usage: 'int', alignment: 'int', first_capacity: 'int')	manimlib.renderer.shared_buffer	One buffer holding what many mobjects read, a stretch of it each, sent in one write.
+class	SurfaceDrawing	renderer	(material: 'Material', mobject: 'Mobject')	manimlib.renderer.drawing	An opaque surface is drawn in one pass and left to the depth test, which decides what
+constant	TYPE_CHECKING	renderer	False	manimlib.renderer.drawing	
+constant	TYPE_CHECKING	renderer	False	manimlib.renderer.gpu	
+constant	TYPE_CHECKING	renderer	False	manimlib.renderer.material	
+constant	TYPE_CHECKING	renderer	False	manimlib.renderer.pipeline	
+constant	TYPE_CHECKING	renderer	False	manimlib.renderer.renderer	
+constant	TYPE_CHECKING	renderer	False	manimlib.renderer.shader_source	
+constant	TYPE_CHECKING	renderer	False	manimlib.renderer.shared_buffer	
+constant	TYPE_CHECKING	renderer	False	manimlib.renderer.uniform_block	
+constant	UNIFORM_BLOCKS	renderer	256	manimlib.renderer.gpu	
+class	Uniforms	renderer	(dtype: 'np.dtype')	manimlib.renderer.uniform_block	A mobject's uniforms: one value each for the whole of it, laid out to match the block its
+class	VDrawing	renderer	(material: 'Material', mobject: 'Mobject')	manimlib.renderer.drawing	A vectorized mobject is drawn by two shaders: a fill over the region its path encloses,
+constant	WINDING_COUNT	renderer	PipelineState(depth_test=False, depth_write=False, color_write=False, stencil_compare='always', stencil_ops=(('keep',...	manimlib.renderer.drawing	
+constant	WINDING_COVER	renderer	PipelineState(depth_test=None, depth_write=True, color_write=True, stencil_compare='not-equal', stencil_ops=(('keep',...	manimlib.renderer.drawing	
+function	build_pipeline	renderer	(device: 'Any', layout: 'Any', module: 'Any', state: 'PipelineState', samples: 'int') -> 'Any'	manimlib.renderer.pipeline	One pipeline. No shader is handed vertex attributes, hence the empty list of vertex
+function	data_layout_code	renderer	(dtype: 'np.dtype') -> 'str'	manimlib.renderer.shader_source	Where each field of a record sits, in floats, for a shader to index by. No shader is handed
+function	get_colormap_code	renderer	(rgb_list: 'Sequence[float]') -> 'str'	manimlib.renderer.shader_source	A list of colors as a shader array literal, for a snippet coloring by a value
+function	get_shader_code	renderer	(filename: 'str', data_dtype: 'np.dtype', uniform_dtype: 'np.dtype', texture_names: 'tuple[str, ...]' = ()) -> 'str | None'	manimlib.renderer.shader_source	Reads a shader from file, filling in what its source depends on about the mobject it will
+function	texture_binding_code	renderer	(texture_names: 'tuple[str, ...]') -> 'str'	manimlib.renderer.shader_source	How a shader declares the images its kind of mobject named, and the sampler they share,
+function	uniform_block_code	renderer	(dtype: 'np.dtype') -> 'str'	manimlib.renderer.uniform_block	A dtype written as the members of a shader struct, which is where a shader gets them,
+function	uniform_block_dtype	renderer	(*members: 'tuple[str, int] | tuple[str, int, int]') -> 'np.dtype'	manimlib.renderer.uniform_block	Lays out members, each given as a name and how many floats it holds, exactly as std140
+constant	ARROW_SYMBOLS	scene	[57344, 57346, 57345, 57347]	manimlib.scene.interactive_scene	
+constant	COLOR_KEY	scene	'c'	manimlib.scene.interactive_scene	
+constant	CURSOR_KEY	scene	'k'	manimlib.scene.interactive_scene	
+class	CheckpointManager	scene	()	manimlib.scene.scene_embed	
+constant	DEG	scene	0.017453292519943295	manimlib.scene.interactive_scene	
+constant	DL	scene	array([-1., -1.,  0.])	manimlib.scene.interactive_scene	
+constant	DOWN	scene	array([ 0., -1.,  0.])	manimlib.scene.interactive_scene	
+constant	DR	scene	array([ 1., -1.,  0.])	manimlib.scene.interactive_scene	
+class	EndScene	scene		manimlib.scene.scene	Common base class for all non-exit exceptions.
+constant	FRAME_HEIGHT	scene	8.0	manimlib.scene.interactive_scene	
+constant	FRAME_WIDTH	scene	14.222222222222221	manimlib.scene.interactive_scene	
+constant	GRAB_KEY	scene	'g'	manimlib.scene.interactive_scene	
+constant	GRAB_KEYS	scene	['g', 'h', 'v', 'z']	manimlib.scene.interactive_scene	
+constant	GREY_A	scene	'#DDDDDD'	manimlib.scene.interactive_scene	
+constant	GREY_C	scene	'#888888'	manimlib.scene.interactive_scene	
+constant	INFORMATION_KEY	scene	'i'	manimlib.scene.interactive_scene	
+class	InteractiveScene	scene	(window: 'Optional[Window]' = None, camera_config: 'dict' = {}, file_writer_config: 'dict' = {}, skip_animations: 'bool' = False, always_update_mobjects: 'bool' = False, start_at_animation_number: 'int | None' = None, end_at_animation_number: 'int | None' = None, show_animation_progress: 'bool' = False, leave_progress_bars: 'bool' = False, preview_while_skipping: 'bool' = True, presenter_mode: 'bool' = False, default_wait_time: 'float' = 1.0, invert_zoom_scroll: 'bool' = False)	manimlib.scene.interactive_scene	To select mobjects on screen, hold ctrl and move the mouse to highlight a region,
+class	InteractiveSceneEmbed	scene	(scene: 'Scene')	manimlib.scene.scene_embed	
+constant	LEFT	scene	array([-1.,  0.,  0.])	manimlib.scene.interactive_scene	
+constant	MANIM_COLORS	scene	['#1C758A', '#29ABCA', '#58C4DD', '#9CDCEB', '#C7E9F1', '#49A88F', '#55C1A7', '#5CD0B3', '#76DDC0', '#ACEAD7', '#699C...	manimlib.scene.interactive_scene	
+constant	ORIGIN	scene	array([0., 0., 0.])	manimlib.scene.interactive_scene	
+constant	PI	scene	3.141592653589793	manimlib.scene.interactive_scene	
+constant	RED	scene	'#FC6255'	manimlib.scene.scene_embed	
+constant	RESIZE_KEY	scene	't'	manimlib.scene.interactive_scene	
+constant	RIGHT	scene	array([1., 0., 0.])	manimlib.scene.interactive_scene	
+constant	SELECT_KEY	scene	's'	manimlib.scene.interactive_scene	
+constant	SMALL_BUFF	scene	0.1	manimlib.scene.interactive_scene	
+class	Scene	scene	(window: 'Optional[Window]' = None, camera_config: 'dict' = {}, file_writer_config: 'dict' = {}, skip_animations: 'bool' = False, always_update_mobjects: 'bool' = False, start_at_animation_number: 'int | None' = None, end_at_animation_number: 'int | None' = None, show_animation_progress: 'bool' = False, leave_progress_bars: 'bool' = False, preview_while_skipping: 'bool' = True, presenter_mode: 'bool' = False, default_wait_time: 'float' = 1.0, invert_zoom_scroll: 'bool' = False)	manimlib.scene.scene	
+class	SceneFileWriter	scene	(scene: 'Scene', write_to_movie: 'bool' = False, subdivide_output: 'bool' = False, png_mode: 'str' = 'RGBA', save_last_frame: 'bool' = False, movie_file_extension: 'str' = '.mp4', output_directory: 'str' = '.', file_name: 'str | None' = None, open_file_upon_completion: 'bool' = False, show_file_location_upon_completion: 'bool' = False, quiet: 'bool' = False, total_frames: 'int' = 0, progress_description_len: 'int' = 40, ffmpeg_bin: 'str' = 'ffmpeg', video_codec: 'str' = 'libx264', pixel_format: 'str' = 'yuv420p', crf: 'int | None' = None, saturation: 'float' = 1.0, gamma: 'float' = 1.0)	manimlib.scene.scene_file_writer	
+class	SceneState	scene	(scene: 'Scene', ignore: 'list[Mobject] | None' = None)	manimlib.scene.scene	
+constant	TYPE_CHECKING	scene	False	manimlib.scene.interactive_scene	
+constant	TYPE_CHECKING	scene	False	manimlib.scene.scene	
+constant	TYPE_CHECKING	scene	False	manimlib.scene.scene_embed	
+constant	TYPE_CHECKING	scene	False	manimlib.scene.scene_file_writer	
+class	ThreeDScene	scene	(window: 'Optional[Window]' = None, camera_config: 'dict' = {}, file_writer_config: 'dict' = {}, skip_animations: 'bool' = False, always_update_mobjects: 'bool' = False, start_at_animation_number: 'int | None' = None, end_at_animation_number: 'int | None' = None, show_animation_progress: 'bool' = False, leave_progress_bars: 'bool' = False, preview_while_skipping: 'bool' = True, presenter_mode: 'bool' = False, default_wait_time: 'float' = 1.0, invert_zoom_scroll: 'bool' = False)	manimlib.scene.scene	
+constant	UL	scene	array([-1.,  1.,  0.])	manimlib.scene.interactive_scene	
+constant	UNSELECT_KEY	scene	'u'	manimlib.scene.interactive_scene	
+constant	UP	scene	array([0., 1., 0.])	manimlib.scene.interactive_scene	
+constant	UR	scene	array([1., 1., 0.])	manimlib.scene.interactive_scene	
+constant	WHITE	scene	'#FFFFFF'	manimlib.scene.interactive_scene	
+constant	X_GRAB_KEY	scene	'h'	manimlib.scene.interactive_scene	
+constant	Y_GRAB_KEY	scene	'v'	manimlib.scene.interactive_scene	
+constant	Z_GRAB_KEY	scene	'z'	manimlib.scene.interactive_scene	
+constant	TYPE_CHECKING	typing	False	manimlib.typing	
+constant	CLOSED_THRESHOLD	utils/bezier	0.001	manimlib.utils.bezier	
+constant	TYPE_CHECKING	utils/bezier	False	manimlib.utils.bezier	
+function	approx_smooth_quadratic_bezier_handles	utils/bezier	(points: 'FloatArray') -> 'FloatArray'	manimlib.utils.bezier	Figuring out which bezier curves most smoothly connect a sequence of points.
+function	bezier	utils/bezier	(points: 'Sequence[float | FloatArray] | VectNArray') -> 'Callable[[float], float | FloatArray]'	manimlib.utils.bezier	
+function	diag_to_matrix	utils/bezier	(l_and_u: 'tuple[int, int]', diag: 'np.ndarray') -> 'np.ndarray'	manimlib.utils.bezier	Converts array whose rows represent diagonal
+function	get_quadratic_approximation_of_cubic	utils/bezier	(a0: 'FloatArray', h0: 'FloatArray', h1: 'FloatArray', a1: 'FloatArray') -> 'FloatArray'	manimlib.utils.bezier	
+function	get_smooth_cubic_bezier_handle_points	utils/bezier	(points: 'Sequence[VectN] | VectNArray') -> 'tuple[FloatArray, FloatArray]'	manimlib.utils.bezier	
+function	get_smooth_quadratic_bezier_path_through	utils/bezier	(points: 'Sequence[VectN]') -> 'np.ndarray'	manimlib.utils.bezier	
+function	integer_interpolate	utils/bezier	(start: 'int', end: 'int', alpha: 'float') -> 'tuple[int, float]'	manimlib.utils.bezier	alpha is a float between 0 and 1.  This returns
+function	interpolate	utils/bezier	(start: 'Scalable', end: 'Scalable', alpha: 'float | VectN') -> 'Scalable'	manimlib.utils.bezier	
+function	inverse_interpolate	utils/bezier	(start: 'Scalable', end: 'Scalable', value: 'Scalable') -> 'np.ndarray'	manimlib.utils.bezier	
+function	is_closed	utils/bezier	(points: 'FloatArray') -> 'bool'	manimlib.utils.bezier	
+function	match_interpolate	utils/bezier	(new_start: 'Scalable', new_end: 'Scalable', old_start: 'Scalable', old_end: 'Scalable', old_value: 'Scalable') -> 'Scalable'	manimlib.utils.bezier	
+function	mid	utils/bezier	(start: 'Scalable', end: 'Scalable') -> 'Scalable'	manimlib.utils.bezier	
+function	outer_interpolate	utils/bezier	(start: 'Scalable', end: 'Scalable', alpha: 'Scalable') -> 'np.ndarray'	manimlib.utils.bezier	
+function	partial_bezier_points	utils/bezier	(points: 'Sequence[Scalable]', a: 'float', b: 'float') -> 'list[Scalable]'	manimlib.utils.bezier	Given an list of points which define
+function	partial_quadratic_bezier_points	utils/bezier	(points: 'Sequence[VectN] | VectNArray', a: 'float', b: 'float') -> 'list[VectN]'	manimlib.utils.bezier	
+function	quadratic_bezier_points_for_arc	utils/bezier	(angle: 'float', n_components: 'int' = 8)	manimlib.utils.bezier	
+function	set_array_by_interpolation	utils/bezier	(arr: 'np.ndarray', arr1: 'np.ndarray', arr2: 'np.ndarray', alpha: 'float', interp_func: 'Callable[[np.ndarray, np.ndarray, float], np.ndarray]' = <function interpolate at 0x7f6ff5270400>) -> 'np.ndarray'	manimlib.utils.bezier	
+function	smooth_quadratic_path	utils/bezier	(anchors: 'Vect3Array') -> 'Vect3Array'	manimlib.utils.bezier	Returns a path defining a smooth quadratic bezier spline
+constant	COLORMAP_3B1B	utils/color	['#1C758A', '#83C167', '#FFFF00', '#FC6255']	manimlib.utils.color	
+constant	TYPE_CHECKING	utils/color	False	manimlib.utils.color	
+constant	WHITE	utils/color	'#FFFFFF'	manimlib.utils.color	
+function	average_color	utils/color	(*colors: 'ManimColor') -> 'Color'	manimlib.utils.color	
+function	color_gradient	utils/color	(reference_colors: 'Iterable[ManimColor]', length_of_output: 'int', interp_by_hsl: 'bool' = False) -> 'list[Color]'	manimlib.utils.color	
+function	color_to_hex	utils/color	(color: 'ManimColor') -> 'str'	manimlib.utils.color	
+function	color_to_int_rgb	utils/color	(color: 'ManimColor') -> 'np.ndarray[int, np.dtype[np.uint8]]'	manimlib.utils.color	
+function	color_to_int_rgba	utils/color	(color: 'ManimColor', opacity: 'float' = 1.0) -> 'np.ndarray[int, np.dtype[np.uint8]]'	manimlib.utils.color	
+function	color_to_rgb	utils/color	(color: 'ManimColor') -> 'Vect3'	manimlib.utils.color	
+function	color_to_rgba	utils/color	(color: 'ManimColor', alpha: 'float' = 1.0) -> 'Vect4'	manimlib.utils.color	
+function	get_color_map	utils/color	(map_name: 'str') -> 'Callable[[Sequence[float]], Vect4Array]'	manimlib.utils.color	
+function	get_colormap_from_colors	utils/color	(colors: 'Iterable[ManimColor]') -> 'Callable[[Sequence[float]], Vect4Array]'	manimlib.utils.color	Returns a funciton which takes in values between 0 and 1, and returns
+function	get_colormap_list	utils/color	(map_name: 'str' = 'viridis', n_colors: 'int' = 9) -> 'Vect3Array'	manimlib.utils.color	Options for map_name:
+function	hex_to_int	utils/color	(rgb_hex: 'str') -> 'int'	manimlib.utils.color	
+function	hex_to_rgb	utils/color	(hex_code: 'str') -> 'Vect3'	manimlib.utils.color	
+function	int_to_hex	utils/color	(rgb_int: 'int') -> 'str'	manimlib.utils.color	
+function	interpolate_color	utils/color	(color1: 'ManimColor', color2: 'ManimColor', alpha: 'float', interp_by_hsl: 'bool' = False) -> 'Color'	manimlib.utils.color	
+function	interpolate_color_by_hsl	utils/color	(color1: 'ManimColor', color2: 'ManimColor', alpha: 'float') -> 'Color'	manimlib.utils.color	
+function	invert_color	utils/color	(color: 'ManimColor') -> 'Color'	manimlib.utils.color	
+function	random_bright_color	utils/color	(hue_range: 'tuple[float, float]' = (0.0, 1.0), saturation_range: 'tuple[float, float]' = (0.5, 0.8), luminance_range: 'tuple[float, float]' = (0.5, 1.0)) -> 'Color'	manimlib.utils.color	
+function	random_color	utils/color	() -> 'Color'	manimlib.utils.color	
+function	rgb_to_color	utils/color	(rgb: 'Vect3 | Sequence[float]') -> 'Color'	manimlib.utils.color	
+function	rgb_to_hex	utils/color	(rgb: 'Vect3 | Sequence[float]') -> 'str'	manimlib.utils.color	
+function	rgba_to_color	utils/color	(rgba: 'Vect4') -> 'Color'	manimlib.utils.color	
+constant	BLACK	utils/other	'#000000'	manimlib.utils.debug	
+constant	CACHE_SIZE	utils/other	1000000000.0	manimlib.utils.cache	
+constant	FRAME_HEIGHT	utils/other	8.0	manimlib.utils.svg_export	
+constant	FRAME_WIDTH	utils/other	14.222222222222221	manimlib.utils.svg_export	
+constant	OUT	utils/other	array([0., 0., 1.])	manimlib.utils.paths	
+constant	STRAIGHT_PATH_THRESHOLD	utils/other	0.01	manimlib.utils.paths	
+class	StructuredArray	utils/other	(dtype: 'np.dtype', length: 'int' = 0)	manimlib.utils.structured_array	A structured numpy array laid out to match what a shader reads, and read from python as a
+constant	TYPE_CHECKING	utils/other	False	manimlib.utils.cache	
+constant	TYPE_CHECKING	utils/other	False	manimlib.utils.debug	
+constant	TYPE_CHECKING	utils/other	False	manimlib.utils.family_ops	
+constant	TYPE_CHECKING	utils/other	False	manimlib.utils.file_ops	
+constant	TYPE_CHECKING	utils/other	False	manimlib.utils.images	
+constant	TYPE_CHECKING	utils/other	False	manimlib.utils.iterables	
+constant	TYPE_CHECKING	utils/other	False	manimlib.utils.paths	
+constant	TYPE_CHECKING	utils/other	False	manimlib.utils.simple_functions	
+constant	TYPE_CHECKING	utils/other	False	manimlib.utils.structured_array	
+function	adjacent_n_tuples	utils/other	(objects: 'Sequence[T]', n: 'int') -> 'zip[tuple[T, ...]]'	manimlib.utils.iterables	
+function	adjacent_pairs	utils/other	(objects: 'Sequence[T]') -> 'zip[tuple[T, T]]'	manimlib.utils.iterables	
+function	arr_clip	utils/other	(arr: 'np.ndarray', min_a: 'float', max_a: 'float') -> 'np.ndarray'	manimlib.utils.simple_functions	
+function	array_is_constant	utils/other	(arr: 'np.ndarray') -> 'bool'	manimlib.utils.iterables	
+function	arrays_match	utils/other	(arr1: 'np.ndarray', arr2: 'np.ndarray') -> 'bool'	manimlib.utils.iterables	
+function	batch_by_comparison	utils/other	(items: 'Iterable[T]', comparison: 'Callable[[T, T], bool]') -> 'List[List[T]]'	manimlib.utils.iterables	Runs of consecutive items, each item joining the one before it wherever the comparison
+function	batch_by_property	utils/other	(items: 'Iterable[T]', property_func: 'Callable[[T], S]') -> 'list[tuple[T, S]]'	manimlib.utils.iterables	Takes in a list, and returns a list of tuples, (batch, prop)
+function	binary_search	utils/other	(function: 'Callable[[float], float]', target: 'float', lower_bound: 'float', upper_bound: 'float', tolerance: 'float' = 0.0001) -> 'float | None'	manimlib.utils.simple_functions	
+function	cache_on_disk	utils/other	(func: 'Callable[..., T]') -> 'Callable[..., T]'	manimlib.utils.cache	
+function	cartesian_product	utils/other	(*arrays: 'np.ndarray')	manimlib.utils.iterables	Copied from https://stackoverflow.com/a/11146645
+function	clear_cache	utils/other	()	manimlib.utils.cache	
+function	clip	utils/other	(a: 'float', min_a: 'float', max_a: 'float') -> 'float'	manimlib.utils.simple_functions	
+function	clockwise_path	utils/other	() -> 'Callable[[Vect3Array, Vect3Array, float], Vect3Array]'	manimlib.utils.paths	
+function	counterclockwise_path	utils/other	() -> 'Callable[[Vect3Array, Vect3Array, float], Vect3Array]'	manimlib.utils.paths	
+function	extract_mobject_family_members	utils/other	(mobject_list: 'Iterable[Mobject]', exclude_pointless: 'bool' = False) -> 'list[Mobject]'	manimlib.utils.family_ops	
+function	fdiv	utils/other	(a: 'Scalable', b: 'Scalable', zero_over_zero_value: 'Scalable | None' = None) -> 'Scalable'	manimlib.utils.simple_functions	Less heavyweight name for np.true_divide, enabling
+function	find_file	utils/other	(file_name: 'str', directories: 'Iterable[str] | None' = None, extensions: 'Iterable[str] | None' = None) -> 'Path'	manimlib.utils.file_ops	
+function	gen_choose	utils/other	(n: 'int', r: 'int') -> 'int'	manimlib.utils.simple_functions	
+function	get_cache_dir	utils/other	() -> 'str'	manimlib.utils.directories	
+function	get_directories	utils/other	() -> 'dict[str, str]'	manimlib.utils.directories	
+function	get_downloads_dir	utils/other	() -> 'str'	manimlib.utils.directories	
+function	get_full_raster_image_path	utils/other	(image_file_name: 'str') -> 'str'	manimlib.utils.images	
+function	get_full_sound_file_path	utils/other	(sound_file_name: 'str') -> 'str'	manimlib.utils.sounds	
+function	get_full_three_d_model_path	utils/other	(model_file_name: 'str') -> 'str'	manimlib.utils.images	
+function	get_full_vector_image_path	utils/other	(image_file_name: 'str') -> 'str'	manimlib.utils.images	
+function	get_num_args	utils/other	(function: 'Callable') -> 'int'	manimlib.utils.simple_functions	
+function	get_output_dir	utils/other	() -> 'str'	manimlib.utils.directories	
+function	get_parameters	utils/other	(function: 'Callable') -> 'Iterable[str]'	manimlib.utils.simple_functions	
+function	get_raster_image_dir	utils/other	() -> 'str'	manimlib.utils.directories	
+function	get_shader_dir	utils/other	() -> 'str'	manimlib.utils.directories	
+function	get_sound_dir	utils/other	() -> 'str'	manimlib.utils.directories	
+function	get_temp_dir	utils/other	() -> 'str'	manimlib.utils.directories	
+function	get_three_d_model_dir	utils/other	() -> 'str'	manimlib.utils.directories	
+function	get_vector_image_dir	utils/other	() -> 'str'	manimlib.utils.directories	
+function	guarantee_existence	utils/other	(path: 'str | Path') -> 'Path'	manimlib.utils.file_ops	
+function	hash_obj	utils/other	(obj: 'object') -> 'int'	manimlib.utils.iterables	
+function	hash_string	utils/other	(string: 'str', n_bytes=16) -> 'str'	manimlib.utils.simple_functions	
+function	index_labels	utils/other	(mobject: 'Mobject', label_height: 'float' = 0.15) -> 'VGroup'	manimlib.utils.debug	
+function	index_within_group	utils/other	(counts: 'np.ndarray') -> 'np.ndarray'	manimlib.utils.iterables	Where each member of a run of groups sits within its own group, given how many members
+function	invert_image	utils/other	(image: 'Iterable') -> 'Image.Image'	manimlib.utils.images	
+function	keep_larger	utils/other	(start: 'np.ndarray', end: 'np.ndarray', alpha: 'float') -> 'np.ndarray'	manimlib.utils.iterables	Takes in both rather than blending between them, for a field which counts something and
+function	list_difference_update	utils/other	(l1: 'Iterable[T]', l2: 'Iterable[T]') -> 'list[T]'	manimlib.utils.iterables	
+function	list_update	utils/other	(l1: 'Iterable[T]', l2: 'Iterable[T]') -> 'list[T]'	manimlib.utils.iterables	Used instead of list(set(l1).update(l2)) to maintain order,
+function	listify	utils/other	(obj: 'object') -> 'list'	manimlib.utils.iterables	
+function	make_even	utils/other	(iterable_1: 'Sequence[T]', iterable_2: 'Sequence[S]') -> 'tuple[Sequence[T], Sequence[S]]'	manimlib.utils.iterables	
+function	merge_dicts_recursively	utils/other	(*dicts)	manimlib.utils.dict_ops	Creates a dict whose keyset is the union of all the
+function	path_along_arc	utils/other	(arc_angle: 'float | Tuple[float, float] | np.ndarray', axis: 'Vect3' = array([0., 0., 1.])) -> 'Callable[[Vect3Array, Vect3Array, float], Vect3Array]'	manimlib.utils.paths	arc_angle can be a single angle, or a pair of angles, in which case
+function	play_sound	utils/other	(sound_file)	manimlib.utils.sounds	Play a sound file using the system's audio player
+function	print_family	utils/other	(mobject: 'Mobject', n_tabs: 'int' = 0) -> 'None'	manimlib.utils.debug	For debugging purposes
+function	recursive_mobject_remove	utils/other	(mobjects: 'List[Mobject]', to_remove: 'Set[Mobject]') -> 'Tuple[List[Mobject], bool]'	manimlib.utils.family_ops	Takes in a list of mobjects, together with a set of mobjects to remove.
+function	remove_list_redundancies	utils/other	(lst: 'Sequence[T]') -> 'list[T]'	manimlib.utils.iterables	Remove duplicate elements while preserving order.
+function	resize_array	utils/other	(nparray: 'np.ndarray', length: 'int') -> 'np.ndarray'	manimlib.utils.iterables	
+function	resize_preserving_order	utils/other	(nparray: 'np.ndarray', length: 'int') -> 'np.ndarray'	manimlib.utils.iterables	
+function	resize_with_interpolation	utils/other	(nparray: 'np.ndarray', length: 'int') -> 'np.ndarray'	manimlib.utils.iterables	
+function	shuffled	utils/other	(iterable: 'Iterable') -> 'list'	manimlib.utils.iterables	
+function	sigmoid	utils/other	(x: 'float | FloatArray')	manimlib.utils.simple_functions	
+function	straight_path	utils/other	(start_points: 'np.ndarray', end_points: 'np.ndarray', alpha: 'float') -> 'np.ndarray'	manimlib.utils.paths	Same function as interpolate, but renamed to reflect
+function	vmobject_to_svg	utils/other	(vmobject, filename: 'str | None' = None, pixel_width: 'int' = 1920, pixel_height: 'int' = 1080) -> 'str'	manimlib.utils.svg_export	Convert a VMobject (and its family) to an SVG string.
+constant	TYPE_CHECKING	utils/rate_functions	False	manimlib.utils.rate_functions	
+function	double_smooth	utils/rate_functions	(t: 'float') -> 'float'	manimlib.utils.rate_functions	
+function	exponential_decay	utils/rate_functions	(t: 'float', half_life: 'float' = 0.1) -> 'float'	manimlib.utils.rate_functions	
+function	linear	utils/rate_functions	(t: 'float') -> 'float'	manimlib.utils.rate_functions	
+function	lingering	utils/rate_functions	(t: 'float') -> 'float'	manimlib.utils.rate_functions	
+function	not_quite_there	utils/rate_functions	(func: 'Callable[[float], float]' = <function smooth at 0x7f6ff39332e0>, proportion: 'float' = 0.7) -> 'Callable[[float], float]'	manimlib.utils.rate_functions	
+function	overshoot	utils/rate_functions	(t: 'float', pull_factor: 'float' = 1.5) -> 'float'	manimlib.utils.rate_functions	
+function	running_start	utils/rate_functions	(t: 'float', pull_factor: 'float' = -0.5) -> 'float'	manimlib.utils.rate_functions	
+function	rush_from	utils/rate_functions	(t: 'float') -> 'float'	manimlib.utils.rate_functions	
+function	rush_into	utils/rate_functions	(t: 'float') -> 'float'	manimlib.utils.rate_functions	
+function	slow_into	utils/rate_functions	(t: 'float') -> 'float'	manimlib.utils.rate_functions	
+function	smooth	utils/rate_functions	(t: 'float') -> 'float'	manimlib.utils.rate_functions	
+function	squish_rate_func	utils/rate_functions	(func: 'Callable[[float], float]', a: 'float' = 0.4, b: 'float' = 0.6) -> 'Callable[[float], float]'	manimlib.utils.rate_functions	
+function	there_and_back	utils/rate_functions	(t: 'float') -> 'float'	manimlib.utils.rate_functions	
+function	there_and_back_with_pause	utils/rate_functions	(t: 'float', pause_ratio: 'float' = 0.3333333333333333) -> 'float'	manimlib.utils.rate_functions	
+function	wiggle	utils/rate_functions	(t: 'float', wiggles: 'float' = 2) -> 'float'	manimlib.utils.rate_functions	
+constant	DOWN	utils/space_ops	array([ 0., -1.,  0.])	manimlib.utils.space_ops	
+constant	OUT	utils/space_ops	array([0., 0., 1.])	manimlib.utils.space_ops	
+constant	PI	utils/space_ops	3.141592653589793	manimlib.utils.space_ops	
+function	R3_to_complex	utils/space_ops	(point: 'Vect3') -> 'complex'	manimlib.utils.space_ops	
+constant	RIGHT	utils/space_ops	array([1., 0., 0.])	manimlib.utils.space_ops	
+constant	TAU	utils/space_ops	6.283185307179586	manimlib.utils.space_ops	
+constant	TYPE_CHECKING	utils/space_ops	False	manimlib.utils.space_ops	
+constant	UP	utils/space_ops	array([0., 1., 0.])	manimlib.utils.space_ops	
+function	angle_axis_from_quaternion	utils/space_ops	(quat: 'Vect4') -> 'Tuple[float, Vect3]'	manimlib.utils.space_ops	
+function	angle_between_vectors	utils/space_ops	(v1: 'VectN', v2: 'VectN') -> 'float'	manimlib.utils.space_ops	Returns the angle between two 3D vectors.
+function	angle_of_vector	utils/space_ops	(vector: 'Vect2 | Vect3') -> 'float'	manimlib.utils.space_ops	Returns polar coordinate theta when vector is project on xy plane
+function	boxes_are_disjoint	utils/space_ops	(mins: 'Vect3Array', maxs: 'Vect3Array') -> 'bool'	manimlib.utils.space_ops	Whether no two of the boxes with these lower and upper corners share any of their
+function	center_of_mass	utils/space_ops	(points: 'Sequence[Vect3]') -> 'Vect3'	manimlib.utils.space_ops	
+function	compass_directions	utils/space_ops	(n: 'int' = 4, start_vect: 'Vect3' = array([1., 0., 0.])) -> 'Vect3'	manimlib.utils.space_ops	
+function	complex_func_to_R3_func	utils/space_ops	(complex_func: 'Callable[[complex], complex]') -> 'Callable[[Vect3], Vect3]'	manimlib.utils.space_ops	
+function	complex_to_R3	utils/space_ops	(complex_num: 'complex') -> 'Vect3'	manimlib.utils.space_ops	
+function	cross	utils/space_ops	(v1: 'Vect3 | List[float]', v2: 'Vect3 | List[float]', out: 'np.ndarray | None' = None) -> 'Vect3 | Vect3Array'	manimlib.utils.space_ops	
+function	cross2d	utils/space_ops	(a: 'Vect2 | Vect2Array', b: 'Vect2 | Vect2Array') -> 'Vect2 | Vect2Array'	manimlib.utils.space_ops	
+function	find_intersection	utils/space_ops	(p0: 'Vect3 | Vect3Array', v0: 'Vect3 | Vect3Array', p1: 'Vect3 | Vect3Array', v1: 'Vect3 | Vect3Array', threshold: 'float' = 1e-05) -> 'Vect3'	manimlib.utils.space_ops	Return the intersection of a line passing through p0 in direction v0
+function	get_closest_point_on_line	utils/space_ops	(a: 'VectN', b: 'VectN', p: 'VectN') -> 'VectN'	manimlib.utils.space_ops	It returns point x such that
+function	get_dist	utils/space_ops	(vect1: 'VectN', vect2: 'VectN')	manimlib.utils.space_ops	
+function	get_norm	utils/space_ops	(vect: 'VectN | List[float]') -> 'float'	manimlib.utils.space_ops	
+function	get_unit_normal	utils/space_ops	(v1: 'Vect3', v2: 'Vect3', tol: 'float' = 1e-06) -> 'Vect3'	manimlib.utils.space_ops	
+function	get_winding_number	utils/space_ops	(points: 'Sequence[Vect2 | Vect3]') -> 'float'	manimlib.utils.space_ops	
+function	line_intersection	utils/space_ops	(line1: 'Tuple[Vect3, Vect3]', line2: 'Tuple[Vect3, Vect3]') -> 'Vect3'	manimlib.utils.space_ops	return intersection point of two lines,
+function	line_intersects_path	utils/space_ops	(start: 'Vect2 | Vect3', end: 'Vect2 | Vect3', path: 'Vect2Array | Vect3Array') -> 'bool'	manimlib.utils.space_ops	Tests whether the line (start, end) intersects
+function	midpoint	utils/space_ops	(point1: 'VectN', point2: 'VectN') -> 'VectN'	manimlib.utils.space_ops	
+function	normalize	utils/space_ops	(vect: 'VectN | List[float]', fall_back: 'VectN | List[float] | None' = None) -> 'VectN'	manimlib.utils.space_ops	
+function	normalize_along_axis	utils/space_ops	(array: 'np.ndarray', axis: 'int') -> 'np.ndarray'	manimlib.utils.space_ops	
+function	poly_line_length	utils/space_ops	(points)	manimlib.utils.space_ops	Return the sum of the lengths between adjacent points
+function	project_along_vector	utils/space_ops	(point: 'Vect3', vector: 'Vect3') -> 'Vect3'	manimlib.utils.space_ops	
+function	quaternion_conjugate	utils/space_ops	(quaternion: 'Vect4') -> 'Vect4'	manimlib.utils.space_ops	
+function	quaternion_from_angle_axis	utils/space_ops	(angle: 'float', axis: 'Vect3') -> 'Vect4'	manimlib.utils.space_ops	
+function	quaternion_mult	utils/space_ops	(*quats: 'Vect4') -> 'Vect4'	manimlib.utils.space_ops	Inputs are treated as quaternions, where the real part is the
+function	rotate_vector	utils/space_ops	(vector: 'Vect3', angle: 'float', axis: 'Vect3' = array([0., 0., 1.])) -> 'Vect3'	manimlib.utils.space_ops	
+function	rotate_vector_2d	utils/space_ops	(vector: 'Vect2', angle: 'float') -> 'Vect2'	manimlib.utils.space_ops	
+function	rotation_about_z	utils/space_ops	(angle: 'float') -> 'Matrix3x3'	manimlib.utils.space_ops	
+function	rotation_between_vectors	utils/space_ops	(v1: 'Vect3', v2: 'Vect3') -> 'Matrix3x3'	manimlib.utils.space_ops	
+function	rotation_matrix	utils/space_ops	(angle: 'float', axis: 'Vect3') -> 'Matrix3x3'	manimlib.utils.space_ops	Rotation in R^3 about a specified axis of rotation.
+function	rotation_matrix_from_quaternion	utils/space_ops	(quat: 'Vect4') -> 'Matrix3x3'	manimlib.utils.space_ops	
+function	rotation_matrix_transpose	utils/space_ops	(angle: 'float', axis: 'Vect3') -> 'Matrix3x3'	manimlib.utils.space_ops	
+function	rotation_matrix_transpose_from_quaternion	utils/space_ops	(quat: 'Vect4') -> 'Matrix3x3'	manimlib.utils.space_ops	
+function	thick_diagonal	utils/space_ops	(dim: 'int', thickness: 'int' = 2) -> 'np.ndarray'	manimlib.utils.space_ops	
+function	z_to_vector	utils/space_ops	(vector: 'Vect3') -> 'Matrix3x3'	manimlib.utils.space_ops	
+class	LatexError	utils/tex		manimlib.utils.tex_file_writing	Common base class for all non-exit exceptions.
+constant	TEX_TO_SYMBOL_COUNT	utils/tex	{'\\!': 0, '\\,': 0, '\\-': 0, '\\/': 0, '\\:': 0, '\\;': 0, '\\>': 0, '\\aa': 0, '\\AA': 0, '\\ae': 0, '\\AE': 0, '\...	manimlib.utils.tex	
+constant	TEX_TO_SYMBOL_COUNT	utils/tex	{'\\!': 0, '\\,': 0, '\\-': 0, '\\/': 0, '\\:': 0, '\\;': 0, '\\>': 0, '\\aa': 0, '\\AA': 0, '\\ae': 0, '\\AE': 0, '\...	manimlib.utils.tex_to_symbol_count	
+function	full_tex_to_svg	utils/tex	(full_tex: 'str', compiler: 'str' = 'latex', message: 'str' = '')	manimlib.utils.tex_file_writing	
+function	get_full_tex	utils/tex	(content: 'str', preamble: 'str' = '')	manimlib.utils.tex_file_writing	
+function	get_tex_template_config	utils/tex	(template_name: 'str') -> 'dict[str, str]'	manimlib.utils.tex_file_writing	
+function	remove_tex_environments	utils/tex	(tex: 'str') -> 'str'	manimlib.utils.tex	

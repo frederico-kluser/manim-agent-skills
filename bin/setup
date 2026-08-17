@@ -1,0 +1,147 @@
+#!/usr/bin/env bash
+# Bootstrap do ambiente, do zero, num clone limpo.
+#
+#   bin/setup              # ManimCE + manimx  (o essencial)
+#   bin/setup --with-gl    # + ManimGL (3b1b, wgpu/Vulkan) num venv separado
+#   bin/setup --with-tex   # + pacotes LaTeX via tlmgr (precisa de TeX Live/TinyTeX)
+#   bin/setup --all        # tudo
+#
+# Idempotente: rodar de novo só atualiza o que faltar.
+# Nada aqui exige GPU. Sem NVIDIA, tudo funciona em CPU.
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
+
+WITH_GL=0
+WITH_TEX=0
+for arg in "$@"; do
+    case "$arg" in
+        --with-gl)  WITH_GL=1 ;;
+        --with-tex) WITH_TEX=1 ;;
+        --all)      WITH_GL=1; WITH_TEX=1 ;;
+        -h|--help)  sed -n '2,12p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'; exit 0 ;;
+        *) echo "argumento desconhecido: $arg (use --help)" >&2; exit 2 ;;
+    esac
+done
+
+say()  { printf '\n\033[1m==> %s\033[0m\n' "$*"; }
+ok()   { printf '    \033[32mOK\033[0m    %s\n' "$*"; }
+warn() { printf '    \033[33maviso\033[0m %s\n' "$*"; }
+die()  { printf '    \033[31mERRO\033[0m  %s\n' "$*" >&2; exit 1; }
+
+# ---------------------------------------------------------------- pré-requisitos
+say "Pré-requisitos"
+
+PY=""
+for cand in python3.13 python3.12 python3.11 python3; do
+    if command -v "$cand" >/dev/null 2>&1; then
+        if "$cand" -c 'import sys; sys.exit(0 if sys.version_info >= (3,11) else 1)' 2>/dev/null; then
+            PY="$cand"; break
+        fi
+    fi
+done
+# O ManimCE 0.19.2+ exige Python >= 3.11. Em interpretador antigo o pip NÃO
+# falha: ele resolve silenciosamente para um Manim velho (0.18/0.19). Por
+# isso exigimos a versão aqui, antes de instalar qualquer coisa.
+[ -n "$PY" ] || die "preciso de Python >= 3.11 (o ManimCE 0.21 exige). Instale e rode de novo."
+ok "$($PY --version)"
+
+command -v ffmpeg >/dev/null 2>&1 \
+    && ok "ffmpeg $(ffmpeg -version 2>/dev/null | head -1 | cut -d' ' -f3)" \
+    || warn "ffmpeg não encontrado no PATH. O ManimCE traz o próprio (PyAV), mas o ManimGL precisa do binário."
+
+if command -v uv >/dev/null 2>&1; then
+    INSTALLER="uv"; ok "uv $(uv --version | cut -d' ' -f2)"
+else
+    INSTALLER="pip"; warn "uv não encontrado — usando venv+pip (mais lento). https://docs.astral.sh/uv/"
+fi
+
+mkvenv() {  # $1 = diretório
+    if [ -x "$1/bin/python" ]; then ok "venv $1 já existe"; return 0; fi
+    if [ "$INSTALLER" = "uv" ]; then uv venv --python "$PY" "$1" >/dev/null
+    else "$PY" -m venv "$1"; fi
+    ok "venv $1 criada"
+}
+
+pipinto() { # $1 = venv, resto = pacotes/flags
+    local venv="$1"; shift
+    if [ "$INSTALLER" = "uv" ]; then VIRTUAL_ENV="$venv" uv pip install "$@"
+    else "$venv/bin/python" -m pip install --quiet --upgrade "$@"; fi
+}
+
+# ---------------------------------------------------------------- ManimCE
+say "ManimCE + manimx"
+mkvenv .venv
+pipinto .venv manim >/dev/null
+pipinto .venv -e . --no-deps >/dev/null
+
+CE_VER="$(.venv/bin/python -c 'import warnings;warnings.filterwarnings("ignore");import manim;print(manim.__version__)' 2>/dev/null || echo '?')"
+ok "manim $CE_VER"
+case "$CE_VER" in
+    0.1[0-9].*|0.[0-9].*) warn "versão antiga resolvida ($CE_VER). Confira o Python: o 0.21 exige 3.11+." ;;
+esac
+
+if .venv/bin/python -c 'import warnings;warnings.filterwarnings("ignore");from av.codec import Codec;Codec("h264_nvenc","w")' 2>/dev/null; then
+    ok "NVENC disponível no PyAV (encoding por GPU)"
+else
+    warn "sem NVENC no PyAV — encoding seguirá em libx264 (CPU). Nada quebra."
+fi
+
+# ---------------------------------------------------------------- ManimGL
+if [ "$WITH_GL" -eq 1 ]; then
+    say "ManimGL (3b1b)"
+    mkvenv .venv-gl
+    # Do git, não do PyPI: o wheel 1.7.2 (dez/2024) ainda é OpenGL/ModernGL,
+    # enquanto o master migrou para wgpu/Vulkan. Os dois se autodeclaram 1.7.2.
+    pipinto .venv-gl "manimgl @ git+https://github.com/3b1b/manim.git" >/dev/null
+    pipinto .venv-gl setuptools >/dev/null
+    GL_INFO="$(.venv-gl/bin/python -c 'import warnings;warnings.filterwarnings("ignore");import manimlib,importlib.util as u;print(manimlib.__version__, "wgpu/Vulkan" if u.find_spec("wgpu") else "OpenGL/ModernGL")' 2>/dev/null || echo '?')"
+    ok "manimgl $GL_INFO"
+else
+    warn "ManimGL não instalado (use --with-gl). O ManimCE sozinho já cobre quase tudo."
+fi
+
+# ---------------------------------------------------------------- LaTeX
+say "LaTeX (Tex/MathTex)"
+TEXBIN=""
+for d in "$HOME/.TinyTeX/bin/x86_64-linux" "$HOME/.TinyTeX/bin/universal-darwin" "$HOME/.TinyTeX/bin/aarch64-linux"; do
+    [ -d "$d" ] && TEXBIN="$d" && break
+done
+[ -n "$TEXBIN" ] && export PATH="$TEXBIN:$PATH"
+
+if ! command -v latex >/dev/null 2>&1; then
+    warn "LaTeX não encontrado. Text() funciona; Tex()/MathTex() não."
+    warn "  Debian/Ubuntu: sudo apt install texlive texlive-latex-extra texlive-fonts-extra dvisvgm"
+    warn "  Ou TinyTeX (leve): https://yihui.org/tinytex/"
+elif [ "$WITH_TEX" -eq 1 ] && command -v tlmgr >/dev/null 2>&1; then
+    # Lista oficial do ManimCE para Tex/MathTex.
+    tlmgr install amsmath babel-english cbfonts-fd cm-super count1to ctex doublestroke \
+        dvisvgm everysel fontspec frcursive fundus-calligra gnu-freefont jknapltx latex-bin \
+        mathastext microtype multitoc physics preview prelim2e ragged2e relsize rsfs \
+        setspace standalone tipa wasy wasysym xcolor xetex xkeyval >/dev/null 2>&1 \
+        && ok "pacotes LaTeX instalados via tlmgr" \
+        || warn "tlmgr falhou em algum pacote — rode 'tlmgr update --self' e tente de novo"
+else
+    ok "latex encontrado em $(command -v latex)"
+    [ "$WITH_TEX" -eq 0 ] && warn "use --with-tex para instalar os pacotes que o Manim exige"
+fi
+
+command -v dvisvgm >/dev/null 2>&1 || warn "dvisvgm ausente — obrigatório para Tex/MathTex"
+
+# ---------------------------------------------------------------- índice de API
+say "Índice de API"
+if [ -f api/manim-ce-api.json.gz ]; then
+    ok "api/ já versionado (regenere com 'bin/mx api-dump' após atualizar o Manim)"
+else
+    .venv/bin/python -m manimx.cli api-dump >/dev/null 2>&1 && ok "api/ gerado" || warn "falhou ao gerar api/"
+fi
+
+# ---------------------------------------------------------------- verificação
+say "Verificação"
+if ./bin/mx doctor; then
+    printf '\n\033[32mPronto.\033[0m Comece por:  bin/mx render scenes/exemplos.py OlaManim -q m --json\n\n'
+else
+    printf '\n\033[33mAmbiente parcialmente pronto.\033[0m Veja os itens acima; a maioria degrada em vez de quebrar.\n\n'
+    exit 1
+fi

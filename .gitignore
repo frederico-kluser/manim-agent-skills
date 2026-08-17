@@ -1,0 +1,31 @@
+# --- ambientes (recriados por bin/setup) -----------------------------------
+.venv/
+.venv-gl/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ruff_cache/
+.pytest_cache/
+.mypy_cache/
+
+# --- saída de renderização -------------------------------------------------
+media/
+media-gl/
+
+# --- segredos e estado local ----------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.claude/settings.local.json
+.claude/*.local.json
+
+# --- ruído de SO / editor --------------------------------------------------
+.DS_Store
+Thumbs.db
+*.swp
+
+# NOTA: api/ é GERADO (`bin/mx api-dump`) mas fica versionado DE PROPÓSITO.
+# É o índice offline que os agentes consultam sem precisar do venv — é o
+# produto, não um artefato de build.

@@ -1,0 +1,47 @@
+[project]
+name = "manimx"
+version = "1.0.0"
+description = "Camada de API sobre o Manim Community para uso por agentes de código, com encoding NVENC e renderização GPU."
+readme = "README.md"
+# ManimCE 0.19.2+ exige 3.11. Declarar 3.10 aqui deixaria o
+# `pip install` passar num interpretador onde o `mx doctor` falha.
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+# O Manim em si é instalado no ambiente (.venv). Aqui só declaramos o
+# mínimo para que `manimx` funcione depois de instalado com -e.
+dependencies = [
+    # 0.20 trouxe encoding paralelo; 0.21, o Cairo 2.2x mais rápido.
+    "manim>=0.20",
+]
+
+[project.optional-dependencies]
+# Renderização interativa/OpenGL do ManimCE.
+gl = ["moderngl", "moderngl-window", "PyOpenGL"]
+# Notebooks.
+jupyter = ["jupyterlab", "ipython"]
+dev = ["pytest", "ruff"]
+
+[project.scripts]
+mx = "manimx.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["manimx"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+# `from manim import *` é o idioma documentado do Manim: a biblioteca
+# expõe ~590 nomes no topo e todo exemplo oficial usa o star import.
+# Exigir imports explícitos em cenas iria contra o ecossistema inteiro.
+"scenes/**" = ["F403", "F405"]
