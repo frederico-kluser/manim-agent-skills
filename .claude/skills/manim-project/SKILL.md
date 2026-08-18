@@ -122,6 +122,7 @@ o caminho, leia dele.
 | erro, travamento, saída errada | `manim-troubleshooting` |
 | código do 3b1b, `manimlib`, portar GL↔CE | `manimgl-3b1b` |
 | muitos vídeos, paralelismo, CI | `manim-batch-pipeline` |
+| cena para PALESTRA/SLIDE — partes que o apresentador avança | `manim-presentation-parts` |
 
 ## O que NÃO fazer
 
