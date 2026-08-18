@@ -80,6 +80,16 @@ segunda versão do ato 1 para sair de sincronia com a primeira.
 3. **Saída ANTES da entrada.** Informação velha e nova nunca se cruzam no mesmo
    `self.play` — o crossfade dá uma "piscada". `FadeOut` completa num play;
    `FadeIn` começa no seguinte.
+3b. **UMA PARTE NÃO TROCA O RODAPÉ NO MEIO.** Texto de apoio novo é fala nova, e
+   fala nova é clique novo. É o teste mais barato para saber se a parte tem uma
+   ideia ou duas: **conte os recados — dois recados, duas partes.** A variante
+   disfarçada da mesma falha: a parte que termina com um movimento que APAGA o
+   que ela acabou de mostrar (uma janela descendo por cima do texto). Esse
+   movimento é a CABEÇA da parte seguinte, não o rabo desta.
+3c. **Sem jargão do projeto no rodapé.** Nome de flag, de arquivo e de conceito
+   interno vira comentário no código da cena — que é para quem edita. Na tela
+   vai a coisa dita em língua corrente. E cada linha de apoio abaixo de ~62
+   caracteres, quebrada onde a FALA respira, na mão.
 4. **Caudas curtas.** Último `wait` de cada ato ≤ 0.4 s (última parte ~0.8). O
    player do deck segura o frame final parado de qualquer forma, e cauda longa
    atrasa o sinal de "terminou" que o apresentador usa para saber que pode
@@ -121,6 +131,26 @@ sumiu = int(((b - a) > 24).sum())   # pixels que CLAREARAM = tinta removida
 
 Pixels que escurecem são a próxima animação entrando — não contam. Extraia os
 frames com ffmpeg (`-sseof -0.05` para o último; sem seek para o primeiro).
+
+## Duas armadilhas de desenho, medidas
+
+**Texto que cruza uma linha de grade.** Num gráfico com marcas tracejadas, o
+número colado à barra pode cair em cima de uma marca; no frame de repouso isso
+lê como texto quebrado. Não mova o número — dê a ele um **prato opaco na cor do
+fundo**, adicionado ANTES do texto no `VGroup`, do tamanho do texto mais ~0,2 de
+folga. O prato não aparece: ele só apaga a grade atrás das letras.
+
+**Espaço dentro de um rótulo curto.** `f"{n//1000} K"` desenha "26  K" — a fonte
+abre um vão largo o bastante para o olho ler duas coisas. Em legenda apertada,
+cole (`26K`), e use buff LARGO entre os itens (~0,5) e curto dentro de cada item
+(~0,1): é o agrupamento que faz a legenda ser lida como N coisas em vez de uma
+faixa de texto.
+
+**O pôster tem que ser o ÚLTIMO frame.** Se o pipeline extrai o pôster com
+`ffmpeg -sseof -1 -i x.mp4 -update 1 -frames:v 1 x.png`, ele grava o primeiro
+frame DEPOIS do seek — o de 1 s antes do fim. Numa parte que fecha com `FadeIn`,
+o pôster sai com o texto lavado enquanto o vídeo está perfeito. Use `-update 1`
+**sem** `-frames:v 1`.
 
 ## Nomes e integração com o deck
 
