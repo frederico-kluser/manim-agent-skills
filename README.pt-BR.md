@@ -32,8 +32,8 @@ Este repo resolve os três, com tudo verificado contra os pacotes realmente inst
 ## Começando
 
 ```bash
-git clone https://github.com/frederico-kluser/manim-agent-skills.git
-cd manim-agent-skills
+git clone https://github.com/frederico-kluser/manim-agent-skill.git
+cd manim-agent-skill
 bin/setup                    # ManimCE + manimx   (--with-gl para o ManimGL, --all para tudo)
 bin/mx doctor                # exit 0 = pronto
 

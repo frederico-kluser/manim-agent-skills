@@ -33,8 +33,8 @@ This repo fixes all three, with everything verified against the actually-install
 ## Quick start
 
 ```bash
-git clone https://github.com/frederico-kluser/manim-agent-skills.git
-cd manim-agent-skills
+git clone https://github.com/frederico-kluser/manim-agent-skill.git
+cd manim-agent-skill
 bin/setup                    # ManimCE + manimx    (add --with-gl for ManimGL, --all for everything)
 bin/mx doctor                # exit 0 = ready
 
